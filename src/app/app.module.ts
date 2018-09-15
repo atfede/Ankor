@@ -5,7 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { StatisticsPage } from '../pages/statistics/statistics';
+import { DashboardPage } from '../pages/dashboard/dashboard';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,7 +17,7 @@ import { Chart } from 'chart.js';
     MyApp,
     HomePage,
     ListPage,
-    StatisticsPage
+    DashboardPage
   ],
   imports: [
     BrowserModule,
@@ -28,7 +28,7 @@ import { Chart } from 'chart.js';
     MyApp,
     HomePage,
     ListPage,
-    StatisticsPage
+    DashboardPage
   ],
   providers: [
     StatusBar,

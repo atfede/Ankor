@@ -19,3 +19,16 @@
   color: color($colors, light);
 
 }
+.item, .item-block, .item-md{
+  background: transparent;
+  color: color($colors, light);
+}
+.item-inner{
+  border: none;
+}
+ion-toolbar{
+  background: transparent;
+}
+ion-header{
+  background: transparent;
+}

@@ -6,7 +6,7 @@ import { Chart } from 'chart.js';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { StatisticsPage } from '../pages/statistics/statistics';
+import { DashboardPage } from '../pages/dashboard/dashboard';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,7 +25,7 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
-      { title: 'Statistics', component: StatisticsPage}
+      { title: 'Dashboard', component: DashboardPage}
     ];
 
   }
