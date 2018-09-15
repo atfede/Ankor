@@ -15,5 +15,7 @@
 // automatically applied to the <body> element in the app.
 
 .bg-style {
-  background: color($colors, dark);
+  background: color($colors, blueBackground);
+  color: color($colors, light);
+
 }

@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-navbar class="topBar">
+    <button ion-button menuToggle>
+      <ion-icon class="menuIconBurger" name="menu"></ion-icon>
+    </button>
+    <ion-title><img id="topTitleImg" height="50px" src="assets/imgs/image-without-bg.png" class="thumb-img" /></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-style">
+  <ion-row class="row" id="compName" justify-content-center="" style="
+    margin-top: 10px;
+">
+  </ion-row>
+  <ion-row id="compName" justify-content-center> Nombre de Empresa </ion-row>
+
+  <!-- <div class="container"> -->
+  <ion-grid class="main-container-grid">
+
+    <!-- Start top bar -->
+    <div class='row topbartable'></div>
+    <ion-row responsive-lg>
+
+      <ion-grid id="threeItemBar">
+        <!-- Table Headers -->
+        <ion-row class="table-headers">
+          <ion-col>
+            FATURAMENTO
+          </ion-col>
+          <ion-col>
+            IMPOSTOS
+            PREVISTOS
+          </ion-col>
+          <ion-col>
+            PRÓXIMO
+            PAGAMENTO
+          </ion-col>
+        </ion-row>
+        <!-- End table headers -->
+        <!-- Table values -->
+        <ion-row>
+          <ion-col>
+            R$ 0,00
+          </ion-col>
+          <ion-col>
+            R$ 0,00
+          </ion-col>
+          <ion-col>
+            DD/MM
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-row>
+    <!-- END top bar -->
+
+    <!-- Top bar button -->
+    <ion-row>
+
+      <ion-grid id="threeItemBar">
+
+        <ion-row class="table-headers">
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+          <ion-col>
+            <button>
+              Este mês
+            </button>
+            <button>
+              Este ano
+            </button>
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-row>
+    <!-- End top bar button -->
+    <!-- Middle content  -->
+
+    <ion-grid>
+      <ion-row height="50%">
+        <!-- Charts -->
+        <canvas #barCanvas></canvas>
+        <!-- END Charts -->
+      </ion-row>
+      <div class="topbartable"></div>
+      <!-- Bottom Content -->
+      <ion-row height="50%">
+          <canvas #lineCanvas></canvas>
+       
+      </ion-row>
+    </ion-grid>
+    <!-- END Bottom Content -->
+
+
+
+
+
+
+
+  </ion-grid>
+
+</ion-content>
