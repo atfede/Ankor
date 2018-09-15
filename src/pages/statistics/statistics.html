@@ -4,6 +4,9 @@
       <ion-icon class="menuIconBurger" name="menu"></ion-icon>
     </button>
     <ion-title><img id="topTitleImg" height="50px" src="assets/imgs/image-without-bg.png" class="thumb-img" /></ion-title>
+    <button ion-button menuToggle style="display:none;">
+        <ion-icon class="menuIconBurger" name="menu"></ion-icon>
+      </button>
   </ion-navbar>
 </ion-header>
 
@@ -24,28 +27,28 @@
       <ion-grid id="threeItemBar">
         <!-- Table Headers -->
         <ion-row class="table-headers">
-          <ion-col>
+          <ion-col class="table-headers">
             FATURAMENTO
           </ion-col>
-          <ion-col>
+          <ion-col class="table-headers">
             IMPOSTOS
             PREVISTOS
           </ion-col>
-          <ion-col>
+          <ion-col class="table-headers">
             PRÓXIMO
             PAGAMENTO
           </ion-col>
         </ion-row>
         <!-- End table headers -->
         <!-- Table values -->
-        <ion-row>
-          <ion-col>
+        <ion-row class="valuesTop">
+          <ion-col class="valuesTop">
             R$ 0,00
           </ion-col>
-          <ion-col>
+          <ion-col class="valuesTop">
             R$ 0,00
           </ion-col>
-          <ion-col>
+          <ion-col class="valuesTop">
             DD/MM
           </ion-col>
         </ion-row>
@@ -61,15 +64,8 @@
 
         <ion-row class="table-headers">
           <ion-col></ion-col>
-          <ion-col></ion-col>
           <ion-col>
-            <button>
-              Este mês
-            </button>
-            <button>
-              Este ano
-            </button>
-
+            <button data-action="false" style="width:70px;display:inline;float:right;background-color: #002e45;border-radius: 0 10px 10px 0;">Este ano</button><button data-action="true" style="display:inline;width:70px;float:right; border-radius: 10px 0 0 10px;">Este mês</button>
           </ion-col>
         </ion-row>
       </ion-grid>

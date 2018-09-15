@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams,LoadingController } from 'ionic-angular';
 
 import { ImageResizer, ImageResizerOptions } from '@ionic-native/image-resizer';
 
@@ -23,6 +23,7 @@ export class StatisticsPage {
   lineChart: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
     setTimeout(() => {
       this.renderCenterComponents();
       this.renderBottomComponents();
@@ -62,6 +63,21 @@ export class StatisticsPage {
             }
           }]
         }
+      },
+
+      annotation: {
+        annotations: [{
+          type: 'line',
+          mode: 'horizontal',
+          scaleID: 'y-axis-0',
+          value: 5600,
+          borderColor: 'rgb(196,152,70)',
+          borderWidth: 4,
+          label: {
+            enabled: true,
+            content: 'Test label'
+          }
+        }]
       }
 
     });
@@ -69,21 +85,23 @@ export class StatisticsPage {
 
 
   renderBottomComponents() {
+    var actualmonth = 'Setembro 2018';
     this.lineChart = new Chart(this.lineCanvas.nativeElement, {
-
+    
       type: 'horizontalBar',
       data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["Manuel CRUZ", "Ulisses CABRAL", "Cristiana DUARTE", "Andréa ROSÁRIO", "Bartolomeu GOMES"],
         datasets: [{
-          label: '# of Votes',
+          label: 'Top 5 Clientes \n' + actualmonth,
           data: [12, 19, 3, 5, 2, 3],
           backgroundColor: [
-            'rgb(125, 175, 188)',
-            'rgb(125, 175, 188)',
-            'rgb(125, 175, 188)',
-            'rgb(125, 175, 188)',
-            'rgb(125, 175, 188)',
-
+            
+            'rgb(0,39,61)',
+            'rgb(0,39,61)',
+            'rgb(0,39,61)',
+            'rgb(0,39,61)',
+            'rgb(0,39,61)',
+            
           ],
 
           borderWidth: 1

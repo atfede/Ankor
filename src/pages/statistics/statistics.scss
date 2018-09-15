@@ -16,6 +16,14 @@
 
 .table-headers{
     color : color($colors, lightBlue);
+    text-align: center;
+    text-transform: capitalize;
+    
+}
+.valuesTop{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
 }
 
 .container{
@@ -23,11 +31,10 @@
     padding-bottom : 17px;
     padding-right : 17px;
 }
-.bottomContent{
-    border-top-color: color($colors, lineGold);
-    border-top-width: 2.5px;
-    border-top-style: inset;
-}
+
 .main-container-grid{
     height: 100%;
+}
+.menuIconBurger{
+    color : color($colors, light);  
 }
