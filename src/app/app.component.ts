@@ -2,11 +2,15 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { Chart } from 'chart.js';
+
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { DashboardPage } from '../pages/dashboard/dashboard';
+// import { DashboardPage } from '../pages/dashboard/dashboard';
+// import { LoginPage } from '../pages/login/login';
+// import { RegisterPage } from '../pages/register/register';
+
+
 
 @Component({
   templateUrl: 'app.html'
@@ -14,7 +18,7 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = 'LoginPage';
 
   pages: Array<{title: string, component: any}>;
 
@@ -25,7 +29,10 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
-      { title: 'Dashboard', component: DashboardPage}
+      { title: 'Dashboard', component: 'DashboardPage'}
+      /*
+      { title: 'Login', component: LoginPage},
+      { title: 'Register', component: RegisterPage}*/
     ];
 
   }

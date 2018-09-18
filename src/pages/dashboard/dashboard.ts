@@ -1,16 +1,18 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, LoadingController, ModalController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ModalController, IonicPage, ToastController } from 'ionic-angular';
 
 import { ImageResizer, ImageResizerOptions } from '@ionic-native/image-resizer';
 
 import { Chart } from 'chart.js';
-
+import { AngularFireAuth } from 'angularfire2/auth';
+import { ThrowStmt } from '@angular/compiler';
+@IonicPage()
 @Component({
   selector: 'page-dashboard',
   templateUrl: 'dashboard.html'
 })
 
-
+//  @IonicPage()
 
 export class DashboardPage {
 
@@ -22,35 +24,57 @@ export class DashboardPage {
   barChart: any;
   lineChart: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modal: ModalController, public loadingCtrl : LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modal: ModalController,
+    public loadingCtrl: LoadingController, private afAuth: AngularFireAuth, private toast: ToastController) {
 
+
+
+  }
+  ionViewDidLoad() {
     this.presentLoadingDefault();
-    
+
     setTimeout(() => {
       this.renderCenterComponents();
       this.renderBottomComponents();
       for (var id in Chart.instances) {
         Chart.instances[id].resize()
       }
-      
-    }, 3000);
 
+    }, 3000);
   }
 
- 
+  ionViewWillEnter() {
+    
+    this.afAuth.authState.subscribe(data => {
+      console.log(data);
+      if (data && data.uid && data.email) {
+
+        this.toast.create({
+          message: `Bem-vindo , ${data.email}`,
+          duration: 3000
+        }).present();
+
+      } else {
+
+      }
+
+    });
+  }
+
+
 
   presentLoadingDefault() {
     let loading = this.loadingCtrl.create({
       content: 'Please wait...'
     });
-  
+
     loading.present();
-  
+
     setTimeout(() => {
       loading.dismiss();
     }, 5000);
   }
-  
+
   presentLoadingCustom() {
     let loading = this.loadingCtrl.create({
       spinner: 'hide',
@@ -60,26 +84,26 @@ export class DashboardPage {
         </div>`,
       duration: 5000
     });
-  
+
     loading.onDidDismiss(() => {
       console.log('Dismissed loading');
     });
-  
+
     loading.present();
   }
-  
+
   presentLoadingText() {
     let loading = this.loadingCtrl.create({
       spinner: 'hide',
       content: 'Loading Please Wait...'
     });
-  
+
     loading.present();
-  
+
     setTimeout(() => {
       // this.nasv.push(Page2);
     }, 1000);
-  
+
     setTimeout(() => {
       loading.dismiss();
     }, 5000);
