@@ -12,23 +12,23 @@ import { AngularFireAuth } from 'angularfire2/auth'
  */
 @IonicPage()
 @Component({
-  selector: 'page-register',
-  templateUrl: 'register.html',
+  selector: 'page-profile',
+  templateUrl: 'profile.html',
 })
-export class RegisterPage {
+export class ProfilePage {
   user = {} as User;
   constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RegisterPage');
+    console.log('ionViewDidLoad ProfilePage');
 
   }
 
-  async register(user: User) {
+  async profile(user: User) {
     
     try {
-      const result = await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
+      const result = this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
       console.log(result);
     }catch(e){
       console.log(e);
