@@ -1,9 +1,9 @@
-export interface User {
+export interface Profile {
     
     companyName: string, 
     firstName: string,
     lastName: string,
     balance : string,
-    co
+    companyId: string
 
 }

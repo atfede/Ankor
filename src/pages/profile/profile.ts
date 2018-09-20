@@ -1,23 +1,28 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { User } from '../../models/User'
+import { AngularFireModule } from 'angularfire2';
 
+import { Profile } from '../../models/profile'
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth'
-/**
- * Generated class for the RegisterPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { AngularFireDatabase } from 'angularfire2/database';
+
+
+
+
 @IonicPage()
 @Component({
   selector: 'page-profile',
   templateUrl: 'profile.html',
 })
+
+
 export class ProfilePage {
-  user = {} as User;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth) {
+
+  profile = {} as Profile;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, private afDatabase: AngularFireDatabase) {
   }
 
   ionViewDidLoad() {
@@ -25,17 +30,17 @@ export class ProfilePage {
 
   }
 
-  async profile(user: User) {
-    
-    try {
-      const result = this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
-      console.log(result);
-    }catch(e){
-      console.log(e);
-    }
 
-    
-
+  async createProfile() {
+    this.afAuth.authState.take(1).subscribe(auth => {
+      console.log(auth);
+      this.afDatabase.object(`profile/${auth.uid}`).set(this.profile).then(() => {
+        this.navCtrl.setRoot('DashboardPage');
+      });
+    })
   }
+
+
+
 
 }

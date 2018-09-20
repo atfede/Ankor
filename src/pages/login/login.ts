@@ -24,28 +24,30 @@ export class LoginPage {
 
   async  login() {
     try {
-      
-      const logAttemp = this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password).then( f => {
-      console.log(logAttemp);
 
-      // Successful login
-      if (logAttemp) {
-        this.navCtrl.push('DashboardPage');
-      } else {
+      const logAttemp = this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password).then(f => {
+
+        console.log(logAttemp);
+
+        // Successful login
+        if (logAttemp) {
+          // this.afAuth.auth.setPersistence();
+          this.navCtrl.push('ProfilePage');
+        } else {
+          this.toast.create({
+            message: `Nome de usuário ou senha incorretos`,
+            duration: 3000
+          }).present();
+        }
+
+      }).catch(er => {
         this.toast.create({
           message: `Nome de usuário ou senha incorretos`,
           duration: 3000
         }).present();
-      }
+        console.log(er);
 
-    }).catch( er => {
-      this.toast.create({
-        message: `Nome de usuário ou senha incorretos`,
-        duration: 3000
-      }).present();
-      console.log(er);
-
-    });
+      });
     } catch (e) {
       this.toast.create({
         message: `Nome de usuário ou senha incorretos`,

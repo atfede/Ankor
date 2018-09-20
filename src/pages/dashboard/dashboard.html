@@ -15,7 +15,7 @@
     margin-top: 10px;
 ">
   </ion-row>
-  <ion-row id="compName" justify-content-center> Nombre de Empresa </ion-row>
+  <ion-row id="compName" justify-content-center> {{(profileData | async)?.companyName }} </ion-row>
 
   <!-- <div class="container"> -->
   <ion-grid class="main-container-grid">

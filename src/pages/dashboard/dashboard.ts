@@ -4,8 +4,14 @@ import { NavController, NavParams, LoadingController, ModalController, IonicPage
 import { ImageResizer, ImageResizerOptions } from '@ionic-native/image-resizer';
 
 import { Chart } from 'chart.js';
+
+import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
+
 import { ThrowStmt } from '@angular/compiler';
+
+import { Profile } from '../../models/Profile'
+
 @IonicPage()
 @Component({
   selector: 'page-dashboard',
@@ -20,12 +26,14 @@ export class DashboardPage {
   @ViewChild('barCanvas') barCanvas;
   @ViewChild('lineCanvas') lineCanvas;
 
-
+  profileData : AngularFireObject<Profile>;
+  
   barChart: any;
   lineChart: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modal: ModalController,
-    public loadingCtrl: LoadingController, private afAuth: AngularFireAuth, private toast: ToastController) {
+    public loadingCtrl: LoadingController, private afAuth: AngularFireAuth, private toast: ToastController,
+    private afDatabase: AngularFireDatabase ) {
 
 
 
@@ -54,8 +62,11 @@ export class DashboardPage {
           duration: 3000
         }).present();
 
-      } else {
+        this.profileData = this.afDatabase.object(`profile\{data.uid}`);
 
+
+      } else {
+        this.navCtrl.push('ProfilePage');
       }
 
     });
