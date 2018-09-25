@@ -62,8 +62,9 @@ export class DashboardPage {
           duration: 3000
         }).present();
 
-        this.profileData = this.afDatabase.object(`profile\{data.uid}`);
-
+        this.profileData = this.afDatabase.object(`profile/${data.uid}`);
+        
+        
 
       } else {
         this.navCtrl.push('ProfilePage');

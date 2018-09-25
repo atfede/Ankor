@@ -7,12 +7,23 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>tributos</ion-title>
+    <ion-title>Tributos a pagar</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+
+  <ion-item *ngFor="let tributo of tributos" > 
+    <ion-row> 
+      <ion-cell>{{abs}}</ion-cell>
+      <ion-cell>{{value}}</ion-cell>
+      <ion-cell>{{duedate}}</ion-cell>
+    </ion-row>
+  </ion-item>
+
+
 
 </ion-content>

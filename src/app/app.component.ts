@@ -18,6 +18,7 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
+
   rootPage: any = 'LoginPage';
 
   pages: Array<{title: string, component: any}>;
@@ -29,7 +30,8 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
-      { title: 'Dashboard', component: 'DashboardPage'}
+      { title: 'Dashboard', component: 'DashboardPage'},
+      { title: 'Impostos', component: 'TributosPage'}
       /*
       { title: 'Login', component: LoginPage},
       { title: 'Register', component: RegisterPage}*/
