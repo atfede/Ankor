@@ -15,19 +15,100 @@
 // automatically applied to the <body> element in the app.
 
 .bg-style {
-  background: linear-gradient(135deg, #002336 0%,#003f5b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: linear-gradient(135deg, #002336 0%, #003f5b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   color: color($colors, light);
 }
-.item, .item-block, .item-md{
+
+/*.item, .item-block, .item-md {
   background: transparent;
   color: color($colors, light);
 }
-.item-inner{
+
+.item-inner {
   border: none;
-}
-ion-toolbar{
+}*/
+
+ion-toolbar {
   background: transparent;
 }
-ion-header{
+
+ion-header {
   background: transparent;
+}
+
+ion-item:first-child {
+  background: transparent !important;
+  border-radius: 20px;
+  border: 1.5px solid #7B7045;
+}
+
+ion-item:last-child {
+  background: transparent !important;
+  border-radius: 20px;
+  border: 1.5px solid #7B7045;
+}
+
+ion-item.item {
+  //background-color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 1px;
+  .label {
+    width: 10%;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1.2em;
+  }
+}
+
+ion-input {
+  background: transparent !important;
+  border-radius: 0;
+}
+
+input[type="text"] {
+  background-color: transparent !important;
+  border: 0 !important;
+  outline: none;
+}
+
+.txt-focused {
+  background-color: transparent !important;
+  border: 0 !important;
+  outline: none;
+}
+
+.text-input-md {
+  color: #fff;
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px rgba(13, 50, 71, 1) inset;
+  border: 0 !important;
+  outline: none;
+}
+
+.button-md {
+  border-radius: 20px !important;
+  border: 1.5px solid #7B7045;
+}
+
+.btn-style {
+  background-color: transparent;
+}
+
+.item-md.item-block .item-inner,
+.item-md.item-input.input-has-focus .item-inner,
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner,
+.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner,
+.list-md .item-input.input-has-focus:last-child,
+.list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child,
+.list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
+  border-bottom: 1px solid #7B7045;
+  //box-shadow: none;
+}
+
+.list-md .item-input.input-has-focus:last-child .item-inner,
+.list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child .item-inner,
+.list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child .item-inner {
+  border-bottom: 1px solid #7B7045;
+  //box-shadow: none;
 }

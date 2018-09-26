@@ -32,7 +32,7 @@ export class LoginPage {
         // Successful login
         if (logAttemp) {
 
-          if(!f.additionalUserInfo.isNewUser){
+          if(f.additionalUserInfo.isNewUser){
             this.navCtrl.push('DashboardPage');
           }else{
             this.navCtrl.push('ProfilePage');

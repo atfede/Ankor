@@ -13,17 +13,20 @@
 </ion-header>
 
 <ion-content padding class="bg-style">
-  <ion-item>
-    <ion-label floating>Email Address</ion-label>
-      <ion-input type="text" [(ngModel)]="user.email"></ion-input>
-  </ion-item>
+  <img src="assets/imgs/image-without-bg.png">
 
-  <ion-item>
-      <ion-label floating > Password </ion-label>
-        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+  <ion-list>
+    <ion-item class="rounded">
+      <ion-input class="txt-focused" type="text" [(ngModel)]="user.email" placeholder="Usuario"></ion-input>
     </ion-item>
+    <br/>
+    <ion-item class="rounded">
+      <ion-input class="txt-focused" type="password" [(ngModel)]="user.password" placeholder="Senha"></ion-input>
+    </ion-item>
+  </ion-list>
 
-    <button ion-button (click)="login(user)" >Login </button>
-    <button ion-button (click)="register()" >Register </button>
+  <button class="btn-style" ion-button (click)="login(user)" block>Login</button>
+  <br/>
+  <button class="btn-style" ion-button (click)="register()" block>Register</button>
 
 </ion-content>
