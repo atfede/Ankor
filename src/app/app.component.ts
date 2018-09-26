@@ -10,11 +10,14 @@ import { ListPage } from '../pages/list/list';
 // import { LoginPage } from '../pages/login/login';
 // import { RegisterPage } from '../pages/register/register';
 
+
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
+
 
   rootPage: any = 'LoginPage';
 
