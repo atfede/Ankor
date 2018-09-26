@@ -20,6 +20,11 @@ export class TributosPage {
   tributos: Array<{ abr: string, value: string, duedate : string }>;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
+    
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad TributosPage');
     this.tributos = [
       {
         abr : 'IRPJ',
@@ -37,10 +42,6 @@ export class TributosPage {
         duedate : 'Pago'
       }
     ]
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TributosPage');
   }
 
 }

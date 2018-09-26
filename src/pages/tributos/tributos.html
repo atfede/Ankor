@@ -5,23 +5,31 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>Tributos a pagar</ion-title>
+  <ion-navbar class="topBar" hideBackButton showMenuButton>
+    <button ion-button menuToggle>
+      <ion-icon class="menuIconBurger" name="menu"></ion-icon>
+    </button>
+    <ion-title><img id="topTitleImg" height="50px" src="assets/imgs/image-without-bg.png" class="thumb-img" /></ion-title>
+    <button ion-button menuToggle style="display:none;">
+        <ion-icon class="menuIconBurger" name="menu"></ion-icon>
+      </button>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="bg-style">
+  <ion-row class="row" id="compName" justify-content-center="" style="
+  margin-top: 10px;
+"> Tributos a pagar
+</ion-row>
 
 
   <ion-item *ngFor="let tributo of tributos" > 
-    <ion-row> 
-      <ion-cell>{{abs}}</ion-cell>
-      <ion-cell>{{value}}</ion-cell>
-      <ion-cell>{{duedate}}</ion-cell>
-    </ion-row>
+    
+      <ion-row>{{tributo.abs}}</ion-row>
+      <ion-row>{{tributo.value}}</ion-row>
+      <ion-row>{{tributo.duedate}}</ion-row>
+    
   </ion-item>
 
 
