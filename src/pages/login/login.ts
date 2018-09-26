@@ -31,8 +31,12 @@ export class LoginPage {
 
         // Successful login
         if (logAttemp) {
-          // this.afAuth.auth.setPersistence();
-          this.navCtrl.push('ProfilePage');
+          if(f.additionalUserInfo.isNewUser){
+            this.navCtrl.push('ProfilePage');
+          }else{
+            this.navCtrl.push('DashboardPage');
+          }
+          
         } else {
           this.toast.create({
             message: `Nome de usuário ou senha incorretos`,
