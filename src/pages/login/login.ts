@@ -27,12 +27,16 @@ export class LoginPage {
 
       const logAttemp = this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password).then(f => {
 
-        console.log(logAttemp);
+        console.log(f);
 
         // Successful login
         if (logAttemp) {
-          // this.afAuth.auth.setPersistence();
-          this.navCtrl.push('ProfilePage');
+
+          if(!f.additionalUserInfo.isNewUser){
+            this.navCtrl.push('DashboardPage');
+          }else{
+            this.navCtrl.push('ProfilePage');
+          }
         } else {
           this.toast.create({
             message: `Nome de usuário ou senha incorretos`,

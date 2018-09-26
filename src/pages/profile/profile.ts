@@ -1,14 +1,12 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 
-import { AngularFireModule } from 'angularfire2';
+import {AngularFireModule} from 'angularfire2';
 
-import { Profile } from '../../models/profile'
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuth } from 'angularfire2/auth'
-import { AngularFireDatabase } from 'angularfire2/database';
-
-
+import {Profile} from '../../models/profile'
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {AngularFireAuth} from 'angularfire2/auth'
+import {AngularFireDatabase} from 'angularfire2/database';
 
 
 @IonicPage()
@@ -17,19 +15,17 @@ import { AngularFireDatabase } from 'angularfire2/database';
   templateUrl: 'profile.html',
 })
 
-
 export class ProfilePage {
 
   profile = {} as Profile;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, private afDatabase: AngularFireDatabase) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth,
+              private afDatabase: AngularFireDatabase) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
-
   }
-
 
   async createProfile() {
     this.afAuth.authState.take(1).subscribe(auth => {
@@ -39,8 +35,6 @@ export class ProfilePage {
       });
     })
   }
-
-
 
 
 }
