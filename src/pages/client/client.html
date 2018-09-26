@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar class="topBar" hideBackButton showMenuButton>
+    <button ion-button menuToggle>
+      <ion-icon class="menuIconBurger" name="menu"></ion-icon>
+    </button>
+    <ion-title><img id="topTitleImg" height="50px" src="assets/imgs/image-without-bg.png" class="thumb-img" /></ion-title>
+    <button ion-button menuToggle style="display:none;">
+      <ion-icon class="menuIconBurger" name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding class="bg-style">
+  <ion-row justify-content-center> {{clientName}} </ion-row>
+  <ion-row justify-content-center> PERFIL DO CLIENTE </ion-row>
+
+  <ion-row>
+      <canvas #lineClientCanvas></canvas>
+  </ion-row>
+</ion-content>
