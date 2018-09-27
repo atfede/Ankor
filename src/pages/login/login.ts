@@ -27,7 +27,7 @@ export class LoginPage {
 
       const logAttemp = this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password).then(f => {
 
-        console.log(f);
+        console.log(logAttemp);
 
         // Successful login
         if (logAttemp) {
