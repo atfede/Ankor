@@ -42,9 +42,15 @@ export class TributosPage {
       },
       {
         abr: 'Cofins',
-        value: '',
+        value: 'R$ 3.000,00',
         duedate: 'Pago',
         paid: true
+      },
+      {
+        abr: 'IPI',
+        value: 'R$ 1.000,00',
+        duedate: '17/11/2018',
+        paid: false
       }
     ]
 
