@@ -1,3 +1,45 @@
 page-tributos {
 
+    ion-row{
+        margin-bottom: 10px;
+    }
+  .tributo-row{
+    background-color: #1f3e51;
+    border-radius: 12px;
+    }
+    .tributo-row{
+        height: 10%;
+        text-align: center;
+    }
+    .tributo-abr{
+        
+        vertical-align: middle;
+        text-transform: capitalize;
+        font-weight: bold;
+        text-align: center;
+    }
+    .back-arrow{
+        color : color($colors, lineGold);
+    }
+    .tributo-value{
+        text-transform: capitalize;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .item-md.item-block .item-inner {
+        padding-right: 8px;
+        border-bottom: 0px solid #dedede;
+    }
+    ion-label{
+        color : rgb(124, 174, 187);
+        font-weight: lighter;
+        font-size: smaller;
+    }
+    .tributo.paid{
+        color : rgb(68, 204, 130) !important;
+    }
+    .label-md {
+        margin: 4px 8px 10px 0;
+    }
 }
