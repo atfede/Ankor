@@ -17,7 +17,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 
 export class TributosPage {
-  tributos: Array<{ abr: string, value: string, duedate: string }>;
+  tributos: Array<{ abr: string, value: string, duedate: string , paid : boolean}>;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
 
@@ -31,17 +31,20 @@ export class TributosPage {
       {
         abr: 'IRPJ',
         value: 'R$ 1.000,00',
-        duedate: '11/11/2018'
+        duedate: '11/11/2018',
+        paid: false
       },
       {
         abr: 'CSLL',
         value: 'R$ 1.000,00',
-        duedate: '12/11/2018'
+        duedate: '12/11/2018',
+        paid: false
       },
       {
         abr: 'Cofins',
         value: '',
-        duedate: 'Pago'
+        duedate: 'Pago',
+        paid: true
       }
     ]
 
