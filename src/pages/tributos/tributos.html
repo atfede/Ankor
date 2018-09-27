@@ -28,7 +28,7 @@
     
       <ion-row>{{tributo.abs}}</ion-row>
       <ion-row>{{tributo.value}}</ion-row>
-      <ion-row>{{tributo.duedate}}</ion-row>
+      <ion-row>{{#if tributo.paid}} PAGO  {{else}}{{tributo.duedate} {{/if}}} </ion-row>
     
   </ion-item>
 
