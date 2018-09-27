@@ -10,13 +10,23 @@
   </ion-navbar>
 </ion-header>
 
-
-
 <ion-content padding class="bg-style">
-  <ion-row justify-content-center> {{clientName}} </ion-row>
-  <ion-row justify-content-center> PERFIL DO CLIENTE </ion-row>
+
+  <ion-row class="row" id="compName" justify-content-center="" style="margin-top: 10px;font-size: larger;">
+    <ion-col col-2>
+      <ion-icon class="back-arrow" name="md-arrow-back" style="font-size: 2em;"></ion-icon>
+    </ion-col>
+    <ion-col col-8 style="text-align:center;" align-items-center justify-content-center>Manuel CRUZ</ion-col>
+    <ion-col col-2></ion-col>
+  </ion-row>
+  <ion-row style="text-align:center;
+        color : rgb(124, 174, 187);
+        font-weight: lighter;
+        text-transform: capitalize;
+        font-size: small;"
+        align-items-center justify-content-center> PERFIL DO CLIENTE </ion-row>
 
   <ion-row>
-      <canvas #lineClientCanvas></canvas>
+    <canvas #lineClientCanvas></canvas>
   </ion-row>
 </ion-content>

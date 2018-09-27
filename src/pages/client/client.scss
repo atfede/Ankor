@@ -1,3 +1,18 @@
 page-client {
 
+    .cliNameLabel{
+        color : rgb(124, 174, 187);
+        font-weight: lighter;
+        font-size: smaller;
+    }
+
+    .title-ClientName{
+        vertical-align: middle;
+        text-transform: capitalize;
+        font-weight: bold;
+        text-align: center;
+    }
+    .back-arrow{
+        color : color($colors, lineGold);
+    }
 }

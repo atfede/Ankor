@@ -19,7 +19,7 @@ export class ClientPage {
   @ViewChild('lineClientCanvas') lineClientCanvas;
 
   lineClient: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl : LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
@@ -27,7 +27,7 @@ export class ClientPage {
     console.log('ionViewDidLoad ClientPage');
     setTimeout(() => {
       this.renderClientChart();
-      
+
       for (var id in Chart.instances) {
         Chart.instances[id].resize()
       }
@@ -41,35 +41,46 @@ export class ClientPage {
 
       type: 'line',
       data: {
-        labels: ["ABR", "MAI", "JUN", "JUL", "AGO", "SET"],
-        datasets: [{
-          label: '# of Votes',
-          data: [652, 3562 ,4000, 7000],
-          backgroundColor: [
-            'rgb(125, 175, 188)',
-            'rgb(125, 175, 188)'
-
-          ],
-
-          borderWidth: 1
-        }]
-      }, 
+        labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        datasets: [
+          {
+            strokeColor: "#FFFFFF",
+            pointColor: "#FFFFFF",
+            pointStrokeColor: "#FFFFFF",
+            pointHighlightFill: "#FFFFFF",
+            data: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+          }
+        ]
+      },
       options: {
         responsive: true,
         maintainAspectRatio: true,
         scales: {
           yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
+            display: false,
+            gridLines: {
+              drawBorder: false,
+              display: false
+            },
+            
+          }],
+          xAxes: [{
+            color : '#73A5B3',
+            gridLines: {
+              
+              drawBorder: false,
+              display: false
+            },
+            
           }]
+
         }
       },
 
     });
   }
 
-  
+
   presentLoadingDefault() {
     let loading = this.loadingCtrl.create({
       content: 'Please wait...'
