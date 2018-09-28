@@ -6,6 +6,7 @@ page-clients {
         background-color: #1f3e51;
         border-radius: 28px;
         height: 7%;
+        margin: 6px;
     }
     .month-drp{
         background-color: #151f25;
@@ -36,5 +37,32 @@ page-clients {
     .select-ios {
         padding: 5px 8px 7px 12px;
         
+}
+.fontname{
+font-weight: bold;
+font-size: 18px;
+margin-top: -3px;
+color: white;
+}
+
+
+
+.name-client{
+    font-size: 12px;
+    color: white;
+    text-align: -webkit-center;
+    padding-top: 16px;
+}
+.value-client{
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 5px;
+    color: white;
+}
+.percent-clients{
+    font-size: 12px;
+    color: white;
+    text-align: -webkit-center;
+    padding-top: 16px;
 }
 }

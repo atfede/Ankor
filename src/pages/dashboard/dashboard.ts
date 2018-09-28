@@ -1,16 +1,16 @@
-import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, LoadingController, ModalController, IonicPage, ToastController } from 'ionic-angular';
+import {Component, ViewChild} from '@angular/core';
+import {NavController, NavParams, LoadingController, ModalController, IonicPage, ToastController} from 'ionic-angular';
 
-import { ImageResizer, ImageResizerOptions } from '@ionic-native/image-resizer';
+import {ImageResizer, ImageResizerOptions} from '@ionic-native/image-resizer';
 
-import { Chart } from 'chart.js';
+import {Chart} from 'chart.js';
 
-import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
-import { AngularFireAuth } from 'angularfire2/auth';
+import {AngularFireDatabase, AngularFireObject} from 'angularfire2/database';
+import {AngularFireAuth} from 'angularfire2/auth';
 
-import { ThrowStmt } from '@angular/compiler';
+import {ThrowStmt} from '@angular/compiler';
 
-import { Profile } from '../../models/Profile'
+import {Profile} from '../../models/Profile'
 
 @IonicPage()
 @Component({
@@ -19,25 +19,22 @@ import { Profile } from '../../models/Profile'
 })
 
 //  @IonicPage()
-
 export class DashboardPage {
-
 
   @ViewChild('barCanvas') barCanvas;
   @ViewChild('lineCanvas') lineCanvas;
 
-  profileData : AngularFireObject<Profile>;
-  
+  profileData: AngularFireObject<Profile>;
+
   barChart: any;
   lineChart: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modal: ModalController,
-    public loadingCtrl: LoadingController, private afAuth: AngularFireAuth, private toast: ToastController,
-    private afDatabase: AngularFireDatabase ) {
-
-
+              public loadingCtrl: LoadingController, private afAuth: AngularFireAuth, private toast: ToastController,
+              private afDatabase: AngularFireDatabase) {
 
   }
+
   ionViewDidLoad() {
     this.presentLoadingDefault();
 
@@ -52,7 +49,7 @@ export class DashboardPage {
   }
 
   ionViewWillEnter() {
-    
+
     this.afAuth.authState.subscribe(data => {
       console.log(data);
       if (data && data.uid && data.email) {
@@ -63,8 +60,6 @@ export class DashboardPage {
         }).present();
 
         this.profileData = this.afDatabase.object(`profile/${data.uid}`);
-        
-        
 
       } else {
         this.navCtrl.push('ProfilePage');
@@ -72,8 +67,6 @@ export class DashboardPage {
 
     });
   }
-
-
 
   presentLoadingDefault() {
     let loading = this.loadingCtrl.create({
@@ -121,41 +114,46 @@ export class DashboardPage {
     }, 5000);
   }
 
-
-
-
   //Charts rendering -------
   renderCenterComponents() {
 
     this.barChart = new Chart(this.barCanvas.nativeElement, {
-
       type: 'bar',
       data: {
         labels: ["Ago 2018", "Set 2017"],
         datasets: [{
-          label: '# of Votes',
-          data: [4000, 7000],
+          label: '',
+          data: [6800, 7000],
           backgroundColor: [
             'rgb(125, 175, 188)',
             'rgb(125, 175, 188)'
-
           ],
-
           borderWidth: 1
         }]
       },
       options: {
         responsive: true,
         maintainAspectRatio: true,
+        curvature : 1, //x
         scales: {
           yAxes: [{
-            ticks: {
-              beginAtZero: true
+            barPercentage: 0.2,
+            display: false,
+            gridLines: {
+              drawBorder: false,
+              display: false
+            }
+          }],
+          xAxes: [{
+            barPercentage: 0.2,
+            color : '#73A5B3',
+            gridLines: {
+              drawBorder: false,
+              display: false
             }
           }]
         }
       },
-
       annotation: {
         annotations: [{
           type: 'line',
@@ -170,10 +168,8 @@ export class DashboardPage {
           }
         }]
       }
-
     });
   }
-
 
   renderBottomComponents() {
     var actualmonth = 'Setembro 2018';
@@ -186,15 +182,12 @@ export class DashboardPage {
           label: 'Top 5 Clientes \n' + actualmonth,
           data: [12, 19, 3, 5, 2, 3],
           backgroundColor: [
-
             'rgb(0,39,61)',
             'rgb(0,39,61)',
             'rgb(0,39,61)',
             'rgb(0,39,61)',
             'rgb(0,39,61)',
-
           ],
-
           borderWidth: 1
         }]
       },

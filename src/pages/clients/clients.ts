@@ -17,7 +17,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class ClientsPage {
   clients: Array<{
     name: string, actualValue: string,
-    cid: string, lastValue: string, isIncrementing: boolean
+    cid: string, lastValue: string, isIncrementing: boolean,percentage: string
   }>;
 
   months: Array<{ month: string, year: string }>;
@@ -54,11 +54,89 @@ export class ClientsPage {
     console.log('ionViewDidLoad ClientsPage');
     this.clients = [];
     this.clients.push({
-      name: 'agus',
+      name: 'Manuel Curz',
       actualValue: 'R$ 127 mil',
       cid: '12312313',
       lastValue: '12/20/1956',
-      isIncrementing: true
+      isIncrementing: true,
+      percentage:'22%'
+    },{
+      name: 'Ulisses Cabl',
+      actualValue: 'R$ 127 mil',
+      cid: '12312313',
+      lastValue: '12/20/1956',
+      isIncrementing: true,
+      percentage:'32%'
+    },{
+      name: 'Cristina Dua',
+      actualValue: 'R$ 127 mil',
+      cid: '12312313',
+      lastValue: '12/20/1956',
+      isIncrementing: true,
+      percentage:'60%'
+    },{
+      name: 'Andrea Rosa',
+      actualValue: 'R$ 127 mil',
+      cid: '12312313',
+      lastValue: '12/20/1956',
+      isIncrementing: true,
+      percentage:'12%'
+    },{
+      name: 'Juan Gomes',
+      actualValue: 'R$ 127 mil',
+      cid: '12312313',
+      lastValue: '12/20/1956',
+      isIncrementing: true,
+      percentage:'15%'
+    },{
+      name: 'Jesus',
+      actualValue: 'R$ 127 mil',
+      cid: '12312313',
+      lastValue: '12/20/1956',
+      isIncrementing: true,
+      percentage:'53%'
+    },{
+      name: 'Enrrique',
+      actualValue: 'R$ 127 mil',
+      cid: '12312313',
+      lastValue: '12/20/1956',
+      isIncrementing: true,
+      percentage:'12%'
+    },{
+      name: 'Pedro',
+      actualValue: 'R$ 127 mil',
+      cid: '12312313',
+      lastValue: '12/20/1956',
+      isIncrementing: true,
+      percentage:'14%'
+    },{
+      name: 'Juan',
+      actualValue: 'R$ 127 mil',
+      cid: '12312313',
+      lastValue: '12/20/1956',
+      isIncrementing: true,
+      percentage:'9%'
+    },{
+      name: 'Nicolas',
+      actualValue: 'R$ 127 mil',
+      cid: '12312313',
+      lastValue: '12/20/1956',
+      isIncrementing: true,
+      percentage:'8%'
+    },{
+      name: 'Fabian',
+      actualValue: 'R$ 127 mil',
+      cid: '12312313',
+      lastValue: '12/20/1956',
+      isIncrementing: true,
+      percentage:'11%'
+    },{
+      name: 'Andres',
+      actualValue: 'R$ 127 mil',
+      cid: '12312313',
+      lastValue: '12/20/1956',
+      isIncrementing: true,
+      percentage:'12%'
     }
     );
 

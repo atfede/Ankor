@@ -5,8 +5,8 @@
     </button>
     <ion-title><img id="topTitleImg" height="50px" src="assets/imgs/image-without-bg.png" class="thumb-img" /></ion-title>
     <button ion-button menuToggle style="display:none;">
-        <ion-icon class="menuIconBurger" name="menu"></ion-icon>
-      </button>
+      <ion-icon class="menuIconBurger" name="menu"></ion-icon>
+    </button>
   </ion-navbar>
 </ion-header>
 
@@ -15,13 +15,14 @@
     margin-top: 10px;
 ">
   </ion-row>
-  <ion-row id="compName" justify-content-center> {{(profileData)?.companyName }} </ion-row>
+  <br/>
+  <!--<ion-row id="compName" justify-content-center> {{(profileData)?.companyName }} </ion-row>-->
+  <ion-row id="compName" justify-content-center> Nome Empresa </ion-row>
 
   <!-- <div class="container"> -->
   <ion-grid class="main-container-grid">
 
     <!-- Start top bar -->
-    <div class='row topbartable'></div>
     <ion-row responsive-lg>
 
       <ion-grid id="threeItemBar">
@@ -50,22 +51,24 @@
           </ion-col>
           <ion-col class="valuesTop">
             DD/MM
+            <br/>
+            <span class="issqn">ISSQN</span>
           </ion-col>
         </ion-row>
       </ion-grid>
-
     </ion-row>
     <!-- END top bar -->
+
+    <div class='row topbartable'></div>
 
     <!-- Top bar button -->
     <ion-row>
 
       <ion-grid id="threeItemBar">
-
         <ion-row class="table-headers">
           <ion-col></ion-col>
           <ion-col>
-            <button data-action="false" style="width:70px;display:inline;float:right;background-color: #002e45;border-radius: 0 10px 10px 0;">Este ano</button><button data-action="true" style="display:inline;width:70px;float:right; border-radius: 10px 0 0 10px;">Este mês</button>
+            <button data-action="false" class="unselectedDate">Este ano</button><button data-action="true" class="selectedDate">Este mês</button>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -83,18 +86,10 @@
       <div class="topbartable"></div>
       <!-- Bottom Content -->
       <ion-row height="50%">
-          <canvas #lineCanvas></canvas>
-       
+        <canvas #lineCanvas></canvas>
       </ion-row>
     </ion-grid>
     <!-- END Bottom Content -->
 
-
-
-
-
-
-
   </ion-grid>
-
 </ion-content>

@@ -8,8 +8,11 @@
   <ion-content class="bg-style">
     <ion-list>
       
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+      <button menuClose ion-item *ngFor="let p of pages" class="side-bar" (click)="openPage(p)">
+    <ion-icon name={{p.icon}} style="color: #d29d1a;"></ion-icon>
+      {{p.title}}
+     
+      <ion-icon name={{p.dowload}} style="color: #d29d1a;"></ion-icon>
       </button>
     </ion-list>
   </ion-content>
