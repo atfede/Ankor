@@ -179,6 +179,18 @@ export class DashboardPage {
     });
   }
 
+  setWidthAmount(amount) {
+    let widthPct = amount * 200 / 1000;
+
+    let styles = {
+      'width': "'" + widthPct + "'"
+      /* 'background-color': this.user.isExpired ? 'red' : 'transparent',
+       'font-weight': this.isImportant ? 'bold' : 'normal'*/
+    };
+
+    return styles;
+  }
+
   /* renderBottomComponents() {
    var actualmonth = 'Setembro 2018';
    this.lineChart = new Chart(this.lineCanvas.nativeElement, {

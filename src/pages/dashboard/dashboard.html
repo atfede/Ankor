@@ -12,7 +12,7 @@
 </ion-header>
 
 <ion-content class="bg-style">
-  <ion-row class="row" id="compName" justify-content-center="" style="
+  <ion-row class="row" id="compName" justify-content-center style="
     margin-top: 10px;
 ">
   </ion-row>
@@ -98,25 +98,24 @@
       <ion-row height="50%" *ngFor="let client of clients">
         <!--<canvas #lineCanvas></canvas>-->
 
-        <ion-col col-5>
+        <ion-col col-6>
           <div style="text-align: right">
               <span style="color: rgb(102, 182, 187);">
             {{client.name}}
               </span>
-            &nbsp;
             <span style="font-weight: bold;">
             {{client.surename}}
             </span>
-            &nbsp;
             <ion-icon name="arrow-round-up" class="icon-arrow" *ngIf="client.increments"
-                      style="text-align: right; color: rgb(68, 204, 130);"></ion-icon>
+                      style="text-align: right; color: rgb(68, 204, 130); font-weight: bold;"></ion-icon>
             <ion-icon name="arrow-round-down" class="icon-arrow" *ngIf="!client.increments"
-                      style="text-align: right; color: rgb(209, 52, 64);"></ion-icon>
+                      style="text-align: right; color: rgb(209, 52, 64); font-weight: bold;"></ion-icon>
           </div>
         </ion-col>
-        <ion-col col-7>
+        <ion-col col-6>
           <div
-            style="background-color: #00253a; width: 160px; margin-top: 3px; height: 12px; display: list-item; float: left; list-style: none; border-radius: 15px 15px 15px 15px"></div>
+            style="width: 60%; background-color: #00253a; margin-top: 3px; height: 12px; display: list-item; float: left; list-style: none; border-radius: 15px 15px 15px 15px"
+            ></div> <!--[ngStyle]="setWidthAmount(client.amount)"-->
           &nbsp;
           <span style="font-weight: bold;">
           {{client.amount}}
