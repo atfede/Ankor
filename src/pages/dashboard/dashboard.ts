@@ -29,6 +29,14 @@ export class DashboardPage {
   barChart: any;
   lineChart: any;
 
+  public clients: Array<Object> = [
+    {id: 1, name: 'Manuel', surename: 'CRUZ', increments: true, amount: 'R$ 653'},
+    {id: 2, name: 'Ulisses', surename: 'CABRAL', increments: true, amount: 'R$ 653'},
+    {id: 3, name: 'Cristiana', surename: 'DUARTE', increments: true, amount: 'R$ 653'},
+    {id: 4, name: 'Andréa', surename: 'ROSARIO', increments: false, amount: 'R$ 653'},
+    {id: 5, name: 'Bartolomeu', surename: 'GOMES', increments: false, amount: 'R$ 653'}
+  ];
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public modal: ModalController,
               public loadingCtrl: LoadingController, private afAuth: AngularFireAuth, private toast: ToastController,
               private afDatabase: AngularFireDatabase) {
@@ -40,7 +48,7 @@ export class DashboardPage {
 
     setTimeout(() => {
       this.renderCenterComponents();
-      this.renderBottomComponents();
+      //this.renderBottomComponents();
       for (var id in Chart.instances) {
         Chart.instances[id].resize()
       }
@@ -134,7 +142,7 @@ export class DashboardPage {
       options: {
         responsive: true,
         maintainAspectRatio: true,
-        curvature : 1, //x
+        curvature: 1, //x
         scales: {
           yAxes: [{
             barPercentage: 0.2,
@@ -146,7 +154,7 @@ export class DashboardPage {
           }],
           xAxes: [{
             barPercentage: 0.2,
-            color : '#73A5B3',
+            color: '#73A5B3',
             gridLines: {
               drawBorder: false,
               display: false
@@ -171,40 +179,40 @@ export class DashboardPage {
     });
   }
 
-  renderBottomComponents() {
-    var actualmonth = 'Setembro 2018';
-    this.lineChart = new Chart(this.lineCanvas.nativeElement, {
+  /* renderBottomComponents() {
+   var actualmonth = 'Setembro 2018';
+   this.lineChart = new Chart(this.lineCanvas.nativeElement, {
 
-      type: 'horizontalBar',
-      data: {
-        labels: ["Manuel CRUZ", "Ulisses CABRAL", "Cristiana DUARTE", "Andréa ROSÁRIO", "Bartolomeu GOMES"],
-        datasets: [{
-          label: 'Top 5 Clientes \n' + actualmonth,
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: [
-            'rgb(0,39,61)',
-            'rgb(0,39,61)',
-            'rgb(0,39,61)',
-            'rgb(0,39,61)',
-            'rgb(0,39,61)',
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: true,
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
-        }
-      }
+   type: 'horizontalBar',
+   data: {
+   labels: ["Manuel CRUZ", "Ulisses CABRAL", "Cristiana DUARTE", "Andréa ROSÁRIO", "Bartolomeu GOMES"],
+   datasets: [{
+   label: 'Top 5 Clientes \n' + actualmonth,
+   data: [12, 19, 3, 5, 2, 3],
+   backgroundColor: [
+   'rgb(0,39,61)',
+   'rgb(0,39,61)',
+   'rgb(0,39,61)',
+   'rgb(0,39,61)',
+   'rgb(0,39,61)',
+   ],
+   borderWidth: 1
+   }]
+   },
+   options: {
+   responsive: true,
+   maintainAspectRatio: true,
+   scales: {
+   yAxes: [{
+   ticks: {
+   beginAtZero: true
+   }
+   }]
+   }
+   }
 
-    });
+   });
 
-  }
+   }*/
 
 }

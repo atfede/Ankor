@@ -3,7 +3,8 @@
     <button ion-button menuToggle>
       <ion-icon class="menuIconBurger" name="menu"></ion-icon>
     </button>
-    <ion-title><img id="topTitleImg" height="50px" src="assets/imgs/image-without-bg.png" class="thumb-img" /></ion-title>
+    <ion-title><img id="topTitleImg" height="50px" src="assets/imgs/image-without-bg.png" class="thumb-img"/>
+    </ion-title>
     <button ion-button menuToggle style="display:none;">
       <ion-icon class="menuIconBurger" name="menu"></ion-icon>
     </button>
@@ -17,7 +18,7 @@
   </ion-row>
   <br/>
   <!--<ion-row id="compName" justify-content-center> {{(profileData)?.companyName }} </ion-row>-->
-  <ion-row id="compName" justify-content-center> Nome Empresa </ion-row>
+  <ion-row id="compName" justify-content-center><h4>Nome Empresa</h4></ion-row>
 
   <!-- <div class="container"> -->
   <ion-grid class="main-container-grid">
@@ -68,7 +69,8 @@
         <ion-row class="table-headers">
           <ion-col></ion-col>
           <ion-col>
-            <button data-action="false" class="unselectedDate">Este ano</button><button data-action="true" class="selectedDate">Este mês</button>
+            <button data-action="false" class="unselectedDate">Este ano</button>
+            <button data-action="true" class="selectedDate">Este mês</button>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -85,8 +87,41 @@
       </ion-row>
       <div class="topbartable"></div>
       <!-- Bottom Content -->
-      <ion-row height="50%">
-        <canvas #lineCanvas></canvas>
+
+      <ion-row class="row" justify-content-center>
+        <h4>Top 5 Clientes</h4>
+      </ion-row>
+      <ion-row class="row" justify-content-center>
+        <div style="color: rgb(102, 182, 187);">Setembro 2018</div>
+      </ion-row>
+      <br/>
+      <ion-row height="50%" *ngFor="let client of clients">
+        <!--<canvas #lineCanvas></canvas>-->
+
+        <ion-col col-5>
+          <div style="text-align: right">
+              <span style="color: rgb(102, 182, 187);">
+            {{client.name}}
+              </span>
+            &nbsp;
+            <span style="font-weight: bold;">
+            {{client.surename}}
+            </span>
+            &nbsp;
+            <ion-icon name="arrow-round-up" class="icon-arrow" *ngIf="client.increments"
+                      style="text-align: right; color: rgb(68, 204, 130);"></ion-icon>
+            <ion-icon name="arrow-round-down" class="icon-arrow" *ngIf="!client.increments"
+                      style="text-align: right; color: rgb(209, 52, 64);"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col col-7>
+          <div
+            style="background-color: #00253a; width: 160px; margin-top: 3px; height: 12px; display: list-item; float: left; list-style: none; border-radius: 15px 15px 15px 15px"></div>
+          &nbsp;
+          <span style="font-weight: bold;">
+          {{client.amount}}
+          </span>
+        </ion-col>
       </ion-row>
     </ion-grid>
     <!-- END Bottom Content -->
