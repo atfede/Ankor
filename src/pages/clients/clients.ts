@@ -142,4 +142,17 @@ export class ClientsPage {
 
   }
 
+
+  goToClient(cname,cid){
+    
+    this.navCtrl.setRoot('ClientPage', {
+      id: cid,
+      name: cname
+    });
+  }
+  
+  goToPrev(){
+    this.navCtrl.pop();
+  }
+
 }

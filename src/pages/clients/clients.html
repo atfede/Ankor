@@ -11,39 +11,43 @@
     </button>
     <ion-title><img id="topTitleImg" height="50px" src="assets/imgs/image-without-bg.png" class="thumb-img" /></ion-title>
     <button ion-button menuToggle style="display:none;">
-        <ion-icon class="menuIconBurger" name="menu"></ion-icon>
-      </button>
+      <ion-icon class="menuIconBurger" name="menu"></ion-icon>
+    </button>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding class="bg-style">
-     
+
   <ion-row class="row" id="compName" justify-content-center="" style="
   margin-top: 10px;
 ">
 
-<ion-col col-m2><ion-icon name="md-arrow-back" style="font-size: 2.5em;color: #b18619 ;margin-top: -8px;"></ion-icon> </ion-col>
-<ion-col col-m4 class="fontname">Top Clients</ion-col >
-   <ion-select class="month-drp" interface="popover"> 
-      
-    <ion-option *ngFor="let month of months" [value]="month">{{month.month}} {{month.year}}</ion-option>
-</ion-select>
+    <ion-col col-m2>
+      <ion-icon (click)="goToPrev()" name="md-arrow-back" style="font-size: 2.5em;color: #b18619 ;margin-top: -8px;"></ion-icon>
+    </ion-col>
+    <ion-col col-m4 class="fontname">Top Clients</ion-col>
+    <ion-select class="month-drp" interface="popover">
 
-</ion-row>
+      <ion-option *ngFor="let month of months" [value]="month">{{month.month}} {{month.year}}</ion-option>
+    </ion-select>
+
+  </ion-row>
 
 
-  <ion-item *ngFor="let client of clients" class="client-row" > 
-    
-<div class = "row" style="width: 100%">
-    <ion-icon name="arrow-round-up" class="icon-arrow"></ion-icon>
-  <div class = "col name-client "> {{client.name}}</div>
-  <div class = "col value-client">{{client.actualValue}}</div>
-  <div class = "col percent-clients">{{client.percentage}} </div>
-  <ion-icon name="arrow-dropright"style="padding: 6px;
-  margin-right: 13px;margin-top: 5px;"></ion-icon>
-</div>
-    
+  <ion-item *ngFor="let client of clients" class="client-row">
+
+    <div class="row" style="width: 100%">
+      <ion-icon name="arrow-round-up" class="icon-arrow"></ion-icon>
+      <div class="col name-client "> {{client.name}}</div>
+      <div class="col value-client">{{client.actualValue}}</div>
+      <div class="col percent-clients">{{client.percentage}} </div>
+      <a (click)="goToClient(client.name,client.cid)">
+        <ion-icon name="arrow-dropright" style="padding: 6px;
+    margin-right: 13px;margin-top: 5px;"></ion-icon>
+      </a>
+    </div>
+
   </ion-item>
 
 

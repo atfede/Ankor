@@ -33,7 +33,7 @@ export class LoginPage {
         if (logAttemp) {
 
           if(!f.additionalUserInfo.isNewUser){
-            this.navCtrl.push('DashboardPage');
+            this.navCtrl.setRoot('DashboardPage');
           }else{
             this.navCtrl.push('ProfilePage');
           }

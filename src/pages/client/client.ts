@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Chart } from 'chart.js';
 /**
@@ -16,15 +17,38 @@ import { Chart } from 'chart.js';
 
 export class ClientPage {
 
+  clientName : string;
+
+  clientData: object;
+
   @ViewChild('lineClientCanvas') lineClientCanvas;
 
   lineClient: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl: LoadingController) {
+    this.clientName = navParams.get('name');
+    var clientid = navParams.get('id');
+    this.clientData = {
+      medioMensual : 'R$ 480 mil',
+      mesActual : 'R$ 563 mil',
+      tendencia : true
+    };
   }
 
+  ionViewWillEnter() {
+    this.clientName = this.navParams.get('name');
+    console.log(this.clientName);
+    this.clientData = {
+      medioMensual : 'R$ 480 mil',
+      mesActual : 'R$ 563 mil',
+      tendencia : false
+    };
+
+  }
   ionViewDidLoad() {
     this.presentLoadingDefault();
-    console.log('ionViewDidLoad ClientPage');
+   
+
+    
     setTimeout(() => {
       this.renderClientChart();
 
@@ -34,6 +58,7 @@ export class ClientPage {
 
     }, 3000);
   }
+
 
   renderClientChart() {
 
@@ -95,5 +120,7 @@ export class ClientPage {
 
 
 
-
-}
+  goToPrev(){
+    this.navCtrl.pop();
+  }
+} 
