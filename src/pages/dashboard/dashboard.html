@@ -1,3 +1,112 @@
+<style>
+  #chart {
+    width: auto; /*650px*/
+    height: 180px;
+    margin: 10px auto 0;
+    display: block;
+  }
+
+  #chart #numbers {
+    height: 250px; /*100%*/
+    width: 50px;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    float: left;
+  }
+
+  #chart #numbers li {
+    text-align: right;
+    padding-right: 1em;
+    list-style: none;
+    height: 29px;
+    border-bottom: 1px solid #444;
+    position: relative;
+    bottom: 30px;
+  }
+
+  #chart #numbers li:last-child {
+    height: 30px;
+  }
+
+  #chart #numbers li span {
+    color: #eee;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+  }
+
+  #chart #bars {
+    display: inline-block;
+    /*background: rgba(0, 0, 0, 0.2);*/
+    width: auto; /*600px*/
+    height: auto; /*250px*/
+    padding: 0;
+    margin: 0;
+    /*box-shadow: 0 0 0 1px #444;*/
+    //box-shadow: 0px 1px 0px 0px #4499ee;
+    border-bottom: 1px solid #4499ee;
+  }
+
+  #chart #bars li {
+    display: table-cell;
+    width: 100px;
+    height: 120px;
+    margin: 0;
+    text-align: center;
+    position: relative;
+  }
+
+  #chart #bars li .bar {
+    display: block;
+    width: 35px;
+    margin-left: 30px; /*15px*/
+    background: #49E;
+    position: absolute;
+    bottom: 0;
+    border-radius: 20px 20px 0 0;
+  }
+
+  #chart #bars li .bar:hover {
+    background: #5AE;
+    cursor: pointer;
+  }
+
+  #chart #bars li .bar:hover:before {
+    color: white;
+    content: attr(data-percentage) '%';
+    position: relative;
+    bottom: 20px;
+  }
+
+  #chart #bars li span {
+    color: #eee;
+    width: 100%;
+    position: absolute;
+    bottom: -2em;
+    left: 0;
+    text-align: center;
+  }
+
+  .dotted {
+    border: 2px dotted #c49846;
+    border-style: none none dashed;
+    color: #fff;
+  }
+
+  #chart #bars:after {
+    border-top: 2px dashed #c49846;
+    width: 60%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 13%;
+    content: '';
+    z-index: -10;
+  }
+
+</style>
+
 <ion-header>
   <ion-navbar class="topBar" hideBackButton showMenuButton>
     <button ion-button menuToggle>
@@ -12,9 +121,7 @@
 </ion-header>
 
 <ion-content class="bg-style">
-  <ion-row class="row" id="compName" justify-content-center style="
-    margin-top: 10px;
-">
+  <ion-row class="row" id="compName" justify-content-center style="margin-top: 10px;">
   </ion-row>
   <br/>
   <!--<ion-row id="compName" justify-content-center> {{(profileData)?.companyName }} </ion-row>-->
@@ -25,7 +132,6 @@
 
     <!-- Start top bar -->
     <ion-row responsive-lg>
-
       <ion-grid id="threeItemBar">
         <!-- Table Headers -->
         <ion-row class="table-headers">
@@ -64,7 +170,6 @@
 
     <!-- Top bar button -->
     <ion-row>
-
       <ion-grid id="threeItemBar">
         <ion-row class="table-headers">
           <ion-col></ion-col>
@@ -82,7 +187,26 @@
     <ion-grid>
       <ion-row height="50%">
         <!-- Charts -->
-        <canvas #barCanvas></canvas>
+        <!--<canvas #barCanvas></canvas>-->
+
+        <div id="chart" style="">
+          <!--<hr class="dotted"/>-->
+          <ul id="bars">
+            <li>
+              <div data-percentage="78" class="bar"></div>
+              <span>AGO 2018</span>
+              <!--              <br/>
+                            <span>Més anterior</span>-->
+            </li>
+            <li>
+              <div data-percentage="98" class="bar"></div>
+              <span>AGO 2018</span>
+              <!--              <br/>
+                            <span>Mismo mes no ano anterior</span>-->
+            </li>
+          </ul>
+        </div>
+
         <!-- END Charts -->
       </ion-row>
       <div class="topbartable"></div>
@@ -115,7 +239,7 @@
         <ion-col col-6>
           <div
             style="width: 60%; background-color: #00253a; margin-top: 3px; height: 12px; display: list-item; float: left; list-style: none; border-radius: 15px 15px 15px 15px"
-            ></div> <!--[ngStyle]="setWidthAmount(client.amount)"-->
+          ></div> <!--[ngStyle]="setWidthAmount(client.amount)"-->
           &nbsp;
           <span style="font-weight: bold;">
           {{client.amount}}

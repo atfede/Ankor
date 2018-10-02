@@ -1,16 +1,14 @@
 import {Component, ViewChild} from '@angular/core';
 import {NavController, NavParams, LoadingController, ModalController, IonicPage, ToastController} from 'ionic-angular';
-
 import {ImageResizer, ImageResizerOptions} from '@ionic-native/image-resizer';
-
 import {Chart} from 'chart.js';
-
 import {AngularFireDatabase, AngularFireObject} from 'angularfire2/database';
 import {AngularFireAuth} from 'angularfire2/auth';
-
 import {ThrowStmt} from '@angular/compiler';
-
 import {Profile} from '../../models/Profile'
+
+declare var jquery: any;
+declare var $: any;
 
 @IonicPage()
 @Component({
@@ -43,16 +41,19 @@ export class DashboardPage {
 
   }
 
+  ngOnInit() {
+    this.displayBarChart();
+  }
+
   ionViewDidLoad() {
     this.presentLoadingDefault();
 
     setTimeout(() => {
-      this.renderCenterComponents();
+      //this.renderCenterComponents();
       //this.renderBottomComponents();
       for (var id in Chart.instances) {
         Chart.instances[id].resize()
       }
-
     }, 3000);
   }
 
@@ -189,6 +190,16 @@ export class DashboardPage {
     };
 
     return styles;
+  }
+
+  displayBarChart() {
+    $("#bars li .bar").each(function (key, bar) {
+      var percentage = $(this).data('percentage');
+
+      $(this).animate({
+        'height': percentage + '%'
+      }, 1000);
+    });
   }
 
   /* renderBottomComponents() {
