@@ -1,9 +1,12 @@
 <style>
   #chart {
-    width: auto; /*650px*/
-    height: 180px;
+    /*width: auto;*/
+    width: 100%;
+    height: 300px; /*220px*/
     margin: 10px auto 0;
     display: block;
+
+    text-align: center;
   }
 
   #chart #numbers {
@@ -44,14 +47,17 @@
     padding: 0;
     margin: 0;
     /*box-shadow: 0 0 0 1px #444;*/
-    //box-shadow: 0px 1px 0px 0px #4499ee;
+    /*box-shadow: 0 px 1 px 0 px 0 px #4499ee;*/
     border-bottom: 1px solid #4499ee;
+
+    /*xx */
+    margin-top: -40px;
   }
 
   #chart #bars li {
     display: table-cell;
     width: 100px;
-    height: 120px;
+    height: 190px; /*120px*/
     margin: 0;
     text-align: center;
     position: relative;
@@ -59,9 +65,9 @@
 
   #chart #bars li .bar {
     display: block;
-    width: 35px;
-    margin-left: 30px; /*15px*/
-    background: #49E;
+    width: 30px;
+    margin-left: 35px; /*15px*/
+    background: rgb(125, 175, 188);
     position: absolute;
     bottom: 0;
     border-radius: 20px 20px 0 0;
@@ -94,15 +100,66 @@
     color: #fff;
   }
 
-  #chart #bars:after {
-    border-top: 2px dashed #c49846;
-    width: 60%;
-    height: 50%;
+  /*xx*/
+  /*  #chart #bars:after {
+      border-top: 2px dashed #c49846;
+      width: 60%;
+      height: 50%;
+      position: absolute;
+      bottom: 0;
+      left: 13%;
+      content: '';
+      z-index: -10;
+    }*/
+
+  .horizontal_dashed_line {
+    border-bottom: 2px dashed #c49846;
+    width: auto; /*60%*/
+    margin-top: 3%;
+    /*position: absolute;*/
+    z-index: -1;
+  }
+
+  .horizontal_dashed_line_parent {
+    width: 55%;
+    float: left;
+  }
+
+  .month_dashed_title {
+    width: 25%;
+    float: left;
+  }
+
+  .month_dashed {
+    margin-top: -20%;
+    font-size: smaller;
+    /*float: left;*/
+  }
+
+  .last_month_1 {
+    bottom: -4em !important;
+    font-size: smaller;
+  }
+
+  .last_month_2 {
+    bottom: -5em !important;
+    font-size: smaller;
+  }
+
+  .top_price {
+    margin-bottom: 5px;
+    z-index: 1;
+    text-align: right;
+  }
+
+  .stats {
     position: absolute;
-    bottom: 0;
-    left: 13%;
-    content: '';
-    z-index: -10;
+  }
+
+  .dashed_line_parent_div {
+    margin-top: 15%;
+    position: absolute;
+    width: 90%;
   }
 
 </style>
@@ -189,20 +246,33 @@
         <!-- Charts -->
         <!--<canvas #barCanvas></canvas>-->
 
-        <div id="chart" style="">
-          <!--<hr class="dotted"/>-->
+        <div id="chart" class="">
+
+          <div class="dashed_line_parent_div">
+            <div class="month_dashed_title">
+              <div class="">Este mes</div>
+              <br/>
+              <div class="month_dashed">SET 2018
+              </div>
+            </div>
+            <div class="horizontal_dashed_line_parent">
+              <div class="horizontal_dashed_line"></div>
+            </div>
+            <div class="top_price">R$ 5.956</div>
+          </div>
+
           <ul id="bars">
             <li>
-              <div data-percentage="78" class="bar"></div>
+              <div data-percentage="40" class="bar"></div>
               <span>AGO 2018</span>
-              <!--              <br/>
-                            <span>Més anterior</span>-->
+              <!--<br/>-->
+              <span class="last_month_1">Més anterior</span>
             </li>
             <li>
-              <div data-percentage="98" class="bar"></div>
-              <span>AGO 2018</span>
-              <!--              <br/>
-                            <span>Mismo mes no ano anterior</span>-->
+              <div data-percentage="70" class="bar"></div>
+              <span>SET 2017</span>
+              <!--<br/>-->
+              <span class="last_month_2">Mismo mes no ano anterior</span>
             </li>
           </ul>
         </div>
