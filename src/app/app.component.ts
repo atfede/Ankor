@@ -1,15 +1,13 @@
-import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import {Component, ViewChild} from '@angular/core';
+import {Nav, Platform} from 'ionic-angular';
+import {StatusBar} from '@ionic-native/status-bar';
+import {SplashScreen} from '@ionic-native/splash-screen';
 
-
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import {HomePage} from '../pages/home/home';
+import {ListPage} from '../pages/list/list';
 // import { DashboardPage } from '../pages/dashboard/dashboard';
 // import { LoginPage } from '../pages/login/login';
 // import { RegisterPage } from '../pages/register/register';
-
 
 
 @Component({
@@ -18,26 +16,24 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-
   rootPage: any = 'LoginPage';
 
-  pages: Array<{title: string, component: any,icon:string}>;
+  pages: Array<{ title: string, component: any, icon: string }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Dashboard', component: 'DashboardPage',icon:'podium'},
-      { title: 'Clientes', component: 'ClientsPage',icon:'contacts'},
-      { title: 'Impostos', component: 'TributosPage',icon:'logo-usd'},
-      { title: 'DRE Sintetica', component: 'TributosPage',icon:'paper'},
-      { title: 'Simuladores', component: 'TributosPage',icon:'calculator'},
-      { title: 'Declaracao de Faturamento', component: 'TributosPage',icon:'briefcase'},
-      { title: 'Balancete', component: 'TributosPage',icon:'trending-up'},
-      
+      {title: 'Dashboard', component: 'DashboardPage', icon: 'podium'},
+      {title: 'Clientes', component: 'ClientsPage', icon: 'contacts'},
+      {title: 'Impostos', component: 'TributosPage', icon: 'logo-usd'},
+      {title: 'DRE Sintetica', component: 'TributosPage', icon: 'paper'},
+      {title: 'Simuladores', component: 'TributosPage', icon: 'calculator'},
+      {title: 'Declaracao de Faturamento', component: 'TributosPage', icon: 'briefcase'},
+      {title: 'Balancete', component: 'TributosPage', icon: 'trending-up'},
+      {title: 'PiechartPage', component: 'PiechartPage', icon: 'trending-up'}
     ];
-
   }
 
   initializeApp() {

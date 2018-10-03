@@ -1,11 +1,11 @@
 <style>
+
   #chart {
     /*width: auto;*/
     width: 100%;
     height: 300px; /*220px*/
-    margin: 10px auto 0;
+    /*margin: 10px auto 0;*/
     display: block;
-
     text-align: center;
   }
 
@@ -51,7 +51,7 @@
     border-bottom: 1px solid #4499ee;
 
     /*xx */
-    margin-top: -40px;
+    margin-top: -13px;
   }
 
   #chart #bars li {
@@ -178,8 +178,7 @@
 </ion-header>
 
 <ion-content class="bg-style">
-  <ion-row class="row" id="compName" justify-content-center style="margin-top: 10px;">
-  </ion-row>
+  <ion-row class="row" id="compName" justify-content-center ></ion-row>
   <br/>
   <!--<ion-row id="compName" justify-content-center> {{(profileData)?.companyName }} </ion-row>-->
   <ion-row id="compName" justify-content-center><h4>Nome Empresa</h4></ion-row>
@@ -231,7 +230,7 @@
         <ion-row class="table-headers">
           <ion-col></ion-col>
           <ion-col>
-            <button data-action="false" class="unselectedDate">Este ano</button>
+            <button data-action="false" class="unselectedDate" (click)="displayYearChart()">Este ano</button>
             <button data-action="true" class="selectedDate">Este mês</button>
           </ion-col>
         </ion-row>

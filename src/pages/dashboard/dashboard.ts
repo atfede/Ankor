@@ -72,7 +72,6 @@ export class DashboardPage {
       } else {
         this.navCtrl.push('ProfilePage');
       }
-
     });
   }
 
@@ -199,6 +198,11 @@ export class DashboardPage {
         'height': percentage + '%'
       }, 1000);
     });
+  }
+
+  displayYearChart() {
+    //this.navCtrl.push('PiechartPage');
+    this.navCtrl.setRoot('PiechartPage', {}, {animate: true, direction: 'forward'});
   }
 
   /* renderBottomComponents() {
