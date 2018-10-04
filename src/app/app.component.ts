@@ -31,8 +31,9 @@ export class MyApp {
       {title: 'DRE Sintetica', component: 'TributosPage', icon: 'paper'},
       {title: 'Simuladores', component: 'TributosPage', icon: 'calculator'},
       {title: 'Declaracao de Faturamento', component: 'TributosPage', icon: 'briefcase'},
-      {title: 'Balancete', component: 'TributosPage', icon: 'trending-up'},
-      {title: 'PiechartPage', component: 'PiechartPage', icon: 'trending-up'}
+      {title: 'Balancete', component: 'TributosPage', icon: 'trending-up'}
+
+      // {title: 'PiechartPage', component: 'PiechartPage', icon: 'trending-up'}
     ];
   }
 

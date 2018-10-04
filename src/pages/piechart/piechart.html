@@ -1,17 +1,172 @@
+<style>
+  .circular-progress-bar {
+    position: relative;
+    margin: 0 auto;
+    transform: rotate(-90deg);
+  }
+
+  .progress-percentage, .progress-text {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    text-align: center;
+    padding: 0px 60px;
+  }
+
+  .progress-percentage {
+    font-size: 60px;
+    left: 60%;
+  }
+
+  .progress-text {
+    left: 35%;
+    color: #585858;
+    font-size: 21px;
+  }
+</style>
+
 <!--
   Generated template for the PiechartPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<!--<ion-header>
 
   <ion-navbar>
     <ion-title>piechart</ion-title>
   </ion-navbar>
 
+</ion-header>-->
+
+<ion-header>
+  <ion-navbar class="topBar" hideBackButton showMenuButton>
+    <button ion-button menuToggle>
+      <ion-icon class="menuIconBurger" name="menu"></ion-icon>
+    </button>
+    <ion-title><img id="topTitleImg" height="50px" src="assets/imgs/image-without-bg.png" class="thumb-img"/>
+    </ion-title>
+    <button ion-button menuToggle style="display:none;">
+      <ion-icon class="menuIconBurger" name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="bg-style">
+  <ion-row class="row" id="compName" justify-content-center></ion-row>
+  <br/>
+  <!--<ion-row id="compName" justify-content-center> {{(profileData)?.companyName }} </ion-row>-->
+  <ion-row id="compName" justify-content-center><h4>Nome Empresa</h4></ion-row>
 
+  <!-- <div class="container"> -->
+  <ion-grid class="main-container-grid">
+
+    <!-- Start top bar -->
+    <ion-row responsive-lg>
+      <ion-grid id="threeItemBar">
+        <!-- Table Headers -->
+        <ion-row class="table-headers">
+          <ion-col class="table-headers">
+            FATURAMENTO
+          </ion-col>
+          <ion-col class="table-headers">
+            IMPOSTOS
+            PREVISTOS
+          </ion-col>
+          <ion-col class="table-headers">
+            PRÓXIMO
+            PAGAMENTO
+          </ion-col>
+        </ion-row>
+        <!-- End table headers -->
+        <!-- Table values -->
+        <ion-row class="valuesTop">
+          <ion-col class="valuesTop">
+            R$ 0,00
+          </ion-col>
+          <ion-col class="valuesTop">
+            R$ 0,00
+          </ion-col>
+          <ion-col class="valuesTop">
+            DD/MM
+            <br/>
+            <span class="issqn">ISSQN</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-row>
+    <!-- END top bar -->
+
+    <div class='row topbartable'></div>
+
+    <!-- Top bar button -->
+    <ion-row>
+      <ion-grid id="threeItemBar">
+        <ion-row class="table-headers">
+          <ion-col></ion-col>
+          <ion-col>
+            <button data-action="false" class="selectedMonth">Este ano</button>
+            <button data-action="true" class="unselectedMonth" (click)="displayMonthlyChart()">Este mês</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-row>
+    <!-- End top bar button -->
+
+    <!-- Middle content  -->
+    <ion-grid>
+      <ion-row height="50%">
+        <!-- Charts -->
+        <!--<canvas #barCanvas></canvas>-->
+
+        <div class="my-progress-bar">
+
+        </div>
+
+        <!-- END Charts -->
+      </ion-row>
+      <div class="topbartable"></div>
+      <!-- Bottom Content -->
+
+      <ion-row class="row" justify-content-center>
+        <h4>Top 5 Clientes</h4>
+      </ion-row>
+      <ion-row class="row" justify-content-center>
+        <div style="color: rgb(102, 182, 187);">Setembro 2018</div>
+      </ion-row>
+      <br/>
+      <ion-row height="50%" *ngFor="let client of clients">
+        <!--<canvas #lineCanvas></canvas>-->
+
+        <ion-col col-6>
+          <div style="text-align: right">
+              <span style="color: rgb(102, 182, 187);">
+            {{client.name}}
+              </span>
+            <span style="font-weight: bold;">
+            {{client.surename}}
+            </span>
+            <ion-icon name="arrow-round-up" class="icon-arrow" *ngIf="client.increments"
+                      style="text-align: right; color: rgb(68, 204, 130); font-weight: bold;"></ion-icon>
+            <ion-icon name="arrow-round-down" class="icon-arrow" *ngIf="!client.increments"
+                      style="text-align: right; color: rgb(209, 52, 64); font-weight: bold;"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col col-6>
+          <div
+            style="width: 60%; background-color: #00253a; margin-top: 3px; height: 12px; display: list-item; float: left; list-style: none; border-radius: 15px 15px 15px 15px"
+          ></div> <!--[ngStyle]="setWidthAmount(client.amount)"-->
+          &nbsp;
+          <span style="font-weight: bold;">
+          {{client.amount}}
+          </span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!-- END Bottom Content -->
+
+  </ion-grid>
 </ion-content>

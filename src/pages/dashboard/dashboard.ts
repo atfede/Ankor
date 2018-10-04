@@ -46,7 +46,7 @@ export class DashboardPage {
   }
 
   ionViewDidLoad() {
-    this.presentLoadingDefault();
+    // this.presentLoadingDefault();
 
     setTimeout(() => {
       //this.renderCenterComponents();
@@ -76,6 +76,7 @@ export class DashboardPage {
   }
 
   presentLoadingDefault() {
+
     let loading = this.loadingCtrl.create({
       content: 'Please wait...'
     });
@@ -201,7 +202,6 @@ export class DashboardPage {
   }
 
   displayYearChart() {
-    //this.navCtrl.push('PiechartPage');
     this.navCtrl.setRoot('PiechartPage', {}, {animate: true, direction: 'forward'});
   }
 
