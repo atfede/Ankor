@@ -14,9 +14,9 @@
 
   <ion-row class="row" id="compName" justify-content-center="" style="margin-top: 10px;font-size: larger;">
     <ion-col col-2>
-      <ion-icon class="back-arrow" name="md-arrow-back" style="font-size: 2em;"></ion-icon>
+      <ion-icon name="md-arrow-back" style="font-size: 2.5em;color: #b18619 ;margin-top: -8px;" (click)='goBack()'></ion-icon>
     </ion-col>
-    <ion-col col-8 style="text-align:center;" align-items-center justify-content-center>Manuel CRUZ</ion-col>
+    <ion-col col-8 style="text-align:center;" align-items-center justify-content-center>{{clientName}}</ion-col>
     <ion-col col-2></ion-col>
   </ion-row>
   <ion-row style="text-align:center;
@@ -24,9 +24,64 @@
         font-weight: lighter;
         text-transform: capitalize;
         font-size: small;"
-        align-items-center justify-content-center> PERFIL DO CLIENTE </ion-row>
+    align-items-center justify-content-center> PERFIL DO CLIENTE </ion-row>
 
   <ion-row>
     <canvas #lineClientCanvas></canvas>
   </ion-row>
+
+  <!-- Client values frame -->
+  <section class="clientValuesFrame">
+    <ion-row class="tributo-row" align-items-center justify-content-center="">
+      <!-- position 1/3 -->
+      <ion-col class="tributo-value">
+        <ion-label>TIKET MEDIO MENSAL</ion-label>
+        <p>{{tiketMedioMensal}}</p>
+      </ion-col>
+      <!-- position 2/3 -->
+      <ion-col class="tributo-value">
+        <ion-label>MES ATUAL</ion-label>
+        <p>{{mesAtual}}</p>
+      </ion-col>
+      <!-- position 3/3 -->
+      <!-- if paid  -->
+      <ion-col class="tributo.paid" *ngIf="isIncrementing" style=" color : rgb(68, 204, 130) !important;font-weight: bold; text-align: center;">
+        <ion-label>TENDENCIA</ion-label>
+        <p>
+          <ion-icon name="arrow-round-up" style=" color : rgb(68, 204, 130) !important; font-weight: bold;font-size: 2.25rem; text-align: center;"></ion-icon>
+        </p>
+      </ion-col>
+      <!-- else -->
+      <ion-col *ngIf="!isIncrementing" style="text-align: center;">
+        <ion-label>TENDENCIA</ion-label>
+        <p>
+          <ion-icon name="arrow-round-down" style=" color : red !important; font-weight: bold;font-size: 2.25rem   ; text-align: center;"></ion-icon>
+        </p>
+      </ion-col>
+      <!-- end else -->
+
+
+    </ion-row>
+  </section>
+  <!-- End client values frame -->
+
+  <!-- Start with metas -->
+  <section class="metasItem">
+    <ion-row align-items-center justify-content-center="">
+      <p>
+        <ion-label>META</ion-label>
+      </p>
+    </ion-row>
+
+    <ion-row align-items-center justify-content-center="">
+      <ion-row align-items-center justify-content-center="">
+        <p style="margin:0px;">R$ &nbsp;</p>
+        <ion-input class="inputMeta" type="text" align-items-center justify-content-center=""></ion-input>
+      </ion-row>
+    </ion-row>
+    <ion-row align-items-center justify-content-center="" style="margin-top:5%;">
+      <button class="btn-style" id="establishMilestone" ion-button (click)="establishMilestone()" block>Establecer meta</button>
+    </ion-row>
+  </section>
+  <!-- End with metas -->
 </ion-content>

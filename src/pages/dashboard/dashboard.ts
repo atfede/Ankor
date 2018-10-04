@@ -1,11 +1,11 @@
-import {Component, ViewChild} from '@angular/core';
-import {NavController, NavParams, LoadingController, ModalController, IonicPage, ToastController} from 'ionic-angular';
-import {ImageResizer, ImageResizerOptions} from '@ionic-native/image-resizer';
-import {Chart} from 'chart.js';
-import {AngularFireDatabase, AngularFireObject} from 'angularfire2/database';
-import {AngularFireAuth} from 'angularfire2/auth';
-import {ThrowStmt} from '@angular/compiler';
-import {Profile} from '../../models/Profile'
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, LoadingController, ModalController, IonicPage, ToastController } from 'ionic-angular';
+import { ImageResizer, ImageResizerOptions } from '@ionic-native/image-resizer';
+import { Chart } from 'chart.js';
+import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { ThrowStmt } from '@angular/compiler';
+import { Profile } from '../../models/Profile'
 
 declare var jquery: any;
 declare var $: any;
@@ -28,16 +28,16 @@ export class DashboardPage {
   lineChart: any;
 
   public clients: Array<Object> = [
-    {id: 1, name: 'Manuel', surename: 'CRUZ', increments: true, amount: 'R$ 653'},
-    {id: 2, name: 'Ulisses', surename: 'CABRAL', increments: true, amount: 'R$ 653'},
-    {id: 3, name: 'Cristiana', surename: 'DUARTE', increments: true, amount: 'R$ 653'},
-    {id: 4, name: 'Andréa', surename: 'ROSARIO', increments: false, amount: 'R$ 653'},
-    {id: 5, name: 'Bartolomeu', surename: 'GOMES', increments: false, amount: 'R$ 653'}
+    { id: 1, name: 'Manuel', surename: 'CRUZ', increments: true, amount: 'R$ 653' },
+    { id: 2, name: 'Ulisses', surename: 'CABRAL', increments: true, amount: 'R$ 653' },
+    { id: 3, name: 'Cristiana', surename: 'DUARTE', increments: true, amount: 'R$ 653' },
+    { id: 4, name: 'Andréa', surename: 'ROSARIO', increments: false, amount: 'R$ 653' },
+    { id: 5, name: 'Bartolomeu', surename: 'GOMES', increments: false, amount: 'R$ 653' }
   ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modal: ModalController,
-              public loadingCtrl: LoadingController, private afAuth: AngularFireAuth, private toast: ToastController,
-              private afDatabase: AngularFireDatabase) {
+    public loadingCtrl: LoadingController, private afAuth: AngularFireAuth, private toast: ToastController,
+    private afDatabase: AngularFireDatabase) {
 
   }
 
@@ -62,12 +62,12 @@ export class DashboardPage {
     this.afAuth.authState.subscribe(data => {
       console.log(data);
       if (data && data.uid && data.email) {
-
-        this.toast.create({
-          message: `Bem-vindo , ${data.email}`,
-          duration: 3000
-        }).present();
-
+        if (this.navParams.get('justLogged')){
+          this.toast.create({
+            message: `Bem-vindo , ${data.email}`,
+            duration: 3000
+          }).present();
+        }
         this.profileData = this.afDatabase.object(`profile/${data.uid}`);
       } else {
         this.navCtrl.push('ProfilePage');
@@ -202,7 +202,7 @@ export class DashboardPage {
   }
 
   displayYearChart() {
-    this.navCtrl.setRoot('PiechartPage', {}, {animate: true, direction: 'forward'});
+    this.navCtrl.setRoot('PiechartPage', {}, { animate: true, direction: 'forward' });
   }
 
   /* renderBottomComponents() {

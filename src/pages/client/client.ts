@@ -18,9 +18,18 @@ export class ClientPage {
 
   @ViewChild('lineClientCanvas') lineClientCanvas;
 
+  actualValue: string;
+  lastValue: string;
+  isIncrementing: boolean;
+  percentage: string;
+  clientName: string;
   lineClient: any;
+  tiketMedioMensal: string;
+  mesAtual: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl: LoadingController) {
   }
+  
 
   ionViewDidLoad() {
     this.presentLoadingDefault();
@@ -35,24 +44,64 @@ export class ClientPage {
     }, 3000);
   }
 
+  ionViewWillEnter() {
+    this.clientName = this.navParams.get('name');
+    this.lastValue = this.navParams.get('lastValue');
+    this.isIncrementing = this.navParams.get('isIncrementing');
+
+    // Hard coded values
+    this.tiketMedioMensal = 'R$ 480 mil';
+    this.mesAtual = 'R$ 563 mil';
+
+
+  }
+
+  establishMilestone() {
+    console.log('Clicked');
+  }
+
+
   renderClientChart() {
+    const meses = [
+    'Outubro',
+    'Setembro',
+    'Agosto',
+    'Julho',
+    'Junho',
+    'Maio',
+    'Abril',
+    'Março',
+    'Fevereiro',
+    'Janeiro',
+    'Dezembro',
+    'Novembro'
+  ];
+    
 
     this.lineClient = new Chart(this.lineClientCanvas.nativeElement, {
 
       type: 'line',
       data: {
-        labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        labels: meses,
         datasets: [
           {
             strokeColor: "#FFFFFF",
             pointColor: "#FFFFFF",
             pointStrokeColor: "#FFFFFF",
             pointHighlightFill: "#FFFFFF",
-            data: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+            data: [11, 12, 52, 34, 11, 13, 17, 28, 22, 15]
           }
         ]
       },
       options: {
+        plugins: {
+          datalabels: {
+             display: function(context) {
+              return context.dataset.data[context.dataIndex] > 1;
+             }
+          }
+        },
+        bezierCurve: true,
         responsive: true,
         maintainAspectRatio: true,
         scales: {
@@ -62,16 +111,16 @@ export class ClientPage {
               drawBorder: false,
               display: false
             },
-            
+
           }],
           xAxes: [{
-            color : '#73A5B3',
+            color: '#73A5B3',
             gridLines: {
-              
+
               drawBorder: false,
               display: false
             },
-            
+
           }]
 
         }
@@ -94,6 +143,9 @@ export class ClientPage {
   }
 
 
+  goBack() {
+    this.navCtrl.setRoot('ClientsPage');
+  }
 
 
 }

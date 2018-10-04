@@ -26,6 +26,10 @@ page-clients {
           font-weight: bold;
            color: green;
     }
+    .item-cover{
+        width : 0%;
+        height: 0%;
+    }
     .item-inner{
         border: none; 
     }
@@ -37,32 +41,35 @@ page-clients {
     .select-ios {
         padding: 5px 8px 7px 12px;
         
-}
-.fontname{
-font-weight: bold;
-font-size: 18px;
-margin-top: -3px;
-color: white;
-}
-
-
-
-.name-client{
-    font-size: 12px;
-    color: white;
-    text-align: -webkit-center;
-    padding-top: 16px;
-}
-.value-client{
+    }
+    .fontname{
     font-weight: bold;
     font-size: 18px;
-    margin-top: 5px;
+    margin-top: -3px;
     color: white;
-}
-.percent-clients{
-    font-size: 12px;
-    color: white;
-    text-align: -webkit-center;
-    padding-top: 16px;
-}
+    }
+
+
+
+    .name-client{
+        font-size: 12px;
+        color: white;
+        text-align: -webkit-center;
+        padding-top: 16px;
+    }
+    .value-client{
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 5px;
+        color: white;
+    }
+    .percent-clients{
+        font-size: 12px;
+        color: white;
+        text-align: -webkit-center;
+        padding-top: 16px;
+    }
+    .selectButtonContainer{
+        display: contents;
+    }
 }

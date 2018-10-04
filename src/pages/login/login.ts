@@ -33,9 +33,11 @@ export class LoginPage {
         if (logAttemp) {
 
           if(!f.additionalUserInfo.isNewUser){
-            this.navCtrl.push('DashboardPage');
+            this.navCtrl.setRoot('DashboardPage',{
+              justLogged : true
+            });
           }else{
-            this.navCtrl.push('ProfilePage');
+            this.navCtrl.setRoot('ProfilePage');
           }
         } else {
           this.toast.create({

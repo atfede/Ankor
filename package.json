@@ -1,8 +1,8 @@
 {
-  "name": "myApp",
+  "name": "Ankor",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "SuiteDB",
+  "homepage": "http://suitedb.com/",
   "private": true,
   "scripts": {
     "start": "ionic-app-scripts serve",
