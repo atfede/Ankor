@@ -1,4 +1,11 @@
 <style>
+
+  .shadow {
+    /* Use -webkit- only if supporting: Chrome < 54, iOS < 9.3, Android < 4.4.4 */
+    -webkit-filter: drop-shadow( -5px -5px 5px #c49846 );
+    filter: drop-shadow( -5px -5px 5px #c49846 );
+  }
+
   .circular-progress-bar {
     position: relative;
     margin: 0 auto;
@@ -25,6 +32,122 @@
     color: #585858;
     font-size: 21px;
   }
+
+  .piechart {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 9%;
+  }
+
+  .progress-wrapper {
+    position: relative;
+  }
+
+  .progress-wrapper .piechart_text {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+    font-weight: 100;
+  }
+
+  .progress-wrapper .piechart_text_percentage {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+    font-size: 2.2em;
+    color: #c49846;
+    font-weight: bold;
+  }
+
+  .progress-wrapper .piechart_text_left {
+    position: absolute;
+    top: 85%;
+    left: -55%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+    font-weight: 100;
+    font-size: 11px;
+    width: 60%;
+  }
+
+  .faturamento_ano {
+    font-weight: bold;
+  }
+
+  .faturamento_ano_price {
+    font-weight: bold;
+    font-size: 16px;
+    color: #c49846;
+  }
+
+  .progress-wrapper .piechart_text_right {
+    position: absolute;
+    top: 85%;
+    left: 95%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+    font-weight: 100;
+    font-size: 11px;
+    width: 60%;
+  }
+
+  .faturamento_ano_anterior {
+    font-weight: bold;
+  }
+
+  .faturamento_ano_anterior_price {
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(125, 172, 160);
+  }
+
+  .progress-wrapper .piechart_text_year_left {
+    position: absolute;
+    top: 9%;
+    left: -30%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+    font-weight: 100;
+    font-size: 11px;
+    width: 60%;
+    color: #c49846;
+    font-weight: bold;
+  }
+
+  .progress-wrapper .piechart_text_year_right {
+    position: absolute;
+    top: 9%;
+    left: 69%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+    font-weight: 100;
+    font-size: 11px;
+    width: 60%;
+    font-weight: bold;
+  }
+
 </style>
 
 <!--
@@ -112,7 +235,6 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-
     </ion-row>
     <!-- End top bar button -->
 
@@ -121,9 +243,45 @@
       <ion-row height="50%">
         <!-- Charts -->
         <!--<canvas #barCanvas></canvas>-->
+        <div class="piechart">
+          <div class="progress-wrapper">
+            <round-progress
+              [current]="75"
+              [max]="100"
+              [color]="'#C49846'"
+              [background]="'#eaeaea'"
+              [radius]="74"
+              [stroke]="5"
+              [rounded]="true"
+              [clockwise]="false"
+              [responsive]="false"
+              [duration]="800"
+              [animation]="'easeInOutQuart'"
+              [animationDelay]="7"
+            ></round-progress>
+            <!--(onRender)="doSomethingWithCurrentValue($event)"-->
 
-        <div class="my-progress-bar">
+            <div class="piechart_text_year_left">2018</div>
+            <div class="piechart_text_year_right">2017</div>
 
+            <div class="piechart_text">Aproveitamento</div>
+            <div class="piechart_text_percentage">75%</div>
+
+            <div class="piechart_text_left">
+              <div class="faturamento_ano">Faturamento deste ano</div>
+              <div>(jan - set 2018)</div>
+              <br/>
+              <div class="faturamento_ano_price">R$ 48,000</div>
+            </div>
+
+            <div class="piechart_text_right">
+              <div class="faturamento_ano_anterior">Faturamento deste ano</div>
+              <div>(jan - set 2018)</div>
+              <br/>
+              <div class="faturamento_ano_anterior_price">R$ 64,700</div>
+            </div>
+
+          </div>
         </div>
 
         <!-- END Charts -->
