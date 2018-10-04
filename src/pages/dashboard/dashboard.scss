@@ -1,47 +1,45 @@
 .toolbar-background, .toolbar-background-md {
     background-color: color($colors, blueBackground) !important;
   }
-  
+
   #topTitleImg {
     display: block;
     margin-left: auto;
     margin-right: auto;
-  
   }
-  
+
   .topbartable {
     border-bottom-color: color($colors, lineGold);
     border-bottom-width: 2.5px;
     border-bottom-style: inset;
   }
-  
+
   .table-headers {
     color: color($colors, lightBlue);
     text-align: center;
     text-transform: capitalize;
-  
   }
-  
+
   .valuesTop {
     text-align: center;
     font-weight: bold;
     font-size: 2rem;
   }
-  
+
   .container {
     padding-left: 17px;
     padding-bottom: 17px;
     padding-right: 17px;
   }
-  
+
   .main-container-grid {
     height: 100%;
   }
-  
+
   .menuIconBurger {
     color: color($colors, light);
   }
-  
+
   .selectedDate {
     width: 70px;
     display: inline;
@@ -49,15 +47,16 @@
     border-radius: 10px 0 0 10px;
     background-color: #ffffff;
   }
-  
+
   .unselectedDate {
     width: 70px;
     display: inline;
     float: right;
     border-radius: 0 10px 10px 0;
     background-color: #002e45;
+    color: #ffffff;
   }
-  
+
   .issqn {
     font-size: 12px;
     font-weight: lighter;

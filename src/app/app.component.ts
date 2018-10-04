@@ -33,7 +33,6 @@ export class MyApp {
       {title: 'Declaracao de Faturamento', component: 'TributosPage', icon: 'briefcase'},
       {title: 'Balancete', component: 'TributosPage', icon: 'trending-up'}
 
-      // {title: 'PiechartPage', component: 'PiechartPage', icon: 'trending-up'}
     ];
   }
 

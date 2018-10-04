@@ -1,13 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 
-/**
- * Generated class for the PiechartPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-piechart',
@@ -15,7 +8,19 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 })
 export class PiechartPage {
 
+  public clients: Array<Object> = [
+    {id: 1, name: 'Manuel', surename: 'CRUZ', increments: true, amount: 'R$ 653'},
+    {id: 2, name: 'Ulisses', surename: 'CABRAL', increments: true, amount: 'R$ 653'},
+    {id: 3, name: 'Cristiana', surename: 'DUARTE', increments: true, amount: 'R$ 653'},
+    {id: 4, name: 'Andréa', surename: 'ROSARIO', increments: false, amount: 'R$ 653'},
+    {id: 5, name: 'Bartolomeu', surename: 'GOMES', increments: false, amount: 'R$ 653'}
+  ];
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  ngOnInit() {
+    //this.displayProgressBar();
   }
 
   ionViewDidLoad() {
@@ -27,30 +32,6 @@ export class PiechartPage {
   }
 
   displayProgressBar() {
-    // var progress_circle = $(".my-progress-bar").gmpc({
-    //   // color
-    //   color: "#000000",
-    //   // height
-    //   height: "300px",
-    //   // width
-    //   width: "300px",
-    //   // line width
-    //   line_width: 8,
-    //   // stating value
-    //   starting_position: 25,
-    //   // max value
-    //   percent: 100,
-    //   // false = counterclockwise
-    //   counter_clockwise: false,
-    //   // show value
-    //   percentage: true,
-    //   // custom counter text
-    //   text: ''
-    // });
-
-    // var progress_circle = $(".my-progress-bar").gmpc({
-      // options here
-    // })
   }
 
 }
