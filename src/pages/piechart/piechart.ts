@@ -16,8 +16,7 @@ export class PiechartPage {
     {id: 5, name: 'Bartolomeu', surename: 'GOMES', increments: false, amount: 'R$ 653'}
   ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ngOnInit() {
     //this.displayProgressBar();

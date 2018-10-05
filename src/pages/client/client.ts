@@ -1,12 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
-import { Chart } from 'chart.js';
-/**
- * Generated class for the ClientPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {Component} from '@angular/core'; //, ViewChild
+import {IonicPage, NavController, NavParams, LoadingController} from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -15,8 +8,6 @@ import { Chart } from 'chart.js';
 })
 
 export class ClientPage {
-
-  @ViewChild('lineClientCanvas') lineClientCanvas;
 
   actualValue: string;
   lastValue: string;
@@ -27,21 +18,63 @@ export class ClientPage {
   tiketMedioMensal: string;
   mesAtual: string;
 
+  iter: number = 0;
+
+  myDataSets = [{
+    name: 'likes',
+    points: [
+      {x: 10, y: 100},
+      {x: 20, y: 200},
+      {x: 30, y: 300},
+      {x: 40, y: 400},
+      {x: 20, y: 500},
+      {x: 20, y: 600}
+    ]
+  }];
+
+  chartStyles = {
+    circle: {
+      color: '#ffffff',
+      radius: 4
+    },
+    xAxis: {
+      labels: {
+        color: '#ffffff',
+        fontSize: 18,
+        angle: 0
+      }, line: {
+        color: '#c49846',
+        width: 5
+      }
+    }
+  };
+
+  chartColors: any[] = [
+    {
+      backgroundColor: ["#c49846", "#c49846"]
+    }];
+
+  months = [
+    '',
+    'ABR',
+    'MAI',
+    'JUN',
+    'JUL',
+    'AGO',
+    'SET'
+  ];
+
+  formatXAxisValue(value: number) {
+    return `Month ${value}`;
+    /*this.iter++;
+     return this.months[this.iter];*/
+  }
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl: LoadingController) {
   }
-  
 
   ionViewDidLoad() {
     this.presentLoadingDefault();
-    console.log('ionViewDidLoad ClientPage');
-    setTimeout(() => {
-      this.renderClientChart();
-
-      for (var id in Chart.instances) {
-        Chart.instances[id].resize()
-      }
-
-    }, 3000);
   }
 
   ionViewWillEnter() {
@@ -53,82 +86,15 @@ export class ClientPage {
     this.tiketMedioMensal = 'R$ 480 mil';
     this.mesAtual = 'R$ 563 mil';
 
-
   }
 
   establishMilestone() {
     console.log('Clicked');
   }
 
-
   renderClientChart() {
-    const meses = [
-    'Outubro',
-    'Setembro',
-    'Agosto',
-    'Julho',
-    'Junho',
-    'Maio',
-    'Abril',
-    'Março',
-    'Fevereiro',
-    'Janeiro',
-    'Dezembro',
-    'Novembro'
-  ];
-    
 
-    this.lineClient = new Chart(this.lineClientCanvas.nativeElement, {
-
-      type: 'line',
-      data: {
-        labels: meses,
-        datasets: [
-          {
-            strokeColor: "#FFFFFF",
-            pointColor: "#FFFFFF",
-            pointStrokeColor: "#FFFFFF",
-            pointHighlightFill: "#FFFFFF",
-            data: [11, 12, 52, 34, 11, 13, 17, 28, 22, 15]
-          }
-        ]
-      },
-      options: {
-        plugins: {
-          datalabels: {
-             display: function(context) {
-              return context.dataset.data[context.dataIndex] > 1;
-             }
-          }
-        },
-        bezierCurve: true,
-        responsive: true,
-        maintainAspectRatio: true,
-        scales: {
-          yAxes: [{
-            display: false,
-            gridLines: {
-              drawBorder: false,
-              display: false
-            },
-
-          }],
-          xAxes: [{
-            color: '#73A5B3',
-            gridLines: {
-
-              drawBorder: false,
-              display: false
-            },
-
-          }]
-
-        }
-      },
-
-    });
   }
-
 
   presentLoadingDefault() {
     let loading = this.loadingCtrl.create({
@@ -139,9 +105,8 @@ export class ClientPage {
 
     setTimeout(() => {
       loading.dismiss();
-    }, 5000);
+    }, 2000);
   }
-
 
   goBack() {
     this.navCtrl.setRoot('ClientsPage');

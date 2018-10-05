@@ -23,9 +23,8 @@ import {FIREBASE_CONFIG} from './app.firebase.config';
 // import { LoginPage } from '../pages/login/login';
 // import { RegisterPage } from '../pages/register/register';
 
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
+import {NgxLineChartModule} from 'ngx-line-chart';
 
 @NgModule({
   declarations: [
@@ -38,11 +37,12 @@ import {RoundProgressModule} from 'angular-svg-round-progressbar';
   ],
   imports: [
     BrowserModule,
-    RoundProgressModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    RoundProgressModule,
+    NgxLineChartModule
 
   ],
 

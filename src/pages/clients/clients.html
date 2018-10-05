@@ -1,28 +1,20 @@
-<!--
-  Generated template for the TributosPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar class="topBar" hideBackButton showMenuButton>
     <button ion-button menuToggle>
       <ion-icon class="menuIconBurger" name="menu"></ion-icon>
     </button>
-    <ion-title><img id="topTitleImg" height="50px" src="assets/imgs/image-without-bg.png" class="thumb-img" /></ion-title>
+    <ion-title><img id="topTitleImg" height="50px" src="assets/imgs/image-without-bg.png" class="thumb-img"/>
+    </ion-title>
     <button ion-button menuToggle style="display:none;">
       <ion-icon class="menuIconBurger" name="menu"></ion-icon>
     </button>
   </ion-navbar>
 </ion-header>
 
-
 <ion-content padding class="bg-style">
-
   <ion-row class="row" id="compName" justify-content-center="" style="
   margin-top: 10px;
 ">
-
     <ion-col (click)="goBack();">
       <ion-icon name="md-arrow-back" style="z-index:99; font-size: 2.5em;color: #b18619 ;margin-top: -8px;"></ion-icon>
     </ion-col>
@@ -39,20 +31,15 @@
     </div>
   </ion-row>
 
-
   <ion-item *ngFor="let client of clients" class="client-row" (click)="goToSpecificClient(client);">
-
     <div class="row" style="width: 100%">
       <ion-icon name="arrow-round-up" class="icon-arrow"></ion-icon>
       <div class="col name-client "> {{client.name}}</div>
       <div class="col value-client">{{client.actualValue}}</div>
-      <div class="col percent-clients">{{client.percentage}} </div>
+      <div class="col percent-clients">{{client.percentage}}</div>
       <ion-icon name="arrow-dropright" style="padding: 6px;
   margin-right: 13px;margin-top: 5px;"></ion-icon>
     </div>
-
   </ion-item>
-
-
 
 </ion-content>
