@@ -57,4 +57,9 @@ export class TributosPage {
     
   }
 
+
+  goToDash(){
+    this.navCtrl.setRoot('DashboardPage', {}, {animate: true, direction: 'backward'});
+  }
+
 }
