@@ -21,38 +21,70 @@ export class ClientPage {
   iter: number = 0;
 
   myDataSets = [{
-    name: 'likes',
+    name: '', //prices
     points: [
       {x: 10, y: 100},
       {x: 20, y: 200},
       {x: 30, y: 300},
-      {x: 40, y: 400},
-      {x: 20, y: 500},
-      {x: 20, y: 600}
+      {x: 40, y: 200},
+      {x: 50, y: 250},
+      {x: 60, y: 350}
     ]
   }];
 
   chartStyles = {
-    circle: {
-      color: '#ffffff',
-      radius: 4
-    },
+    dataSetStyles: [
+      {
+        circle: {
+          color: '#ffffff',
+          radius: 6
+        },
+        labels: { // line values
+          value: {
+            color: '#ffffff',
+            fontSize: 24
+          },
+          yAxis: {
+            color: 'transparent', //left line
+            fontSize: 14
+          }
+        },
+        line: {
+          color: '#c49846',
+          width: 5
+        }
+      },
+      {
+        circle: {
+          color: '#ffffff',
+          radius: 6
+        },
+        labels: {
+          value: {
+            color: '#ffffff',
+            fontSize: 14
+          },
+          yAxis: {
+            color: '#ffffff',
+            fontSize: 14
+          }
+        },
+        line: {
+          color: '#c49846',
+          width: 5
+        }
+      }
+    ],
     xAxis: {
       labels: {
         color: '#ffffff',
         fontSize: 18,
         angle: 0
-      }, line: {
-        color: '#c49846',
-        width: 5
       }
-    }
+    },
+    showXAxis: false,
+    showYAxis: false
   };
-
-  chartColors: any[] = [
-    {
-      backgroundColor: ["#c49846", "#c49846"]
-    }];
 
   months = [
     '',

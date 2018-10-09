@@ -1,7 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import {NavController, NavParams, LoadingController, ModalController, IonicPage, ToastController} from 'ionic-angular';
 import {ImageResizer, ImageResizerOptions} from '@ionic-native/image-resizer';
-import {Chart} from 'chart.js';
+// import {Chart} from 'chart.js';
 import {AngularFireDatabase, AngularFireObject} from 'angularfire2/database';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {ThrowStmt} from '@angular/compiler';
@@ -48,13 +48,14 @@ export class DashboardPage {
   ionViewDidLoad() {
     // this.presentLoadingDefault();
 
-    setTimeout(() => {
-      //this.renderCenterComponents();
-      //this.renderBottomComponents();
+   /* setTimeout(() => {
+      this.renderCenterComponents();
+      this.renderBottomComponents();
+
       for (var id in Chart.instances) {
         Chart.instances[id].resize()
       }
-    }, 3000);
+    }, 3000);*/
   }
 
   ionViewWillEnter() {
@@ -113,9 +114,9 @@ export class DashboardPage {
 
     loading.present();
 
-    setTimeout(() => {
+   /* setTimeout(() => {
       // this.nasv.push(Page2);
-    }, 1000);
+    }, 1000);*/
 
     setTimeout(() => {
       loading.dismiss();
@@ -123,7 +124,7 @@ export class DashboardPage {
   }
 
   //Charts rendering -------
-  renderCenterComponents() {
+/*  renderCenterComponents() {
 
     this.barChart = new Chart(this.barCanvas.nativeElement, {
       type: 'bar',
@@ -177,7 +178,7 @@ export class DashboardPage {
         }]
       }
     });
-  }
+  }*/
 
   setWidthAmount(amount) {
     let widthPct = amount * 200 / 1000;
