@@ -1,14 +1,5 @@
 <style>
 
-/*  .graph[_ngcontent-c2] .grid[_ngcontent-c2] {
-    stroke: #2fb100;
-    stroke-dasharray: 0;
-    stroke-width: 1;
-  }
-
-  .graph[_ngcontent-c2] .labels[_ngcontent-c2] {
-     stroke: #3eff00 !important;
-  }*/
 </style>
 
 <ion-header>
@@ -25,7 +16,6 @@
 </ion-header>
 
 <ion-content padding class="bg-style">
-
   <ion-row class="row" id="compName" justify-content-center="" style="margin-top: 10px;font-size: larger;">
     <ion-col col-2>
       <ion-icon name="md-arrow-back" style="font-size: 2.5em;color: #b18619 ;margin-top: -8px;"
@@ -41,7 +31,6 @@
         font-size: small;"
            align-items-center justify-content-center> PERFIL DO CLIENTE
   </ion-row>
-
   <ion-row>
     <ngx-line-chart [dataSets]="myDataSets" [xLabelFunction]="formatXAxisValue.bind(this)"
                     [style]="chartStyles"></ngx-line-chart>
@@ -79,7 +68,6 @@
         </p>
       </ion-col>
       <!-- end else -->
-
 
     </ion-row>
   </section>

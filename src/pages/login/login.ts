@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
-import { User } from '../../models/User';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import {User} from '../../models/User';
+import {UserData} from '../../models/UserData';
 // import { Dashboard } from '../dashboard/dashboard';
-import { AngularFireAuth } from 'angularfire2/auth';
-
+import {AngularFireAuth} from 'angularfire2/auth';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
+import {Observable} from "rxjs";
 
 @IonicPage()
 @Component({
@@ -13,18 +15,17 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export class LoginPage {
 
   user = {} as User;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth,
-    private toast: ToastController) {
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth,
+              private toast: ToastController, private http: HttpClient) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  async  login() {
+  async login() {
     try {
-
       const logAttemp = this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password).then(f => {
 
         console.log(logAttemp);
@@ -32,11 +33,13 @@ export class LoginPage {
         // Successful login
         if (logAttemp) {
 
-          if(!f.additionalUserInfo.isNewUser){
-            this.navCtrl.setRoot('DashboardPage',{
-              justLogged : true
+          this.getUser();
+
+          if (!f.additionalUserInfo.isNewUser) {
+            this.navCtrl.setRoot('DashboardPage', {
+              justLogged: true
             });
-          }else{
+          } else {
             this.navCtrl.setRoot('ProfilePage');
           }
         } else {
@@ -66,4 +69,15 @@ export class LoginPage {
   register() {
     this.navCtrl.push('RegisterPage');
   }
+
+  getUser(): Observable<UserData> {
+    console.log(this.http.get('http://www.suitedb.com/atfede/dbConnection2.php?user_name=' + this.user.email + '&password=' + this.user.password));
+
+    return this.http.get<UserData>('http://www.suitedb.com/atfede/dbConnection2.php?user_name=' + this.user.email + '&password=' + this.user.password);
+  }
+
+  /*  public getUsers(url: string): Observable<IUser[]> {
+      return this._http.get<IUser[]>(url);
+    }*/
+
 }

@@ -5,7 +5,8 @@ import {ImageResizer, ImageResizerOptions} from '@ionic-native/image-resizer';
 import {AngularFireDatabase, AngularFireObject} from 'angularfire2/database';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {ThrowStmt} from '@angular/compiler';
-import {Profile} from '../../models/Profile'
+import {Profile} from '../../models/Profile';
+import {UserData} from '../../models/UserData';
 
 declare var jquery: any;
 declare var $: any;
