@@ -1,3 +1,9 @@
+<style>
+  .popover-color{
+    background-color: #1f3e51;
+  }
+</style>
+
 <ion-header>
   <ion-navbar class="topBar" hideBackButton showMenuButton>
     <button ion-button menuToggle>
@@ -24,8 +30,8 @@
     <div class="selectButtonContainer">
       <ion-select class="month-drp" interface="popover">
         <ng-container *ngFor="let month of months">
-          <ion-option *ngIf="!month.actMonth" [value]="month">{{month.month}} {{month.year}}</ion-option>
-          <ion-option *ngIf="month.actMonth" selected [value]="month">{{month.month}} {{month.year}}</ion-option>
+          <ion-option *ngIf="!month.actMonth" [value]="month" class="popover-color">{{month.month}} {{month.year}}</ion-option>
+          <ion-option *ngIf="month.actMonth" selected [value]="month" class="popover-color">{{month.month}} {{month.year}}</ion-option>
         </ng-container>
       </ion-select>
     </div>

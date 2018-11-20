@@ -25,7 +25,7 @@ import {FIREBASE_CONFIG} from './app.firebase.config';
 
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
 import {NgxLineChartModule} from 'ngx-line-chart';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [

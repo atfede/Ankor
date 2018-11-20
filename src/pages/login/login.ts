@@ -33,7 +33,7 @@ export class LoginPage {
         // Successful login
         if (logAttemp) {
 
-          this.getUser();
+          //this.getUser();
 
           if (!f.additionalUserInfo.isNewUser) {
             this.navCtrl.setRoot('DashboardPage', {
