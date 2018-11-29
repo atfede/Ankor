@@ -2,6 +2,30 @@
   .popover-color {
     background-color: #1f3e51;
   }
+
+  .piechart {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 9%;
+  }
+
+  .progress-wrapper {
+    position: relative;
+  }
+
+  .piechart_text {
+    margin-top: 0px;
+    margin-left: 19px;
+  }
+
+  .piechart_text_percentage {
+    margin-left: 51px;
+    font-weight: bold;
+    margin-top: -106px;
+    font-size: 28px;
+    color: #c49846;
+  }
+
 </style>
 
 <ion-header>
@@ -22,7 +46,7 @@
   margin-top: 10px;
 ">
     <ion-col (click)="goBack();">
-      <ion-icon name="md-arrow-back" style="z-index:99; font-size: 2.5em;color: #b18619 ;margin-top: -8px;"></ion-icon>
+      <ion-icon name="md-arrow-back" style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -8px;"></ion-icon>
     </ion-col>
 
     <ion-col class="fontname">Top Clientes</ion-col>
@@ -50,8 +74,38 @@
       <div class="col name-client "> {{client.Surename}}</div>
       <div class="col value-client">R$ {{client.Amount}}</div>
       <div class="col percent-clients">{{ client.Percentage }}%</div>
-      <ion-icon name="arrow-dropright" style="padding: 6px; margin-right: 13px;margin-top: 5px;"></ion-icon>
+      <ion-icon name="arrow-dropright"
+                style="padding: 6px; margin-right: 13px; margin-top: 5px; color: #ffffff;"></ion-icon>
     </div>
   </ion-item>
+
+  <!-- <ion-row height="50%" style="margin-top: 25px; margin-bottom: 15px;">
+     &lt;!&ndash; Charts &ndash;&gt;
+     &lt;!&ndash;<canvas #barCanvas></canvas>&ndash;&gt;
+     <div class="piechart">
+       <div class="progress-wrapper">
+         <round-progress
+           [current]="25"
+           [max]="100"
+           [color]="'#C49846'"
+           [background]="'#eaeaea'"
+           [radius]="74"
+           [stroke]="5"
+           [rounded]="true"
+           [clockwise]="false"
+           [responsive]="false"
+           [duration]="800"
+           [animation]="'easeInOutQuart'"
+           [animationDelay]="7"
+         ></round-progress>
+
+         <div class="piechart_text_percentage">25%</div>
+         <div class="piechart_text">faturamento total</div>
+
+       </div>
+     </div>
+
+     &lt;!&ndash; END Charts &ndash;&gt;
+   </ion-row>-->
 
 </ion-content>

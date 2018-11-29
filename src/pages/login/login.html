@@ -6,9 +6,9 @@
 -->
 <ion-header>
 
-  <ion-navbar hideMenuButton>
+<!--  <ion-navbar hideMenuButton>
     <ion-title>Login</ion-title>
-  </ion-navbar>
+  </ion-navbar>-->
 
 </ion-header>
 
@@ -17,16 +17,16 @@
 
   <ion-list>
     <ion-item class="rounded">
-      <ion-input class="txt-focused" type="text" [(ngModel)]="user.email" placeholder="Usuario"></ion-input>
+      <ion-input class="txt-input" type="text" [(ngModel)]="user.email" placeholder="Usuario"></ion-input>
     </ion-item>
     <br/>
     <ion-item class="rounded">
-      <ion-input class="txt-focused" type="password" [(ngModel)]="user.password" placeholder="Senha"></ion-input>
+      <ion-input class="txt-input" type="password" [(ngModel)]="user.password" placeholder="Senha"></ion-input>
     </ion-item>
   </ion-list>
 
-  <button class="btn-style" ion-button (click)="login(user)" block>Login</button>
+  <button class="btn-style" ion-button (click)="login(user)" block>Entrar</button>
   <br/>
-  <button class="btn-style" ion-button (click)="register()" block>Register</button>
+  <button class="btn-style" ion-button (click)="register()" block>Registo</button>
 
 </ion-content>

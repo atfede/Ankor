@@ -30,7 +30,7 @@ export class PiechartPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PiechartPage');
+    //console.log('ionViewDidLoad PiechartPage');
   }
 
   displayMonthlyChart() {

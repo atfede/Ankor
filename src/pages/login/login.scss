@@ -42,6 +42,22 @@ page-login {
     .text-input-md {
       color: #fff;
     }
+
+ /* .text-input::-moz-placeholder {
+    color: red;
+  }
+
+  .text-input:-ms-input-placeholder {
+    color: red;
+  }
+
+  .text-input::-webkit-input-placeholder {
+    color: red;
+  }*/
+
+  ion-input::shadow input {
+    color: #ffffff; //var(--ion-color-primary)
+  }
     
     /* Change the white to any color ;) */
     input:-webkit-autofill {
@@ -56,9 +72,34 @@ page-login {
     }
     
     .btn-style {
-      background-color: transparent;
+      //background-color: transparent;
     }
-    
+
+  .button-ios {
+    border-radius: 25px;
+    height: 2.8em;
+    font-size: 1.6rem;
+    color: #fff;
+    background-color: #00364f;
+    margin: 0.4rem 0.2rem;
+    padding: 0 1em;
+    border: 1.5px solid #746d45;
+  }
+
+  //border top
+  .list-ios > .item-block:first-child{
+    border-top: 1.5px solid #7B7045;
+  }
+
+  //border bottom
+  .list-ios > .item-block:last-child .item-inner, .list-ios > .item-wrapper:last-child .item-block .item-inner{
+    border-bottom: 1.5px solid #7B7045;
+  }
+
+  .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
+    border-bottom: none;
+  }
+
     .item-md.item-block .item-inner,
     .item-md.item-input.input-has-focus .item-inner,
     .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner,
@@ -67,14 +108,14 @@ page-login {
     .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child,
     .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
       border-bottom: 1px solid #7B7045;
-      //box-shadow: none;
+      box-shadow: none;
     }
     
     .list-md .item-input.input-has-focus:last-child .item-inner,
     .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child .item-inner,
     .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child .item-inner {
       border-bottom: 1px solid #7B7045;
-      //box-shadow: none;
+      box-shadow: none;
     }
     .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
       border-bottom-color: #32db64;
