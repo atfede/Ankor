@@ -1,4 +1,6 @@
-export interface ExtratoTotal {
+import {Client} from "./Client";
+
+export class ExtratoTotal {
   MesAnoEmit: string;
   QtdNFes: number;
   TotalNFe: number;
@@ -6,4 +8,5 @@ export interface ExtratoTotal {
   TotalICMS: number;
   TotalBCICMSST: number;
   TotalICMSST: number;
+  Client : Client
 }

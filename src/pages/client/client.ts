@@ -20,6 +20,8 @@ export class ClientPage {
 
   iter: number = 0;
 
+  milestone: number = 0;
+
   myDataSets = [{
     name: '', //prices
     points: [
@@ -121,7 +123,8 @@ export class ClientPage {
   }
 
   establishMilestone() {
-    console.log('Clicked');
+    //this.milestone =
+
   }
 
   renderClientChart() {

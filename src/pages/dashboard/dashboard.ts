@@ -9,6 +9,10 @@ import {Profile} from '../../models/Profile';
 import {UserData} from '../../models/UserData';
 import {ExtratoTotal} from "../../models/ExtratoTotal";
 import {Client} from "../../models/Client";
+import {TipoCliente} from "../../models/TipoCliente";
+import {Constants} from "../../models/Constants";
+import {Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
 // import {HelperService} from './services/helper.service';
 
 declare var jquery: any;
@@ -28,9 +32,11 @@ export class DashboardPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modal: ModalController,
               public loadingCtrl: LoadingController, private afAuth: AngularFireAuth, private toast: ToastController,
-              private afDatabase: AngularFireDatabase
-              /*, private _helper: HelperService*/
-  ) {
+              private afDatabase: AngularFireDatabase, private http: HttpClient
+              /*, private _helper: HelperService*/) {
+
+    //TODO: Get type of Profile from login (servicio o comercio)
+
 
   }
 
@@ -39,213 +45,191 @@ export class DashboardPage {
   lineChart: any;
 
   public clients: Array<Client> = [
-    /*{Id: 1, Name: 'Manuel', Surename: 'CRUZ', Increments: true, Amount: 70000},
-    {Id: 2, Name: 'Ulisses', Surename: 'CABRAL', Increments: true, Amount: 65000},
-    {Id: 3, Name: 'Cristiana', Surename: 'DUARTE', Increments: true, Amount: 60000},
-    {Id: 4, Name: 'Andréa', Surename: 'ROSARIO', Increments: false, Amount: 80000},
-    {Id: 5, Name: 'Nestor', Surename: 'GOMES', Increments: false, Amount: 85000},
-    {Id: 6, Name: 'Álvar', Surename: 'LOPEZ', Increments: true, Amount: 90000},*/
-    {Id: 7, Name: '', Surename: '901.421.100', Increments: true, Amount: 2319.72},
-    {Id: 8, Name: '', Surename: '312.924.508', Increments: true, Amount: 2298.84},
-    {Id: 9, Name: '', Surename: '096.212.221', Increments: true, Amount: 2301.42},
-    {Id: 10, Name: '', Surename: '22829604000', Increments: true, Amount: 4704.37},
-    {Id: 11, Name: '', Surename: '887.440.600', Increments: true, Amount: 719.49}
+    {Id: 1, Name: 'DANIELLE', Surename: 'CUNHA VARELA', Increments: true, Amount: 2319.72, ClientType: 'comercio'}, //901.421.100-78
+    {Id: 3, Name: 'FATIMA', Surename: 'APARECIDA FAGUN.', Increments: true, Amount: 2345.76, ClientType: 'servicio'}, //469.574.560-72
+    {Id: 4, Name: '', Surename: 'MAXIMA LOGISTICA E DIST.', Increments: true, Amount: 3695.74, ClientType: 'comercio'}, //22829604000188
+    {Id: 6, Name: 'PABLO', Surename: 'PAEZ RODRIGUEZ', Increments: true, Amount: 2353.14, ClientType: 'comercio'}, //096.233.801-00
+    {Id: 10, Name: 'DEBORAH J.', Surename: 'PEREZ CABRERA', Increments: false, Amount: 2301.42, ClientType: 'comercio'} //096.212.221-17
   ];
 
   public topFiveClients: Array<Client> = [];
 
-  /*public extratos: Array<Object> = [
-    {
-      DtEmit: '01/11/18',
-      DtEntSai: '01/11/18',
-      IEEmit: '096/3655825',
-      UFEmit: 'RS',
-      CNPJEmit: '24.127.085/0001-31',
-      IEDestRemet: '',
-      UFDestRemet: 'RS',
-      CNPJDestRemet: '809.391.630-04',
-      Mod: '55',
-      Serie: '1',
-      Numero: '55556',
-      TotalNFe: 958.66,
-      TotalBCICMS: 189.36,
-      TotalICMS: 34.08,
-      TotalBCICMSST: 0.00,
-      TotalICMSST: 0.00,
-      ICMSFCP: 0.00,
-      ICMSInterestadualUFDestino: 0.00,
-      ICMSInterestadualUFRem: 0.00,
-      Sit: 'N',
-      ES: 'S'
-    },
-    {
-      DtEmit: '01/11/18',
-      DtEntSai: '01/11/18',
-      IEEmit: '096/3655825',
-      UFEmit: 'RS',
-      CNPJEmit: '24.127.085/0001-31',
-      IEDestRemet: '',
-      UFDestRemet: 'RS',
-      CNPJDestRemet: '588.802.830-49',
-      Mod: '55',
-      Serie: '1',
-      Numero: '55557',
-      TotalNFe: '194,85',
-      TotalBCICMS: '0,00',
-      TotalICMS: '0,00',
-      TotalBCICMSST: '0,00',
-      TotalICMSST: '0,00',
-      ICMSFCP: '0,00',
-      ICMSInterestadualUFDestino: '0,00',
-      ICMSInterestadualUFRem: '0,00',
-      Sit: 'N',
-      ES: 'S'
-    },
-    {
-      DtEmit: '01/11/18',
-      DtEntSai: '01/11/18',
-      IEEmit: '096/3655825',
-      UFEmit: 'RS',
-      CNPJEmit: '24.127.085/0001-31',
-      IEDestRemet: '',
-      UFDestRemet: 'RS',
-      CNPJDestRemet: '004.919.210-80',
-      Mod: '55',
-      Serie: '1',
-      Numero: '55558',
-      TotalNFe: 64.95,
-      TotalBCICMS: 0.00,
-      TotalICMS: 34.08,
-      TotalBCICMSST: 0.00,
-      TotalICMSST: 0.00,
-      ICMSFCP: 0.00,
-      ICMSInterestadualUFDestino: 0.00,
-      ICMSInterestadualUFRem: 0.00,
-      Sit: 'N',
-      ES: 'S'
-    },
-    {
-      DtEmit: '01/11/18',
-      DtEntSai: '01/11/18',
-      IEEmit: '096/3655825',
-      UFEmit: 'RS',
-      CNPJEmit: '24.127.085/0001-31',
-      IEDestRemet: '',
-      UFDestRemet: 'RS',
-      CNPJDestRemet: '809.391.630-04',
-      Mod: '55',
-      Serie: '1',
-      Numero: '55556',
-      TotalNFe: 958.66,
-      TotalBCICMS: 189.36,
-      TotalICMS: 34.08,
-      TotalBCICMSST: 0.00,
-      TotalICMSST: 0.00,
-      ICMSFCP: 0.00,
-      ICMSInterestadualUFDestino: 0.00,
-      ICMSInterestadualUFRem: 0.00,
-      Sit: 'N',
-      ES: 'S'
-    },
-    {
-      DtEmit: '01/11/18',
-      DtEntSai: '01/11/18',
-      IEEmit: '096/3655825',
-      UFEmit: 'RS',
-      CNPJEmit: '24.127.085/0001-31',
-      IEDestRemet: '',
-      UFDestRemet: 'RS',
-      CNPJDestRemet: '809.391.630-04',
-      Mod: '55',
-      Serie: '1',
-      Numero: '55556',
-      TotalNFe: '958,66',
-      TotalBCICMS: '189,36',
-      TotalICMS: '34,08',
-      TotalBCICMSST: '0,00',
-      TotalICMSST: '0,00',
-      ICMSFCP: '0,00',
-      ICMSInterestadualUFDestino: '0,00',
-      ICMSInterestadualUFRem: '0,00',
-      Sit: 'N',
-      ES: 'S'
-    },
-    {
-      DtEmit: '01/11/18',
-      DtEntSai: '01/11/18',
-      IEEmit: '096/3655825',
-      UFEmit: 'RS',
-      CNPJEmit: '24.127.085/0001-31',
-      IEDestRemet: '',
-      UFDestRemet: 'RS',
-      CNPJDestRemet: '809.391.630-04',
-      Mod: '55',
-      Serie: '1',
-      Numero: '55556',
-      TotalNFe: '958,66',
-      TotalBCICMS: '189,36',
-      TotalICMS: '34,08',
-      TotalBCICMSST: '0,00',
-      TotalICMSST: '0,00',
-      ICMSFCP: '0,00',
-      ICMSInterestadualUFDestino: '0,00',
-      ICMSInterestadualUFRem: '0,00',
-      Sit: 'N',
-      ES: 'S'
-    },
-    {
-      DtEmit: '01/11/18',
-      DtEntSai: '01/11/18',
-      IEEmit: '096/3655825',
-      UFEmit: 'RS',
-      CNPJEmit: '24.127.085/0001-31',
-      IEDestRemet: '',
-      UFDestRemet: 'RS',
-      CNPJDestRemet: '809.391.630-04',
-      Mod: '55',
-      Serie: '1',
-      Numero: '55556',
-      TotalNFe: '958,66',
-      TotalBCICMS: '189,36',
-      TotalICMS: '34,08',
-      TotalBCICMSST: '0,00',
-      TotalICMSST: '0,00',
-      ICMSFCP: '0,00',
-      ICMSInterestadualUFDestino: '0,00',
-      ICMSInterestadualUFRem: '0,00',
-      Sit: 'N',
-      ES: 'S'
-    },
-
-  ];*/
-
   getTotalExtratosCurrentYear() {
     let total = 0;
+
     this.extratoTotal.forEach((el) => {
-      total += el.TotalNFe;
+      if (el.MesAnoEmit.split('/')[1] == '18') { //get current year
+        total += el.TotalNFe;
+      }
     });
 
-    return total;
+    //TODO: check Constants
+    if (Constants.IsComercio) {
+      return total;
+    }
+    else if (Constants.IsServicio) {
+      return total;
+    }
+    return null;
+  }
+  getImpostosPrevistos(year) {
+    let totalICMS = 0;
+    let totalICMSST = 0;
+
+    //total ICMS
+    this.extratoTotal.forEach((el) => {
+      if (el.MesAnoEmit.split('/')[1] == year) { //'18'
+        totalICMS += el.TotalICMS;
+      }
+    });
+
+    /*
+        this.extratoTotal.forEach((el) => {
+          if (el.MesAnoEmit.split('/')[1] == year) { //'18'
+            totalICMSST += el.TotalICMSST;
+          }
+        });
+    */
+
+    // return totalICMS + totalICMSST;
+    return totalICMS;
   }
 
+
   getTotalExtratosCurrentMonth() {
-    return this.extratoTotal[this.extratoTotal.length - 1].TotalNFe;
+    if (Constants.IsComercio) {
+      return this.extratoTotal[this.extratoTotal.length - 1].TotalNFe - Constants.ICMS - Constants.COMERCIO - Constants.ISSQN5;
+    }
+    else if (Constants.IsServicio) {
+      return this.extratoTotal[this.extratoTotal.length - 1].TotalNFe - Constants.ICMS - Constants.SERVICIO - Constants.ISSQN5;
+    }
   }
 
   getTotalPreviousMonth() {
     return this.extratoTotal[this.extratoTotal.length - 1].TotalNFe;
   }
 
-  getImpostosPrevistos() {
-    let total = 0;
-    this.extratoTotal.forEach((el) => {
-      total += el.TotalICMS;
-    });
-
-    return total.toFixed(2);
-  }
-
   public extratoTotal: Array<ExtratoTotal> = [
+    {
+      MesAnoEmit: '01/17',
+      QtdNFes: 9.00,
+      TotalNFe: 4440.50,
+      TotalBCICMS: 0.00,
+      TotalICMS: 0.00,
+      TotalBCICMSST: 0.00,
+      TotalICMSST: 0.00,
+      Client: new Client(1, '', '', true, 1, '')
+    },
+    {
+      MesAnoEmit: '02/17',
+      QtdNFes: 0.00,
+      TotalNFe: 0.00,
+      TotalBCICMS: 0.00,
+      TotalICMS: 0.00,
+      TotalBCICMSST: 0.00,
+      TotalICMSST: 0.00,
+      Client: new Client(1, '', '', true, 1, '')
+    },
+    {
+      MesAnoEmit: '03/17',
+      QtdNFes: 7.00,
+      TotalNFe: 7883.20,
+      TotalBCICMS: 48.50,
+      TotalICMS: 8.73,
+      TotalBCICMSST: 0.00,
+      TotalICMSST: 0.00,
+      Client: new Client(1, '', '', true, 1, '')
+    },
+    {
+      MesAnoEmit: '04/17',
+      QtdNFes: 1533,
+      TotalNFe: 447218.65,
+      TotalBCICMS: 18254.50,
+      TotalICMS: 3285.81,
+      TotalBCICMSST: 0.00,
+      TotalICMSST: 0.00,
+      Client: new Client(1, '', '', true, 1, '')
+    },
+    {
+      MesAnoEmit: '05/17',
+      QtdNFes: 6602,
+      TotalNFe: 2102023.40,
+      TotalBCICMS: 96317.00,
+      TotalICMS: 17337.06,
+      TotalBCICMSST: 0.00,
+      TotalICMSST: 0.00,
+      Client: new Client(1, '', '', true, 1, '')
+    },
+    {
+      MesAnoEmit: '06/17',
+      QtdNFes: 4926,
+      TotalNFe: 1627491.75,
+      TotalBCICMS: 91288.50,
+      TotalICMS: 16431.93,
+      TotalBCICMSST: 0.00,
+      TotalICMSST: 0.00,
+      Client: new Client(1, '', '', true, 1, '')
+    },
+    {
+      MesAnoEmit: '07/17',
+      QtdNFes: 5406,
+      TotalNFe: 1589075.50,
+      TotalBCICMS: 93744.50,
+      TotalICMS: 168074.01,
+      TotalBCICMSST: 0.00,
+      TotalICMSST: 0.00,
+      Client: new Client(1, '', '', true, 1, '')
+    },
+    {
+      MesAnoEmit: '08/17',
+      QtdNFes: 4893,
+      TotalNFe: 1618932.95,
+      TotalBCICMS: 131641.00,
+      TotalICMS: 236095.38,
+      TotalBCICMSST: 0.00,
+      TotalICMSST: 0.00,
+      Client: new Client(1, '', '', true, 1, '')
+    },
+    {
+      MesAnoEmit: '09/17',
+      QtdNFes: 3600,
+      TotalNFe: 1156374.65,
+      TotalBCICMS: 103584.00,
+      TotalICMS: 19185.12,
+      TotalBCICMSST: 0.00,
+      TotalICMSST: 0.00,
+      Client: new Client(1, '', '', true, 1, '')
+    },
+    {
+      MesAnoEmit: '10/17',
+      QtdNFes: 3787,
+      TotalNFe: 1250434.60,
+      TotalBCICMS: 130000.00,
+      TotalICMS: 23400.00,
+      TotalBCICMSST: 0.00,
+      TotalICMSST: 0.00,
+      Client: new Client(1, '', '', true, 1, '')
+    },
+    {
+      MesAnoEmit: '11/17',
+      QtdNFes: 3740,
+      TotalNFe: 1101795.58,
+      TotalBCICMS: 99873.76,
+      TotalICMS: 17966.76,
+      TotalBCICMSST: 298.71,
+      TotalICMSST: 47.95,
+      Client: new Client(1, '', '', true, 1, '')
+    },
+    {
+      MesAnoEmit: '12/17',
+      QtdNFes: 4446,
+      TotalNFe: 1229158.74,
+      TotalBCICMS: 104850.68,
+      TotalICMS: 18754.05,
+      TotalBCICMSST: 1261.86,
+      TotalICMSST: 211.33,
+      Client: new Client(1, '', '', true, 1, '')
+    },
     {
       MesAnoEmit: '01/18',
       QtdNFes: 2981,
@@ -253,7 +237,8 @@ export class DashboardPage {
       TotalBCICMS: 90087.37,
       TotalICMS: 16043.77,
       TotalBCICMSST: 0.00,
-      TotalICMSST: 0.00
+      TotalICMSST: 0.00,
+      Client: new Client(1, '', '', true, 1, '')
     },
     {
       MesAnoEmit: '02/18',
@@ -262,7 +247,8 @@ export class DashboardPage {
       TotalBCICMS: 123742.47,
       TotalICMS: 20693.05,
       TotalBCICMSST: 0.00,
-      TotalICMSST: 0.00
+      TotalICMSST: 0.00,
+      Client: new Client(1, '', '', true, 1, '')
     },
     {
       MesAnoEmit: '03/18',
@@ -271,7 +257,8 @@ export class DashboardPage {
       TotalBCICMS: 67115.83,
       TotalICMS: 11661.46,
       TotalBCICMSST: 0.00,
-      TotalICMSST: 0.00
+      TotalICMSST: 0.00,
+      Client: new Client(1, '', '', true, 1, '')
     },
     {
       MesAnoEmit: '04/18',
@@ -280,7 +267,8 @@ export class DashboardPage {
       TotalBCICMS: 104131.86,
       TotalICMS: 18081.53,
       TotalBCICMSST: 0.00,
-      TotalICMSST: 0.00
+      TotalICMSST: 0.00,
+      Client: new Client(1, '', '', true, 1, '')
     },
     {
       MesAnoEmit: '05/18',
@@ -289,7 +277,8 @@ export class DashboardPage {
       TotalBCICMS: 84758.46,
       TotalICMS: 15140.00,
       TotalBCICMSST: 0.00,
-      TotalICMSST: 0.00
+      TotalICMSST: 0.00,
+      Client: new Client(1, '', '', true, 1, '')
     },
     {
       MesAnoEmit: '06/18',
@@ -298,7 +287,8 @@ export class DashboardPage {
       TotalBCICMS: 65401.03,
       TotalICMS: 11450.67,
       TotalBCICMSST: 0.00,
-      TotalICMSST: 0.00
+      TotalICMSST: 0.00,
+      Client: new Client(1, '', '', true, 1, '')
     },
     {
       MesAnoEmit: '07/18',
@@ -307,7 +297,8 @@ export class DashboardPage {
       TotalBCICMS: 25571.71,
       TotalICMS: 3093.95,
       TotalBCICMSST: 13044.22,
-      TotalICMSST: 2573.96
+      TotalICMSST: 2573.96,
+      Client: new Client(1, '', '', true, 1, '')
     },
     {
       MesAnoEmit: '08/18',
@@ -316,7 +307,8 @@ export class DashboardPage {
       TotalBCICMS: 12069.00,
       TotalICMS: 1824.01,
       TotalBCICMSST: 0,
-      TotalICMSST: 0
+      TotalICMSST: 0,
+      Client: new Client(1, '', '', true, 1, '')
     },
     {
       MesAnoEmit: '09/18',
@@ -325,7 +317,8 @@ export class DashboardPage {
       TotalBCICMS: 12560.69,
       TotalICMS: 2223.81,
       TotalBCICMSST: 0,
-      TotalICMSST: 0
+      TotalICMSST: 0,
+      Client: new Client(1, '', '', true, 1, '')
     },
     {
       MesAnoEmit: '10/18',
@@ -334,7 +327,8 @@ export class DashboardPage {
       TotalBCICMS: 13737.85,
       TotalICMS: 2185.59,
       TotalBCICMSST: 0,
-      TotalICMSST: 0
+      TotalICMSST: 0,
+      Client: new Client(1, '', '', true, 1, '')
     }
   ];
 
@@ -420,63 +414,6 @@ export class DashboardPage {
     }, 5000);
   }
 
-  //Charts rendering -------
-  /*  renderCenterComponents() {
-
-      this.barChart = new Chart(this.barCanvas.nativeElement, {
-        type: 'bar',
-        data: {
-          labels: ["Ago 2018", "Set 2017"],
-          datasets: [{
-            label: '',
-            data: [6800, 7000],
-            backgroundColor: [
-              'rgb(125, 175, 188)',
-              'rgb(125, 175, 188)'
-            ],
-            borderWidth: 1
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: true,
-          curvature: 1, //x
-          scales: {
-            yAxes: [{
-              barPercentage: 0.2,
-              display: false,
-              gridLines: {
-                drawBorder: false,
-                display: false
-              }
-            }],
-            xAxes: [{
-              barPercentage: 0.2,
-              color: '#73A5B3',
-              gridLines: {
-                drawBorder: false,
-                display: false
-              }
-            }]
-          }
-        },
-        annotation: {
-          annotations: [{
-            type: 'line',
-            mode: 'horizontal',
-            scaleID: 'y-axis-0',
-            value: 5600,
-            borderColor: 'rgb(196,152,70)',
-            borderWidth: 4,
-            label: {
-              enabled: true,
-              content: 'Test label'
-            }
-          }]
-        }
-      });
-    }*/
-
   setWidthAmount(amount) {
     let widthPct = amount * 200 / 1000;
 
@@ -504,50 +441,12 @@ export class DashboardPage {
 
   getTopFiveClients() {
 
-    var top5Clientes = this.clients.sort(function (a, b) {
+    var top5Clients = this.clients.sort(function (a, b) {
       return a.Amount - b.Amount;
     }).reverse();
 
-    this.topFiveClients = top5Clientes.slice(0, 5);
-
-    //return top5Clientes.slice(0, 5);
+    this.topFiveClients = top5Clients.slice(0, 5);
   }
-
-  /* renderBottomComponents() {
-   var actualmonth = 'Setembro 2018';
-   this.lineChart = new Chart(this.lineCanvas.nativeElement, {
-
-   type: 'horizontalBar',
-   data: {
-   labels: ["Manuel CRUZ", "Ulisses CABRAL", "Cristiana DUARTE", "Andréa ROSÁRIO", "Bartolomeu GOMES"],
-   datasets: [{
-   label: 'Top 5 Clientes \n' + actualmonth,
-   data: [12, 19, 3, 5, 2, 3],
-   backgroundColor: [
-   'rgb(0,39,61)',
-   'rgb(0,39,61)',
-   'rgb(0,39,61)',
-   'rgb(0,39,61)',
-   'rgb(0,39,61)',
-   ],
-   borderWidth: 1
-   }]
-   },
-   options: {
-   responsive: true,
-   maintainAspectRatio: true,
-   scales: {
-   yAxes: [{
-   ticks: {
-   beginAtZero: true
-   }
-   }]
-   }
-   }
-
-   });
-
-   }*/
 
   getPreviousMonthName() {
     const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
@@ -575,10 +474,93 @@ export class DashboardPage {
   }
 
   getCurrentYear() {
-
     //validar si es opción: mismo año u opción mes anterior a mes corriente
     var currentTime = new Date();
     return currentTime.getFullYear();
   }
+
+  getProximoPagamentoDays(){
+    return this.daysInMonth(new Date().getMonth() + 1, new Date().getFullYear());
+  }
+
+  getProximoPagamentoMonth(){
+    var currentTime = new Date();
+    return currentTime.getMonth() + 1;
+  }
+
+  daysInMonth (month, year) {
+    return new Date(year, month, 0).getDate();
+  }
+
+// July
+  //daysInMonth(7,2009); // 31
+
+  public iter: number = 0;
+
+  getNfe() {//Observable<any>{
+    if(this.iter == 0){
+
+      return JSON.stringify(this.http.get<UserData>('http://www.suitedb.com/atfede/connectionNfe.php'));
+
+      //Ajax Request
+      /*var form = new FormData();
+      form.append("pIe_CNPJ", "1");
+      form.append("pIeRS_CNPJ", "0963695916");
+      form.append("pDtPeriodoInicio", "20181001");
+      form.append("pDtPeriodoFim", "20181031");
+      form.append("pNfeNormal", "true");
+      form.append("pNfeCancelada", "false");
+      form.append("pNfe_CFOP", "1");
+      form.append("pCFOP", "0");
+      form.append("pTipoDoc", "2");
+      form.append("pProprio_Terceiro", "1");
+      form.append("pPaginaAtual", "1");
+      form.append("pModeloNFe", "true");
+      form.append("pModeloNFCe", "false");
+
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://www.sefaz.rs.gov.br/ServicosNFE/NFE-ICS-EXT_Do.aspx",
+        "method": "POST",
+        "headers": {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Accept": "application/xml, text/xml, *!/!*; q=0.01",
+          "Cookie": "__utmz=195556014.1539617505.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utma=195556014.2063226952.1539617505.1542725034.1542734378.27; __utmc=195556014; AffinitySefaz=5db14c88d5ff2afd64c946285ab5d8eaebda34d62903451c85fbc84a385d0bf6; ticketSessionProviderSS=6d80717334a747769d821aa50d059fbf; __utmt=1; ASP.NET_SessionId=3n4l0y45zccjcd55eeed1455; ticketSS=d0339e1b52244a57892ef99ca9f848fb; __utmb=195556014.6.10.1542734378",
+          "Host": "www.sefaz.rs.gov.br",
+          "Origin": "https://www.sefaz.rs.gov.br",
+          "Referer": "https://www.sefaz.rs.gov.br/Receita/PainelContribuinte.aspx?ie=0963655825",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36",
+          "x-dtpc": "542858887_238h12",
+          "X-Requested-With": "XMLHttpRequest",
+          "Connection": "keep-alive",
+          "Accept-Language": "es-419,es;q=0.9",
+          "cache-control": "no-cache",
+          "Postman-Token": "480b75b9-f400-434b-8c49-ac081017da49"
+
+          ,
+          // "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers": "*",
+          "Access-Control-Expose-Headers": "*",
+          "Access-Control-Allow-Credentials": "true"
+        },
+        "processData": false,
+        "contentType": false,
+        "mimeType": "multipart/form-data",
+        "data": form
+      }
+
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+      });
+    }*/
+
+
+    }
+
+    this.iter++;
+  }
+
+
 
 }

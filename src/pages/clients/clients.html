@@ -1,5 +1,5 @@
 <style>
-  .popover-color{
+  .popover-color {
     background-color: #1f3e51;
   }
 </style>
@@ -30,21 +30,27 @@
     <div class="selectButtonContainer">
       <ion-select class="month-drp" interface="popover">
         <ng-container *ngFor="let month of months">
-          <ion-option *ngIf="!month.actMonth" [value]="month" class="popover-color">{{month.month}} {{month.year}}</ion-option>
-          <ion-option *ngIf="month.actMonth" selected [value]="month" class="popover-color">{{month.month}} {{month.year}}</ion-option>
+          <ion-option *ngIf="!month.actMonth" [value]="month" class="popover-color">{{month.month}} {{month.year}}
+          </ion-option>
+          <ion-option *ngIf="month.actMonth" selected [value]="month" class="popover-color">{{month.month}}
+            {{month.year}}
+          </ion-option>
         </ng-container>
       </ion-select>
     </div>
   </ion-row>
 
-  <ion-item *ngFor="let client of clients" class="client-row" (click)="goToSpecificClient(client);">
+  <!--<ion-item *ngFor="let client of clients" class="client-row" (click)="goToSpecificClient(client);">-->
+  <ion-item *ngFor="let client of clientsOctubreTopTen" class="client-row" (click)="goToSpecificClient(client);">
     <div class="row" style="width: 100%">
-      <ion-icon name="arrow-round-up" class="icon-arrow"></ion-icon>
-      <div class="col name-client "> {{client.name}}</div>
-      <div class="col value-client">{{client.actualValue}}</div>
-      <div class="col percent-clients">{{client.percentage}}</div>
-      <ion-icon name="arrow-dropright" style="padding: 6px;
-  margin-right: 13px;margin-top: 5px;"></ion-icon>
+      <ion-icon name="arrow-round-up" class="icon-arrow" *ngIf="client.Increments"
+                style="text-align: right; color: rgb(68, 204, 130); font-weight: bold;"></ion-icon>
+      <ion-icon name="arrow-round-down" class="icon-arrow" *ngIf="!client.Increments"
+                style="text-align: right; color: rgb(209, 52, 64); font-weight: bold;"></ion-icon>
+      <div class="col name-client "> {{client.Surename}}</div>
+      <div class="col value-client">R$ {{client.Amount}}</div>
+      <div class="col percent-clients">{{ client.Percentage }}%</div>
+      <ion-icon name="arrow-dropright" style="padding: 6px; margin-right: 13px;margin-top: 5px;"></ion-icon>
     </div>
   </ion-item>
 

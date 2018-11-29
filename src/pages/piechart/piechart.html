@@ -2,8 +2,8 @@
 
   .shadow {
     /* Use -webkit- only if supporting: Chrome < 54, iOS < 9.3, Android < 4.4.4 */
-    -webkit-filter: drop-shadow( -5px -5px 5px #c49846 );
-    filter: drop-shadow( -5px -5px 5px #c49846 );
+    -webkit-filter: drop-shadow(-5px -5px 5px #c49846);
+    filter: drop-shadow(-5px -5px 5px #c49846);
   }
 
   .circular-progress-bar {
@@ -89,7 +89,7 @@
 
   .faturamento_ano_price {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 12px;
     color: #c49846;
   }
 
@@ -104,7 +104,7 @@
     z-index: 1;
     font-weight: 100;
     font-size: 11px;
-    width: 60%;
+    width: 65%; /*60%*/
   }
 
   .faturamento_ano_anterior {
@@ -113,7 +113,7 @@
 
   .faturamento_ano_anterior_price {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 12px;
     color: rgb(125, 172, 160);
   }
 
@@ -155,12 +155,12 @@
     font-size: 12px;
   }
 
-  .price_month{
+  .price_month {
 
   }
 
   .price_year {
-    font-size: 15px;
+    font-size: 14px;
   }
 
 </style>
@@ -195,7 +195,7 @@
 <ion-content class="bg-style">
   <ion-row class="row" id="compName" justify-content-center></ion-row>
   <br/>
-  <!--<ion-row id="compName" justify-content-center> {{(profileData)?.companyName }} </ion-row>-->
+  <!--<ion-row id="compName" justify-content-center> {{(profileData)?.CompanyName }} </ion-row>-->
   <ion-row id="compName" justify-content-center><h4>L A Lopes Com De Cosmeticos Ltda Epp</h4></ion-row>
 
   <!-- <div class="container"> -->
@@ -222,14 +222,15 @@
         <!-- Table values -->
         <ion-row class="valuesTop">
           <ion-col class="valuesTop">
-            <span class="price_year">R$ {{ getTotalExtratosCurrentYear() }}</span>
+            <span class="price_year">R$ {{getTotalExtratosCurrentYear() | number : '1.2-2'}}</span>
           </ion-col>
           <ion-col class="valuesTop">
-            <span class="price_year">R$ {{ getImpostosPrevistos() }}</span>
+            <span class="price_year">R$ {{getImpostosPrevistos('18') | number : '1.2-2'}}</span>
           </ion-col>
           <ion-col class="valuesTop">
             <!--DD/MM-->
-            <span class="price_year">31/12</span>
+            <!--<span class="price_year">{{getProximoPagamentoDays()}}/{{getProximoPagamentoMonth()}}</span>-->
+            <span class="price_year">12/{{getProximoPagamentoMonth()}}</span>
             <br/>
             <span class="issqn">ISSQN</span>
           </ion-col>
@@ -256,7 +257,7 @@
 
     <!-- Middle content  -->
     <ion-grid>
-      <ion-row height="50%">
+      <ion-row height="50%" style="margin-top: 25px; margin-bottom: 15px;">
         <!-- Charts -->
         <!--<canvas #barCanvas></canvas>-->
         <div class="piechart">
@@ -281,20 +282,20 @@
             <div class="piechart_text_year_right">{{getLastYear()}}</div>
 
             <div class="piechart_text">Aproveitamento</div>
-            <div class="piechart_text_percentage">{{ getAproveitamento() }}%</div>
+            <div class="piechart_text_percentage">{{getAproveitamento()}}%</div>
 
             <div class="piechart_text_left">
               <div class="faturamento_ano">Faturamento deste ano</div>
-              <div>(jan - {{ getCurrentMonth() }} 2018)</div>
+              <div>(jan - {{ getLastMonth() }} 2018)</div>
               <br/>
-              <div class="faturamento_ano_price">R$ 48,000</div>
+              <div class="faturamento_ano_price">R$ {{getTotalExtratosCurrentYear()}}</div>
             </div>
 
             <div class="piechart_text_right">
               <div class="faturamento_ano_anterior">Faturamento do ano anterior</div>
-              <div>(jan - {{ getCurrentMonth() }} 2018)</div>
+              <div>(jan - {{ getLastMonth()}} 2018)</div>
               <br/>
-              <div class="faturamento_ano_anterior_price">R$ 64,700</div>
+              <div class="faturamento_ano_anterior_price">R$ {{getTotalExtratosLastYear()}}</div>
             </div>
 
           </div>
@@ -309,33 +310,41 @@
         <h4>Top 5 Clientes</h4>
       </ion-row>
       <ion-row class="row" justify-content-center>
-        <div style="color: rgb(102, 182, 187);">Setembro 2018</div>
+        <div style="color: rgb(102, 182, 187);">{{getPreviousMonthName()}} 2018</div>
       </ion-row>
       <br/>
-      <ion-row height="50%" *ngFor="let client of clients">
+      <ion-row height="50%" *ngFor="let client of topFiveClients">
         <!--<canvas #lineCanvas></canvas>-->
 
-        <ion-col col-5>
+        <ion-col col-6>
           <div style="text-align: right">
-              <span style="color: rgb(102, 182, 187);">
+              <span style="color: rgb(102, 182, 187); font-size: 13px;">
             {{client.Name}}
               </span>
-            <span style="font-weight: bold;">
-            {{client.Surename}}
+            <!--            <span style="font-weight: bold; font-size: 13px;" *ngIf="client.Surename.length > 7">
+                        {{ client.Surename | slice:0:10 }} ...
+                        </span>
+                        <span style="font-weight: bold; font-size: 13px;" *ngIf="client.Surename.length <= 7">
+                        {{ client.Surename }}
+                        </span>-->
+
+            <span style="font-weight: bold; font-size: 13px;">
+            {{ client.Surename }}
             </span>
+
             <ion-icon name="arrow-round-up" class="icon-arrow" *ngIf="client.Increments"
                       style="text-align: right; color: rgb(68, 204, 130); font-weight: bold;"></ion-icon>
             <ion-icon name="arrow-round-down" class="icon-arrow" *ngIf="!client.Increments"
                       style="text-align: right; color: rgb(209, 52, 64); font-weight: bold;"></ion-icon>
           </div>
         </ion-col>
-        <ion-col col-7>
+        <ion-col col-6>
           <div
-            style="width: 60%; background-color: #00253a; margin-top: 3px; height: 12px; display: list-item; float: left; list-style: none; border-radius: 15px 15px 15px 15px"
+            style="width: 50%; background-color: #00253a; margin-top: 3px; height: 12px; display: list-item; float: left; list-style: none; border-radius: 15px 15px 15px 15px"
           ></div> <!--[ngStyle]="setWidthAmount(client.amount)"-->
           &nbsp;
           <span style="font-weight: bold;">
-          {{client.Amount}}
+          R$ {{client.Amount}}
           </span>
         </ion-col>
       </ion-row>

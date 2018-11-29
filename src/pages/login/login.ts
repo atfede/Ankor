@@ -33,7 +33,7 @@ export class LoginPage {
         // Successful login
         if (logAttemp) {
 
-          //this.getUser();
+          this.getUser();
 
           if (!f.additionalUserInfo.isNewUser) {
             this.navCtrl.setRoot('DashboardPage', {
@@ -71,7 +71,7 @@ export class LoginPage {
   }
 
   getUser(): Observable<UserData> {
-    console.log(this.http.get('http://www.suitedb.com/atfede/dbConnection2.php?user_name=' + this.user.email + '&password=' + this.user.password));
+    //console.log(this.http.get('http://www.suitedb.com/atfede/dbConnection2.php?user_name=' + this.user.email + '&password=' + this.user.password));
 
     return this.http.get<UserData>('http://www.suitedb.com/atfede/dbConnection2.php?user_name=' + this.user.email + '&password=' + this.user.password);
   }

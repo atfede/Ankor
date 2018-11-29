@@ -3,7 +3,7 @@
   #chart {
     /*width: auto;*/
     width: 100%;
-    height: 360px; /*220px*/
+    height: 240px; /*360px*/
     /*margin: 10px auto 0;*/
     display: block;
     text-align: center;
@@ -158,7 +158,7 @@
   }
 
   .price_year {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .stats {
@@ -218,14 +218,15 @@
         <!-- Table values -->
         <ion-row class="valuesTop">
           <ion-col class="valuesTop">
-            <span class="price_year">R$ {{ getTotalExtratosCurrentYear() }}</span>
+            <span class="price_year">R$ {{getTotalExtratosCurrentYear() | number : '1.2-2'}}</span>
           </ion-col>
           <ion-col class="valuesTop">
-            <span class="price_year">R$ {{ getImpostosPrevistos() }}</span>
+            <span class="price_year">R$ {{getImpostosPrevistos(18) | number : '1.2-2'}}</span>
           </ion-col>
           <ion-col class="valuesTop">
             <!--DD/MM-->
-            <span class="price_year">31/12</span>
+            <!--<span class="price_year">{{getProximoPagamentoDays()}}/{{getProximoPagamentoMonth()}}</span>-->
+            <span class="price_year">12/{{getProximoPagamentoMonth()}}</span>
             <br/>
             <span class="issqn">ISSQN</span>
           </ion-col>
@@ -303,23 +304,31 @@
       <ion-row height="50%" *ngFor="let client of topFiveClients">
         <!--<canvas #lineCanvas></canvas>-->
 
-        <ion-col col-5>
+        <ion-col col-6>
           <div style="text-align: right">
-              <span style="color: rgb(102, 182, 187);">
+              <span style="color: rgb(102, 182, 187); font-size: 13px;">
             {{client.Name}}
               </span>
-            <span style="font-weight: bold;">
-            {{client.Surename}}
+<!--            <span style="font-weight: bold; font-size: 13px;" *ngIf="client.Surename.length > 7">
+            {{ client.Surename | slice:0:10 }} ...
             </span>
+            <span style="font-weight: bold; font-size: 13px;" *ngIf="client.Surename.length <= 7">
+            {{ client.Surename }}
+            </span>-->
+
+            <span style="font-weight: bold; font-size: 13px;">
+            {{ client.Surename }}
+            </span>
+
             <ion-icon name="arrow-round-up" class="icon-arrow" *ngIf="client.Increments"
                       style="text-align: right; color: rgb(68, 204, 130); font-weight: bold;"></ion-icon>
             <ion-icon name="arrow-round-down" class="icon-arrow" *ngIf="!client.Increments"
                       style="text-align: right; color: rgb(209, 52, 64); font-weight: bold;"></ion-icon>
           </div>
         </ion-col>
-        <ion-col col-7>
+        <ion-col col-6>
           <div
-            style="width: 60%; background-color: #00253a; margin-top: 3px; height: 12px; display: list-item; float: left; list-style: none; border-radius: 15px 15px 15px 15px"
+            style="width: 50%; background-color: #00253a; margin-top: 3px; height: 12px; display: list-item; float: left; list-style: none; border-radius: 15px 15px 15px 15px"
           ></div> <!--[ngStyle]="setWidthAmount(client.amount)"-->
           &nbsp;
           <span style="font-weight: bold;">
@@ -330,5 +339,8 @@
     </ion-grid>
     <!-- END Bottom Content -->
 
+
   </ion-grid>
+
+
 </ion-content>

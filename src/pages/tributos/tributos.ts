@@ -1,5 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component, ViewChild} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {Client} from "../../models/Client";
 
 /**
  * Generated class for the TributosPage page.
@@ -15,29 +16,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 
 
-
 export class TributosPage {
-  tributos: Array<{ abr: string, value: string, duedate: string , paid : boolean}>;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  tributos: Array<{ abr: string, value: string, duedate: string, paid: boolean }>;
 
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
 
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TributosPage');
-
+    //console.log('ionViewDidLoad TributosPage');
 
     this.tributos = [
       {
         abr: 'IRPJ',
         value: 'R$ 1.000,00',
-        duedate: '11/11/2018',
+        duedate: '30/11/2018',
         paid: false
       },
       {
         abr: 'CSLL',
         value: 'R$ 1.000,00',
-        duedate: '12/11/2018',
+        duedate: '30/11/2018',
         paid: false
       },
       {
@@ -47,14 +47,13 @@ export class TributosPage {
         paid: true
       },
       {
-        abr: 'IPI',
+        abr: 'PIS',
         value: 'R$ 1.000,00',
-        duedate: '17/11/2018',
+        duedate: '25/11/2018',
         paid: false
       }
-    ]
+    ];
 
-    
   }
 
 }
