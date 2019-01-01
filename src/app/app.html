@@ -1,3 +1,17 @@
+<style>
+  .menu-title {
+    font-size: 15px;
+    float: left;
+    margin: 6px 4px;
+  }
+
+  .menu-icon {
+    float: left;
+    width: 30px;
+  "
+  }
+</style>
+
 <ion-menu [content]="content" class="bg-style">
   <ion-header>
     <ion-toolbar>
@@ -7,12 +21,23 @@
 
   <ion-content class="bg-style">
     <ion-list>
-      
+
       <button menuClose ion-item *ngFor="let p of pages" class="side-bar" (click)="openPage(p)">
-    <ion-icon name={{p.icon}} style="color: #d29d1a;"></ion-icon>
-      {{p.title}}
-     
-      <ion-icon name={{p.dowload}} style="color: #d29d1a;"></ion-icon>
+        <img src="{{p.icon}}" class="menu-icon"/>
+        <div class="menu-title">{{p.title}}</div>
+
+        <!--<ion-icon name={{p.dowload}} style="color: #d29d1a;"></ion-icon>-->
+      </button>
+    </ion-list>
+
+    <ion-list>
+
+      <button menuClose ion-item *ngFor="let p of bottomMenu" class="side-bar" style="border-top: 0;"
+              (click)="openPage(p)">
+        <img src="{{p.icon}}" class="menu-icon"/>
+        <div class="menu-title">{{p.title}}</div>
+
+        <!--<ion-icon name={{p.dowload}} style="color: #d29d1a;"></ion-icon>-->
       </button>
     </ion-list>
   </ion-content>

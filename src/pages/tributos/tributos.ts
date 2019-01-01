@@ -30,30 +30,34 @@ export class TributosPage {
     this.tributos = [
       {
         abr: 'IRPJ',
-        value: 'R$ 1.000,00',
+        value: 'R$ 930,37',
         duedate: '30/11/2018',
         paid: false
       },
       {
         abr: 'CSLL',
-        value: 'R$ 1.000,00',
+        value: 'R$ 837,34',
         duedate: '30/11/2018',
         paid: false
       },
       {
         abr: 'Cofins',
-        value: 'R$ 3.000,00',
-        duedate: 'Pago',
-        paid: true
+        value: 'R$ 2.325,94',
+        duedate: '25/11/2018', // 'PAGO'
+        paid: false
       },
       {
         abr: 'PIS',
-        value: 'R$ 1.000,00',
+        value: 'R$ 503,95',
         duedate: '25/11/2018',
         paid: false
       }
     ];
 
+  }
+
+  goBack() {
+    this.navCtrl.setRoot('DashboardPage');
   }
 
 }

@@ -12,36 +12,27 @@
 
 </ion-header>
 
-
 <ion-content padding>
-  <!-- First name -->
   <ion-item>
     <ion-label floating>First Name</ion-label>
     <ion-input type="text" [(ngModel)]="profile.FirstName"></ion-input>
   </ion-item>
-  <!-- Last Name -->
 
   <ion-item>
     <ion-label floating>Last Name</ion-label>
     <ion-input type="text" [(ngModel)]="profile.LastName"></ion-input>
   </ion-item>
 
-  <!-- Company Name -->
   <ion-item>
     <ion-label floating>Company name</ion-label>
     <ion-input type="text" [(ngModel)]="profile.CompanyName"></ion-input>
   </ion-item>
 
-  <!-- Company ID -->
   <ion-item>
     <ion-label floating>Company ID</ion-label>
     <ion-input type="text" [(ngModel)]="profile.CompanyId"></ion-input>
   </ion-item>
 
-
-
-
-
-  <button ion-button clear block (click)="createProfile()">Register </button>
+  <button ion-button clear block (click)="createProfile()">Register</button>
 
 </ion-content>

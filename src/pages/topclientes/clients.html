@@ -26,6 +26,47 @@
     color: #c49846;
   }
 
+  .value-client {
+    font-size: 12px;
+  }
+
+  .value-client {
+    padding-top: 10px;
+  }
+
+  .search-button {
+    padding: 0;
+    float: right;
+    line-height: 0;
+  }
+
+  .button-ios {
+    background-color: #002e45 !important;
+  }
+
+  .search-button-img {
+    width: 37px;
+    margin-top: -14px;
+  }
+
+  .fontname {
+    margin-top: 7px !important;
+  }
+
+  .back-button {
+    margin-top: 0px !important;
+    z-index: 99;
+    font-size: 2.5em;
+    color: #b18619;
+  }
+
+  .searchbar-ios {
+    border-radius: 25px;
+  }
+
+  .searchbar-ios .searchbar-input {
+    border-radius: 25px !important;
+  }
 </style>
 
 <ion-header>
@@ -42,14 +83,40 @@
 </ion-header>
 
 <ion-content padding class="bg-style">
-  <ion-row class="row" id="compName" justify-content-center="" style="
-  margin-top: 10px;
-">
-    <ion-col (click)="goBack();">
-      <ion-icon name="md-arrow-back" style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -8px;"></ion-icon>
+  <ion-row class="row" id="compName" justify-content-center="">
+    <ion-col (click)="goBack();" *ngIf="!isSearchBarOpened">
+      <ion-icon name="md-arrow-back" style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -0px;"></ion-icon>
     </ion-col>
 
-    <ion-col class="fontname">Top Clientes</ion-col>
+    <ion-col class="fontname" *ngIf="!isSearchBarOpened">Top Clientes</ion-col>
+
+    <!--<ion-col *ngIf="!isSearchBarOpened">-->
+    <!--<button class="search-button"> &lt;!&ndash;(click)=""&ndash;&gt;-->
+    <!--<img src="./assets/imgs/search-icon.png" style="width: 37px; margin-top: -10px;"/>-->
+    <!--</button>-->
+    <!--</ion-col>-->
+
+    <ion-col *ngIf="isSearchBarOpened">
+      <!-- <ion-searchbar [ngModel]="txtSearch" showCancelButton="true" animated="true" placeholder="Procurar clientes"
+                      (ionCancel)="isSearchBarOpened=false"></ion-searchbar>-->
+      <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="filterClients()" showCancelButton="true" animated="true"
+                     placeholder="Procurar clientes" (ionCancel)="isSearchBarOpened=false"></ion-searchbar>
+    </ion-col>
+
+    <ion-col *ngIf="!isSearchBarOpened">
+      <ion-buttons end>
+        <button ion-button icon-only *ngIf="!isSearchBarOpened" (search)="onSearch($event)"
+                (click)="isSearchBarOpened=true">
+          <!--<ion-icon name="search"></ion-icon>-->
+          <img src="./assets/imgs/search-icon.png" class="search-button-img"/>
+        </button>
+      </ion-buttons>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+
+    <ion-col></ion-col>
 
     <div class="selectButtonContainer">
       <ion-select class="month-drp" interface="popover">
@@ -62,10 +129,11 @@
         </ng-container>
       </ion-select>
     </div>
+
+    <ion-col></ion-col>
   </ion-row>
 
-  <!--<ion-item *ngFor="let client of clients" class="client-row" (click)="goToSpecificClient(client);">-->
-  <ion-item *ngFor="let client of clientsOctubreTopTen" class="client-row" (click)="goToSpecificClient(client);">
+  <ion-item *ngFor="let client of filteredTopTenClients" class="client-row" (click)="viewClient(client);">
     <div class="row" style="width: 100%">
       <ion-icon name="arrow-round-up" class="icon-arrow" *ngIf="client.Increments"
                 style="text-align: right; color: rgb(68, 204, 130); font-weight: bold;"></ion-icon>
@@ -74,15 +142,14 @@
       <div class="col name-client "> {{client.Surename}}</div>
       <div class="col value-client">R$ {{client.Amount}}</div>
       <div class="col percent-clients">{{ client.Percentage }}%</div>
-      <ion-icon name="arrow-dropright"
-                style="padding: 6px; margin-right: 13px; margin-top: 5px; color: #ffffff;"></ion-icon>
+      <ion-icon name="arrow-dropright" style="padding: 6px; margin-top: 5px; color: #ffffff;"></ion-icon>
     </div>
   </ion-item>
 
   <!-- <ion-row height="50%" style="margin-top: 25px; margin-bottom: 15px;">
      &lt;!&ndash; Charts &ndash;&gt;
      &lt;!&ndash;<canvas #barCanvas></canvas>&ndash;&gt;
-     <div class="piechart">
+     <div class="dashboardyear">
        <div class="progress-wrapper">
          <round-progress
            [current]="25"

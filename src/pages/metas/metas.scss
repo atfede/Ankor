@@ -1,0 +1,49 @@
+metas {
+  ion-content {
+    background-color: #1f3e51;
+  }
+
+  .scroll-content {
+    background-color: #1f3e51;
+  }
+
+  .back-arrow {
+    color: #C49846;
+  }
+
+  .metas-title {
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .progress-bar {
+    //width: 100%;
+  }
+
+  .selectButtonContainer {
+    display: contents;
+  }
+
+  .select-ios {
+    max-width: 100%;
+    color: white;
+    //background-color: #00253a;
+  }
+
+  .progress-bar .progress-outer{
+    padding: 0;
+
+  }
+
+  .progress-inner{
+    -webkit-box-shadow:0 0 20px #C49846;
+    -moz-box-shadow: 0 0 20px #C49846;
+    box-shadow: 0 0 20px #C49846;
+  }
+
+  .client-name{
+    float: right;
+    margin-top: 5px;
+    color: white;
+  }
+}

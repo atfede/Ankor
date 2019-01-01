@@ -5,7 +5,9 @@ import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import {MyApp} from './app.component';
 import {HomePage} from '../pages/home/home';
 import {ListPage} from '../pages/list/list';
-// import { DashboardPage } from '../pages/dashboard/dashboard';
+// import {MetasComponent} from '../pages/metas/metas';
+
+// import { DashboardPage } from '../pages/dashboardmes/dashboardmes';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -26,15 +28,18 @@ import {FIREBASE_CONFIG} from './app.firebase.config';
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
 import {NgxLineChartModule} from 'ngx-line-chart';
 import {HttpClientModule} from '@angular/common/http';
+// import {ProgressBarComponent} from '../components/progress-bar/progress-bar';
+import {SharedModule} from '../components/shared-progress-bar-module/sharedmodules.module';
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage,
-    ListPage
-    // DashboardPage
-    // LoginPage,
-    // RegisterPage
+    MyApp
+    , HomePage
+    , ListPage
+    // , MetasComponent
+    // , DashboardPage
+    // , LoginPage,
+    // , RegisterPage,
   ],
   imports: [
     BrowserModule,
@@ -44,10 +49,11 @@ import {HttpClientModule} from '@angular/common/http';
     AngularFireDatabaseModule,
     RoundProgressModule,
     NgxLineChartModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
+
 
   ],
-
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
@@ -55,7 +61,8 @@ import {HttpClientModule} from '@angular/common/http';
     ListPage
     // DashboardPage
     // RegisterPage,
-    // LoginPage
+    // LoginPage,
+
 
   ],
   providers: [

@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
 import {User} from '../../models/User';
 import {UserData} from '../../models/UserData';
-// import { Dashboard } from '../dashboard/dashboard';
+// import { Dashboard } from '../dashboardmes/dashboardmes';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {Observable} from "rxjs";

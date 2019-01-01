@@ -19,14 +19,13 @@
 
 <ion-content padding class="bg-style">
   <ion-row class="row" id="compName" justify-content-center="" style="margin-top: 10px;font-size: larger;">
-    <ion-col col-2>
+    <ion-col col-2 (click)="goBack()">
         <ion-icon class="back-arrow" name="md-arrow-back" style="font-size: 2em;"></ion-icon>
     </ion-col>
     <ion-col col-8 style="text-align:center;" align-items-center justify-content-center>Tributos a pagar</ion-col>
     <ion-col col-2></ion-col>
 
   </ion-row>
-
 
   <ion-row class="tributo-row" *ngFor="let tributo of tributos" align-items-center justify-content-center="">
 
@@ -39,9 +38,13 @@
       {{tributo.value}}
     </ion-col>
 
-    <ion-col class="tributo.paid" *ngIf="tributo.paid" style=" color : rgb(68, 204, 130) !important;font-weight: bold;    text-align: center;">
-      <ion-icon name="checkmark" style=" color : rgb(68, 204, 130) !important; font-weight: bold;    text-align: center;"></ion-icon>
+    <!--<ion-col class="tributo.paid" *ngIf="tributo.paid" style=" color : rgb(68, 204, 130) !important;font-weight: bold;    text-align: center;">-->
+    <ion-col class="tributo.paid" *ngIf="tributo.paid">
+      <!--<ion-icon name="checkmark" style=" color : rgb(68, 204, 130) !important; font-weight: bold;    text-align: center;"></ion-icon>
       PAGO
+    </ion-col>-->
+      <ion-label style="text-align: center;">DATA PAGO</ion-label>
+      30/11/2018
     </ion-col>
     <ion-col *ngIf="!tributo.paid" style="text-align: center;">
       <ion-label style="text-align: center;">DATA PAGO</ion-label>

@@ -3,7 +3,7 @@
   #chart {
     /*width: auto;*/
     width: 100%;
-    height: 240px; /*360px*/
+    height: 300px; /*240px*/
     /*margin: 10px auto 0;*/
     display: block;
     text-align: center;
@@ -295,7 +295,7 @@
       <!-- Bottom Content -->
 
       <ion-row class="row" justify-content-center>
-        <h4>Top 5 Clientes</h4>
+        <h5>Top 5 Clientes</h5>
       </ion-row>
       <ion-row class="row" justify-content-center>
         <div style="color: rgb(102, 182, 187);">{{getPreviousMonthName()}} 2018</div>
@@ -306,17 +306,17 @@
 
         <ion-col col-6>
           <div style="text-align: right">
-              <span style="color: rgb(102, 182, 187); font-size: 13px;">
+              <span style="color: rgb(102, 182, 187); font-size: 11px;">
             {{client.Name}}
               </span>
-<!--            <span style="font-weight: bold; font-size: 13px;" *ngIf="client.Surename.length > 7">
-            {{ client.Surename | slice:0:10 }} ...
-            </span>
-            <span style="font-weight: bold; font-size: 13px;" *ngIf="client.Surename.length <= 7">
-            {{ client.Surename }}
-            </span>-->
+            <!--            <span style="font-weight: bold; font-size: 13px;" *ngIf="client.Surename.length > 7">
+                        {{ client.Surename | slice:0:10 }} ...
+                        </span>
+                        <span style="font-weight: bold; font-size: 13px;" *ngIf="client.Surename.length <= 7">
+                        {{ client.Surename }}
+                        </span>-->
 
-            <span style="font-weight: bold; font-size: 13px;">
+            <span style="font-weight: bold; font-size: 11px;">
             {{ client.Surename }}
             </span>
 

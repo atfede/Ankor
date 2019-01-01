@@ -16,12 +16,13 @@ export class PiechartPage {
     {Id: 3, Name: 'FATIMA', Surename: 'APARECIDA FAGUN.', Increments: true, Amount: 2345.76, ClientType: 'servicio'}, //469.574.560-72
     {Id: 4, Name: '', Surename: 'MAXIMA LOGISTICA E DIST.', Increments: true, Amount: 3695.74, ClientType: 'comercio'}, //22829604000188
     {Id: 6, Name: 'PABLO', Surename: 'PAEZ RODRIGUEZ', Increments: true, Amount: 2353.14, ClientType: 'comercio'}, //096.233.801-00
-    {Id: 10, Name: 'DEBORAH J.', Surename: 'PEREZ CABRERA', Increments: false, Amount: 2301.42, ClientType: 'comercio'} //096.212.221-17
+    {Id: 10, Name: 'DEBORAH', Surename: 'PEREZ CABRERA', Increments: false, Amount: 2301.42, ClientType: 'comercio'} //096.212.221-17
   ];
 
   public topFiveClients: Array<Client> = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
   }
 
   ngOnInit() {
@@ -49,8 +50,7 @@ export class PiechartPage {
     //TODO: check Constants
     if (Constants.IsComercio) {
       return total;
-    }
-    else if (Constants.IsServicio) {
+    } else if (Constants.IsServicio) {
       return total;
     }
     return null;
@@ -68,8 +68,7 @@ export class PiechartPage {
     //TODO: check Constants
     if (Constants.IsComercio) {
       return total;
-    }
-    else if (Constants.IsServicio) {
+    } else if (Constants.IsServicio) {
       return total;
     }
     return null;
@@ -78,8 +77,7 @@ export class PiechartPage {
   getTotalExtratosCurrentMonth() {
     if (Constants.IsComercio) {
       return this.extratoTotal[this.extratoTotal.length - 1].TotalNFe - Constants.ICMS - Constants.COMERCIO - Constants.ISSQN5;
-    }
-    else if (Constants.IsServicio) {
+    } else if (Constants.IsServicio) {
       return this.extratoTotal[this.extratoTotal.length - 1].TotalNFe - Constants.ICMS - Constants.SERVICIO - Constants.ISSQN5;
     }
   }
@@ -121,13 +119,19 @@ export class PiechartPage {
     return monthNames[d.getMonth()].toLowerCase().substring(0, 3);
   }
 
-  getLastMonth() {
+  getLastMonthName() {
     const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
       "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
     ];
 
     const d = new Date();
-    return monthNames[d.getMonth() - 1].toLowerCase().substring(0, 3);
+    const m = d.getMonth();
+
+    if (m == 0) {
+      return monthNames[m].toLowerCase().substring(0, 3);
+    } else {
+      return monthNames[m - 1].toLowerCase().substring(0, 3);
+    }
   }
 
   public extratoTotal: Array<ExtratoTotal> = [
@@ -414,7 +418,6 @@ export class PiechartPage {
   }
 
   getTopFiveClients() {
-
     var top5Clients = this.clients.sort(function (a, b) {
       return a.Amount - b.Amount;
     }).reverse();

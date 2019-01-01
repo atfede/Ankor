@@ -174,7 +174,7 @@
 <!--<ion-header>
 
   <ion-navbar>
-    <ion-title>piechart</ion-title>
+    <ion-title>dashboardyear</ion-title>
   </ion-navbar>
 
 </ion-header>-->
@@ -196,7 +196,7 @@
   <ion-row class="row" id="compName" justify-content-center></ion-row>
   <br/>
   <!--<ion-row id="compName" justify-content-center> {{(profileData)?.CompanyName }} </ion-row>-->
-  <ion-row id="compName" justify-content-center><h4>L A Lopes Com De Cosmeticos Ltda Epp</h4></ion-row>
+  <ion-row id="compName" justify-content-center><h5>L A Lopes Com De Cosmeticos Ltda Epp</h5></ion-row>
 
   <!-- <div class="container"> -->
   <ion-grid class="main-container-grid">
@@ -286,14 +286,14 @@
 
             <div class="piechart_text_left">
               <div class="faturamento_ano">Faturamento deste ano</div>
-              <div>(jan - {{ getLastMonth() }} 2018)</div>
+              <div>({{ getLastMonthName() }} - {{getCurrentYear()}})</div>
               <br/>
               <div class="faturamento_ano_price">R$ {{getTotalExtratosCurrentYear()}}</div>
             </div>
 
             <div class="piechart_text_right">
               <div class="faturamento_ano_anterior">Faturamento do ano anterior</div>
-              <div>(jan - {{ getLastMonth()}} 2018)</div>
+              <div>({{ getLastMonthName()}} - {{getLastYear()}})</div>
               <br/>
               <div class="faturamento_ano_anterior_price">R$ {{getTotalExtratosLastYear()}}</div>
             </div>
@@ -307,7 +307,7 @@
       <!-- Bottom Content -->
 
       <ion-row class="row" justify-content-center>
-        <h4>Top 5 Clientes</h4>
+        <h5>Top 5 Clientes</h5>
       </ion-row>
       <ion-row class="row" justify-content-center>
         <div style="color: rgb(102, 182, 187);">{{getPreviousMonthName()}} 2018</div>
@@ -318,7 +318,7 @@
 
         <ion-col col-6>
           <div style="text-align: right">
-              <span style="color: rgb(102, 182, 187); font-size: 13px;">
+              <span style="color: rgb(102, 182, 187); font-size: 11px;">
             {{client.Name}}
               </span>
             <!--            <span style="font-weight: bold; font-size: 13px;" *ngIf="client.Surename.length > 7">
@@ -328,7 +328,7 @@
                         {{ client.Surename }}
                         </span>-->
 
-            <span style="font-weight: bold; font-size: 13px;">
+            <span style="font-weight: bold; font-size: 11px;">
             {{ client.Surename }}
             </span>
 

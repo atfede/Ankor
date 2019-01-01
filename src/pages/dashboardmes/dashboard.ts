@@ -49,7 +49,7 @@ export class DashboardPage {
     {Id: 3, Name: 'FATIMA', Surename: 'APARECIDA FAGUN.', Increments: true, Amount: 2345.76, ClientType: 'servicio'}, //469.574.560-72
     {Id: 4, Name: '', Surename: 'MAXIMA LOGISTICA E DIST.', Increments: true, Amount: 3695.74, ClientType: 'comercio'}, //22829604000188
     {Id: 6, Name: 'PABLO', Surename: 'PAEZ RODRIGUEZ', Increments: true, Amount: 2353.14, ClientType: 'comercio'}, //096.233.801-00
-    {Id: 10, Name: 'DEBORAH J.', Surename: 'PEREZ CABRERA', Increments: false, Amount: 2301.42, ClientType: 'comercio'} //096.212.221-17
+    {Id: 10, Name: 'DEBORAH', Surename: 'PEREZ CABRERA', Increments: false, Amount: 2301.42, ClientType: 'comercio'} //096.212.221-17
   ];
 
   public topFiveClients: Array<Client> = [];
@@ -66,12 +66,12 @@ export class DashboardPage {
     //TODO: check Constants
     if (Constants.IsComercio) {
       return total;
-    }
-    else if (Constants.IsServicio) {
+    } else if (Constants.IsServicio) {
       return total;
     }
     return null;
   }
+
   getImpostosPrevistos(year) {
     let totalICMS = 0;
     let totalICMSST = 0;
@@ -99,8 +99,7 @@ export class DashboardPage {
   getTotalExtratosCurrentMonth() {
     if (Constants.IsComercio) {
       return this.extratoTotal[this.extratoTotal.length - 1].TotalNFe - Constants.ICMS - Constants.COMERCIO - Constants.ISSQN5;
-    }
-    else if (Constants.IsServicio) {
+    } else if (Constants.IsServicio) {
       return this.extratoTotal[this.extratoTotal.length - 1].TotalNFe - Constants.ICMS - Constants.SERVICIO - Constants.ISSQN5;
     }
   }
@@ -454,7 +453,13 @@ export class DashboardPage {
     ];
 
     const d = new Date();
-    return monthNames[d.getMonth() - 1]; //.substring(0, 3 , .toUpperCase()
+    const m = d.getMonth();
+
+    if (m == 0) {
+      return monthNames[m]; //.substring(0, 3 , .toUpperCase()
+    } else {
+      return monthNames[m - 1];
+    }
   }
 
   getCurrentMonthName() {
@@ -467,7 +472,6 @@ export class DashboardPage {
   }
 
   getLastYear() {
-
     //validar si es opción: mismo año u opción mes anterior a mes corriente
     var currentTime = new Date();
     return currentTime.getFullYear() - 1;
@@ -479,16 +483,16 @@ export class DashboardPage {
     return currentTime.getFullYear();
   }
 
-  getProximoPagamentoDays(){
+  getProximoPagamentoDays() {
     return this.daysInMonth(new Date().getMonth() + 1, new Date().getFullYear());
   }
 
-  getProximoPagamentoMonth(){
+  getProximoPagamentoMonth() {
     var currentTime = new Date();
     return currentTime.getMonth() + 1;
   }
 
-  daysInMonth (month, year) {
+  daysInMonth(month, year) {
     return new Date(year, month, 0).getDate();
   }
 
@@ -498,7 +502,7 @@ export class DashboardPage {
   public iter: number = 0;
 
   getNfe() {//Observable<any>{
-    if(this.iter == 0){
+    if (this.iter == 0) {
 
       return JSON.stringify(this.http.get<UserData>('http://www.suitedb.com/atfede/connectionNfe.php'));
 
@@ -560,7 +564,6 @@ export class DashboardPage {
 
     this.iter++;
   }
-
 
 
 }

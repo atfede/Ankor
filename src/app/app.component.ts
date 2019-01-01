@@ -5,7 +5,7 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 
 import {HomePage} from '../pages/home/home';
 import {ListPage} from '../pages/list/list';
-// import { DashboardPage } from '../pages/dashboard/dashboard';
+// import { DashboardPage } from '../pages/dashboardmes/dashboardmes';
 // import { LoginPage } from '../pages/login/login';
 // import { RegisterPage } from '../pages/register/register';
 
@@ -19,20 +19,26 @@ export class MyApp {
   rootPage: any = 'LoginPage';
 
   pages: Array<{ title: string, component: any, icon: string }>;
+  bottomMenu: Array<{ title: string, component: any, icon: string }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      {title: 'Dashboard', component: 'DashboardPage', icon: 'podium'},
-      {title: 'Clientes', component: 'ClientsPage', icon: 'contacts'},
-      {title: 'Impostos', component: 'TributosPage', icon: 'logo-usd'},
-      {title: 'DRE Sintetica', component: 'TributosPage', icon: 'paper'},
-      {title: 'Simuladores', component: 'TributosPage', icon: 'calculator'},
-      {title: 'Declaracao de Faturamento', component: 'TributosPage', icon: 'briefcase'},
-      {title: 'Balancete', component: 'TributosPage', icon: 'trending-up'}
+      {title: 'Dashboard', component: 'DashboardPage', icon: 'assets/imgs/dashboard-icon.png'},
+      {title: 'Clientes', component: 'ClientsPage', icon: 'assets/imgs/clientes-icon.png'},
+      {title: 'Impostos', component: 'TributosPage', icon: 'assets/imgs/impostos-icon.png'},
+      {title: 'DRE Sintetica', component: 'TributosPage', icon: 'assets/imgs/logout-icon.png'},
+      {title: 'Simuladores', component: 'TributosPage', icon: 'assets/imgs/simuladores-icon.png'},
+      {title: 'Declaracao de Faturamento', component: 'TributosPage', icon: 'assets/imgs/declaracaodefaturamento.png'},
+      {title: 'Balancete', component: 'TributosPage', icon: 'assets/imgs/balancete-icon.png'},
+      {title: 'Metas', component: 'MetasComponent', icon: 'assets/imgs/metas-icon.png'}
+    ];
 
+    this.bottomMenu = [
+      {title: 'Configuracoes', component: 'TributosPage', icon: 'assets/imgs/configuracoes-icon.png'},
+      {title: 'Logout', component: 'Login', icon: 'assets/imgs/logout-icon.png'}
     ];
   }
 

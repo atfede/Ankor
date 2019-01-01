@@ -1,4 +1,4 @@
-import {Component} from '@angular/core'; //, ViewChild
+import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams, LoadingController} from 'ionic-angular';
 
 @IonicPage()
@@ -10,6 +10,7 @@ import {IonicPage, NavController, NavParams, LoadingController} from 'ionic-angu
 export class ClientPage {
 
   actualValue: string;
+
   lastValue: string;
   isIncrementing: boolean;
   percentage: string;
@@ -18,19 +19,22 @@ export class ClientPage {
   tiketMedioMensal: string;
   mesAtual: string;
 
-  iter: number = 0;
+  totalFaturado: number = 77531.24;
 
+  iter: number = 0;
   milestone: number = 0;
+  metaEstablecida: number = 0;
+  metaEstablecidaFlag: Boolean = false;
 
   myDataSets = [{
     name: '', //prices
     points: [
-      {x: 10, y: 100},
-      {x: 20, y: 200},
-      {x: 30, y: 300},
-      {x: 40, y: 200},
-      {x: 50, y: 250},
-      {x: 60, y: 350}
+      {x: 6, y: 5174.53}, //junho 2018
+      {x: 7, y: 8320.66}, //julio 2018
+      {x: 8, y: 7200.42}, //agosto 2018
+      {x: 9, y: 635.67}, //sept 2018
+      {x: 10, y: 4947.73},
+      {x: 11, y: 11349.58}
     ]
   }];
 
@@ -98,8 +102,11 @@ export class ClientPage {
     'SET'
   ];
 
+
+  // [xLabelFunction]="formatXAxisValue.bind(this)" poner en html
+
   formatXAxisValue(value: number) {
-    return `Month ${value}`;
+    return `Mes ${value}`;
     /*this.iter++;
      return this.months[this.iter];*/
   }
@@ -117,13 +124,8 @@ export class ClientPage {
     this.isIncrementing = this.navParams.get('isIncrementing');
 
     // Hard coded values
-    this.tiketMedioMensal = 'R$ 480 mil';
-    this.mesAtual = 'R$ 563 mil';
-
-  }
-
-  establishMilestone() {
-    //this.milestone =
+    this.tiketMedioMensal = 'R$ 37 mil'; //37628,59
+    this.mesAtual = 'R$ 77 mil'; //77.531,24
 
   }
 
@@ -147,5 +149,13 @@ export class ClientPage {
     this.navCtrl.setRoot('ClientsPage');
   }
 
+  getPIS() {
+    return 0.65 * this.totalFaturado / 100;
+  }
+
+  displayMilestone(milestone) {
+    this.metaEstablecida = milestone._value;
+    this.metaEstablecidaFlag = true;
+  }
 
 }

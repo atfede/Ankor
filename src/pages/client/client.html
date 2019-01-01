@@ -1,5 +1,20 @@
 <style>
+  .line_chart {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
+  .monthsDrawed {
+    margin-top: -50px;
+    margin-left: 30px;
+  }
+
+  .monthDrawedName {
+    width: 50px;
+    float: left;
+    font-size: 11px;
+  }
 </style>
 
 <ion-header>
@@ -18,10 +33,12 @@
 <ion-content padding class="bg-style">
   <ion-row class="row" id="compName" justify-content-center="" style="margin-top: 10px;font-size: larger;">
     <ion-col col-2>
-      <ion-icon name="md-arrow-back" style="font-size: 2.5em;color: #b18619 ;margin-top: -8px;"
+      <ion-icon name="md-arrow-back" style="font-size: 2.5em;color: #b18619; margin-top: -8px;"
                 (click)='goBack()'></ion-icon>
     </ion-col>
-    <ion-col col-8 style="text-align:center;" align-items-center justify-content-center>{{clientName}}</ion-col>
+    <!--<ion-col col-8 style="text-align:center;" align-items-center justify-content-center>{{clientName}}</ion-col>-->
+    <ion-col col-8 style="text-align:center;" align-items-center justify-content-center>MAXIMA LOGISTICA E DIST.
+    </ion-col>
     <ion-col col-2></ion-col>
   </ion-row>
   <ion-row style="text-align:center;
@@ -32,8 +49,32 @@
            align-items-center justify-content-center> PERFIL DO CLIENTE
   </ion-row>
   <ion-row>
-    <ngx-line-chart [dataSets]="myDataSets" [xLabelFunction]="formatXAxisValue.bind(this)"
+
+    <!--linea meta-->
+    <div *ngIf="metaEstablecidaFlag"
+         style="
+    width: 80%;
+    margin-left: 28px;
+    position: absolute;
+    background-color: #36981b;
+    margin-top: 62px;
+    height: 2px;
+    display: block;
+    font-size: 12px;
+"
+    >R$ {{metaEstablecida}}</div>
+
+    <ngx-line-chart class="line_chart"
+                    [dataSets]="myDataSets"
                     [style]="chartStyles"></ngx-line-chart>
+    <div id="monthsDrawed" class="monthsDrawed">
+      <div class="monthDrawedName">JUN</div>
+      <div class="monthDrawedName">JUL</div>
+      <div class="monthDrawedName">AGO</div>
+      <div class="monthDrawedName">SET</div>
+      <div class="monthDrawedName">OUT</div>
+      <div class="monthDrawedName">NOV</div>
+    </div>
   </ion-row>
 
   <!-- Client values frame -->
@@ -50,21 +91,15 @@
         <p>{{mesAtual}}</p>
       </ion-col>
       <!-- position 3/3 -->
-      <!-- if paid  -->
-      <ion-col class="tributo.paid" *ngIf="isIncrementing"
-               style="color : rgb(68, 204, 130) !important;font-weight: bold; text-align: center;">
+
+      <ion-col style="text-align: center;">
         <ion-label>TENDENCIA</ion-label>
         <p>
-          <ion-icon name="arrow-round-up"
-                    style="color : rgb(68, 204, 130) !important; font-weight: bold;font-size: 2.25rem; text-align: center;"></ion-icon>
-        </p>
-      </ion-col>
-      <!-- else -->
-      <ion-col *ngIf="!isIncrementing" style="text-align: center;">
-        <ion-label>TENDENCIA</ion-label>
-        <p>
-          <ion-icon name="arrow-round-down"
-                    style=" color : red !important; font-weight: bold;font-size: 2.25rem   ; text-align: center;"></ion-icon>
+          <ion-icon *ngIf="!isIncrementing" name="arrow-round-up"
+                    style="color : rgb(68, 204, 130) !important; font-weight: bold; font-size: 2.25rem; text-align: center;"></ion-icon>
+
+          <ion-icon *ngIf="isIncrementing" name="arrow-round-down"
+                    style="color: red !important; font-weight: bold;font-size: 2.25rem   ; text-align: center;"></ion-icon>
         </p>
       </ion-col>
       <!-- end else -->
@@ -77,20 +112,27 @@
   <section class="metasItem">
     <ion-row align-items-center justify-content-center="">
       <p>
-        <ion-label>META</ion-label>
+        <ion-label>META ESTABLECIDA</ion-label>
+        <ion-label *ngIf="metaEstablecidaFlag" style="
+        font-size: 18px;
+    color: white;
+    font-weight: bold;
+    text-align: center;">R$ {{metaEstablecida}}
+        </ion-label>
       </p>
     </ion-row>
 
     <ion-row align-items-center justify-content-center="">
       <ion-row align-items-center justify-content-center="">
         <p style="margin:0px;">R$ &nbsp;</p>
-        <ion-input class="inputMeta" type="text" align-items-center justify-content-center=""></ion-input>
+        <ion-input class="inputMeta" type="text" align-items-center justify-content-center="" #milestone></ion-input>
       </ion-row>
     </ion-row>
+
     <ion-row align-items-center justify-content-center="" style="margin-top:5%;">
-      <button class="btn-style" id="establishMilestone" ion-button (click)="establishMilestone()" block>
-      Establecer meta
-    </button>
+      <button class="btn-style" id="establishMilestone" ion-button (click)="displayMilestone(milestone)" block>
+        Establecer meta
+      </button>
     </ion-row>
   </section>
   <!-- End with metas -->
