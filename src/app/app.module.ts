@@ -30,6 +30,10 @@ import {NgxLineChartModule} from 'ngx-line-chart';
 import {HttpClientModule} from '@angular/common/http';
 // import {ProgressBarComponent} from '../components/progress-bar/progress-bar';
 import {SharedModule} from '../components/shared-progress-bar-module/sharedmodules.module';
+import {DresinteticoComponent} from "../pages/dresintetico/dresintetico";
+import {DresinteticoComponentModule} from '../pages/dresintetico/dresintetico.module';
+
+import {Globals} from '../components/Globals';
 
 @NgModule({
   declarations: [
@@ -40,6 +44,7 @@ import {SharedModule} from '../components/shared-progress-bar-module/sharedmodul
     // , DashboardPage
     // , LoginPage,
     // , RegisterPage,
+    // , DresinteticoComponentModule
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,8 @@ import {SharedModule} from '../components/shared-progress-bar-module/sharedmodul
     RoundProgressModule,
     NgxLineChartModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    DresinteticoComponentModule
 
 
   ],
@@ -66,9 +72,10 @@ import {SharedModule} from '../components/shared-progress-bar-module/sharedmodul
 
   ],
   providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    StatusBar
+    , SplashScreen
+    , {provide: ErrorHandler, useClass: IonicErrorHandler}
+    , Globals
   ]
 })
 export class AppModule {

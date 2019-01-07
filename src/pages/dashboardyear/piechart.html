@@ -163,21 +163,11 @@
     font-size: 14px;
   }
 
+  .client-amount {
+    font-weight: bold;
+  }
+
 </style>
-
-<!--
-  Generated template for the PiechartPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<!--<ion-header>
-
-  <ion-navbar>
-    <ion-title>dashboardyear</ion-title>
-  </ion-navbar>
-
-</ion-header>-->
 
 <ion-header>
   <ion-navbar class="topBar" hideBackButton showMenuButton>
@@ -196,7 +186,17 @@
   <ion-row class="row" id="compName" justify-content-center></ion-row>
   <br/>
   <!--<ion-row id="compName" justify-content-center> {{(profileData)?.CompanyName }} </ion-row>-->
-  <ion-row id="compName" justify-content-center><h5>L A Lopes Com De Cosmeticos Ltda Epp</h5></ion-row>
+  <ion-row id="compName" justify-content-center>
+    <ion-col col-1 (click)="viewPreviousCompany();">
+      <ion-icon name="md-arrow-back" style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -0px;"></ion-icon>
+    </ion-col>
+    <ion-col col-10 style="text-align: center; margin-top: -9px;">
+      <h6>L A Lopes Com De Cosmeticos Ltda Epp</h6>
+    </ion-col>
+    <ion-col col-1 (click)="viewNextCompany();">
+      <ion-icon name="md-arrow-forward" style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -0px;"></ion-icon>
+    </ion-col>
+  </ion-row>
 
   <!-- <div class="container"> -->
   <ion-grid class="main-container-grid">
@@ -258,8 +258,7 @@
     <!-- Middle content  -->
     <ion-grid>
       <ion-row height="50%" style="margin-top: 25px; margin-bottom: 15px;">
-        <!-- Charts -->
-        <!--<canvas #barCanvas></canvas>-->
+
         <div class="piechart">
           <div class="progress-wrapper">
             <round-progress
@@ -314,7 +313,6 @@
       </ion-row>
       <br/>
       <ion-row height="50%" *ngFor="let client of topFiveClients">
-        <!--<canvas #lineCanvas></canvas>-->
 
         <ion-col col-6>
           <div style="text-align: right">
@@ -340,10 +338,10 @@
         </ion-col>
         <ion-col col-6>
           <div
-            style="width: 50%; background-color: #00253a; margin-top: 3px; height: 12px; display: list-item; float: left; list-style: none; border-radius: 15px 15px 15px 15px"
-          ></div> <!--[ngStyle]="setWidthAmount(client.amount)"-->
+            style="width: 50%; background-color: #00253a; margin-top: 3px; height: 12px; display: list-item; float: left; list-style: none; border-radius: 15px 15px 15px 15px"></div>
+          <!--[ngStyle]="setWidthAmount(client.amount)"-->
           &nbsp;
-          <span style="font-weight: bold;">
+          <span class="client-amount">
           R$ {{client.Amount}}
           </span>
         </ion-col>

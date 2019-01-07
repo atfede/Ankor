@@ -29,16 +29,16 @@ export class MyApp {
       {title: 'Dashboard', component: 'DashboardPage', icon: 'assets/imgs/dashboard-icon.png'},
       {title: 'Clientes', component: 'ClientsPage', icon: 'assets/imgs/clientes-icon.png'},
       {title: 'Impostos', component: 'TributosPage', icon: 'assets/imgs/impostos-icon.png'},
-      {title: 'DRE Sintetica', component: 'TributosPage', icon: 'assets/imgs/logout-icon.png'},
-      {title: 'Simuladores', component: 'TributosPage', icon: 'assets/imgs/simuladores-icon.png'},
-      {title: 'Declaracao de Faturamento', component: 'TributosPage', icon: 'assets/imgs/declaracaodefaturamento.png'},
-      {title: 'Balancete', component: 'TributosPage', icon: 'assets/imgs/balancete-icon.png'},
+      {title: 'DRE Sintetica', component: 'DresinteticoComponent', icon: 'assets/imgs/logout-icon.png'},
+      {title: 'Simuladores', component: 'DashboardPage', icon: 'assets/imgs/simuladores-icon.png'},
+      {title: 'Declaracao de Faturamento', component: 'DashboardPage', icon: 'assets/imgs/declaracaodefaturamento.png'},
+      {title: 'Balancete', component: 'DashboardPage', icon: 'assets/imgs/balancete-icon.png'},
       {title: 'Metas', component: 'MetasComponent', icon: 'assets/imgs/metas-icon.png'}
     ];
 
     this.bottomMenu = [
-      {title: 'Configuracoes', component: 'TributosPage', icon: 'assets/imgs/configuracoes-icon.png'},
-      {title: 'Logout', component: 'Login', icon: 'assets/imgs/logout-icon.png'}
+      {title: 'Configuracoes', component: 'DashboardPage', icon: 'assets/imgs/configuracoes-icon.png'},
+      {title: 'Logout', component: 'LoginPage', icon: 'assets/imgs/logout-icon.png'}
     ];
   }
 

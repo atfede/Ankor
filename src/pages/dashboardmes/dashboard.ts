@@ -13,6 +13,7 @@ import {TipoCliente} from "../../models/TipoCliente";
 import {Constants} from "../../models/Constants";
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {Globals} from "../../components/Globals";
 // import {HelperService} from './services/helper.service';
 
 declare var jquery: any;
@@ -33,6 +34,7 @@ export class DashboardPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public modal: ModalController,
               public loadingCtrl: LoadingController, private afAuth: AngularFireAuth, private toast: ToastController,
               private afDatabase: AngularFireDatabase, private http: HttpClient
+    , private globals: Globals
               /*, private _helper: HelperService*/) {
 
     //TODO: Get type of Profile from login (servicio o comercio)
@@ -44,12 +46,15 @@ export class DashboardPage {
   barChart: any;
   lineChart: any;
 
+  //private currentPage = GlobalVariable.CURRENT_PAGE;
+  //private numberOfCompanies = GlobalVariable.NUMBER_OF_COMPANIES;
+
   public clients: Array<Client> = [
-    {Id: 1, Name: 'DANIELLE', Surename: 'CUNHA VARELA', Increments: true, Amount: 2319.72, ClientType: 'comercio'}, //901.421.100-78
-    {Id: 3, Name: 'FATIMA', Surename: 'APARECIDA FAGUN.', Increments: true, Amount: 2345.76, ClientType: 'servicio'}, //469.574.560-72
-    {Id: 4, Name: '', Surename: 'MAXIMA LOGISTICA E DIST.', Increments: true, Amount: 3695.74, ClientType: 'comercio'}, //22829604000188
-    {Id: 6, Name: 'PABLO', Surename: 'PAEZ RODRIGUEZ', Increments: true, Amount: 2353.14, ClientType: 'comercio'}, //096.233.801-00
-    {Id: 10, Name: 'DEBORAH', Surename: 'PEREZ CABRERA', Increments: false, Amount: 2301.42, ClientType: 'comercio'} //096.212.221-17
+    {Id: 1, Name: 'DANIELLE', Surename: 'CUNHA VARELA', Increments: true, Amount: 2319.72, ClientType: 'comercio', extratos: new Array<ExtratoTotal>()}, //901.421.100-78
+    {Id: 3, Name: 'FATIMA', Surename: 'APARECIDA FAGUN.', Increments: true, Amount: 2345.76, ClientType: 'servicio', extratos: new Array<ExtratoTotal>()}, //469.574.560-72
+    {Id: 4, Name: '', Surename: 'MAXIMA LOGISTICA E DIST.', Increments: true, Amount: 3695.74, ClientType: 'comercio', extratos: new Array<ExtratoTotal>()}, //22829604000188
+    {Id: 6, Name: 'PABLO', Surename: 'PAEZ RODRIGUEZ', Increments: true, Amount: 2353.14, ClientType: 'comercio', extratos: new Array<ExtratoTotal>()}, //096.233.801-00
+    {Id: 10, Name: 'DEBORAH', Surename: 'PEREZ CABRERA', Increments: false, Amount: 2301.42, ClientType: 'comercio', extratos: new Array<ExtratoTotal>()} //096.212.221-17
   ];
 
   public topFiveClients: Array<Client> = [];
@@ -117,7 +122,8 @@ export class DashboardPage {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, 'Ft2 Entretenimento E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '02/17',
@@ -127,7 +133,8 @@ export class DashboardPage {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '03/17',
@@ -137,7 +144,8 @@ export class DashboardPage {
       TotalICMS: 8.73,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '04/17',
@@ -147,7 +155,8 @@ export class DashboardPage {
       TotalICMS: 3285.81,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '05/17',
@@ -157,7 +166,8 @@ export class DashboardPage {
       TotalICMS: 17337.06,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '06/17',
@@ -167,7 +177,8 @@ export class DashboardPage {
       TotalICMS: 16431.93,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '07/17',
@@ -177,7 +188,8 @@ export class DashboardPage {
       TotalICMS: 168074.01,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '08/17',
@@ -187,7 +199,8 @@ export class DashboardPage {
       TotalICMS: 236095.38,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '09/17',
@@ -197,7 +210,8 @@ export class DashboardPage {
       TotalICMS: 19185.12,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '10/17',
@@ -207,7 +221,8 @@ export class DashboardPage {
       TotalICMS: 23400.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '11/17',
@@ -217,7 +232,8 @@ export class DashboardPage {
       TotalICMS: 17966.76,
       TotalBCICMSST: 298.71,
       TotalICMSST: 47.95,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '12/17',
@@ -227,7 +243,8 @@ export class DashboardPage {
       TotalICMS: 18754.05,
       TotalBCICMSST: 1261.86,
       TotalICMSST: 211.33,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '01/18',
@@ -237,7 +254,8 @@ export class DashboardPage {
       TotalICMS: 16043.77,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '02/18',
@@ -247,7 +265,8 @@ export class DashboardPage {
       TotalICMS: 20693.05,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '03/18',
@@ -257,7 +276,8 @@ export class DashboardPage {
       TotalICMS: 11661.46,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '04/18',
@@ -267,7 +287,8 @@ export class DashboardPage {
       TotalICMS: 18081.53,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '05/18',
@@ -277,7 +298,8 @@ export class DashboardPage {
       TotalICMS: 15140.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '06/18',
@@ -287,7 +309,8 @@ export class DashboardPage {
       TotalICMS: 11450.67,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '07/18',
@@ -297,7 +320,8 @@ export class DashboardPage {
       TotalICMS: 3093.95,
       TotalBCICMSST: 13044.22,
       TotalICMSST: 2573.96,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '08/18',
@@ -307,7 +331,8 @@ export class DashboardPage {
       TotalICMS: 1824.01,
       TotalBCICMSST: 0,
       TotalICMSST: 0,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '09/18',
@@ -317,7 +342,8 @@ export class DashboardPage {
       TotalICMS: 2223.81,
       TotalBCICMSST: 0,
       TotalICMSST: 0,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     },
     {
       MesAnoEmit: '10/18',
@@ -327,7 +353,8 @@ export class DashboardPage {
       TotalICMS: 2185.59,
       TotalBCICMSST: 0,
       TotalICMSST: 0,
-      Client: new Client(1, '', '', true, 1, '')
+      Client: new Client(1, '', '', true, 1, '', new Array<ExtratoTotal>()),
+      Clients: new Array<Client>()
     }
   ];
 
@@ -456,7 +483,7 @@ export class DashboardPage {
     const m = d.getMonth();
 
     if (m == 0) {
-      return monthNames[m]; //.substring(0, 3 , .toUpperCase()
+      return monthNames[monthNames.length - 1];
     } else {
       return monthNames[m - 1];
     }
@@ -559,10 +586,25 @@ export class DashboardPage {
       });
     }*/
 
-
     }
 
     this.iter++;
+  }
+
+  viewPreviousCompany() {
+    if (this.globals.CURRENT_PAGE > 0) {
+      this.globals.CURRENT_PAGE--;
+      //this.extratoTotal[];
+      //alert(this.globals.CURRENT_PAGE);
+    }
+  }
+
+  viewNextCompany() {
+    if (this.globals.CURRENT_PAGE < this.globals.NUMBER_OF_COMPANIES) {
+      this.globals.CURRENT_PAGE++;
+      //alert(this.globals.CURRENT_PAGE);
+
+    }
   }
 
 

@@ -8,5 +8,6 @@ export class ExtratoTotal {
   TotalICMS: number;
   TotalBCICMSST: number;
   TotalICMSST: number;
-  Client : Client
+  Client : Client;
+  Clients: Array<Client>;
 }

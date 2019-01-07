@@ -1,4 +1,98 @@
-<!-- Generated template for the DresinteticoComponent component -->
-<div>
-  {{text}}
-</div>
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar class="topBar" hideBackButton showMenuButton>
+    <button ion-button menuToggle>
+      <ion-icon class="menuIconBurger" name="menu"></ion-icon>
+    </button>
+    <ion-title><img id="topTitleImg" height="50px" src="assets/imgs/image-without-bg.png" class="thumb-img"/>
+    </ion-title>
+    <button ion-button menuToggle style="display:none;">
+      <ion-icon class="menuIconBurger" name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row class="row" id="compName" justify-content-center="" style="margin-top: 10px;font-size: larger;">
+    <ion-col col-2 (click)="goBack()">
+      <ion-icon class="back-arrow" name="md-arrow-back" style="font-size: 2em;"></ion-icon>
+    </ion-col>
+    <ion-col col-8 class="metas-title" align-items-center justify-content-center>DRE Sintetica</ion-col>
+    <ion-col col-2></ion-col>
+
+  </ion-row>
+
+  <ion-row>
+
+    <ion-col></ion-col>
+
+    <ion-col>
+      <div class="selectButtonContainer">
+        <ion-select class="month-drp" interface="popover">
+          <ng-container *ngFor="let month of months">
+            <ion-option *ngIf="!month.actMonth" [value]="month" class="popover-color">{{month.month}} {{month.year}}
+            </ion-option>
+            <ion-option *ngIf="month.actMonth" selected [value]="month" class="popover-color">{{month.month}}
+              {{month.year}}
+            </ion-option>
+          </ng-container>
+        </ion-select>
+      </div>
+    </ion-col>
+
+    <ion-col></ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-6 class="title-name">RECEITA</ion-col>
+    <ion-col col-6 class="price">R$ 480 mil</ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-6 class="title-name">PREVISAO DE IMPOSTOS</ion-col>
+    <ion-col col-6 class="price">R$ 480 mil</ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-6 class="title-name">DESPESAS</ion-col>
+    <ion-col col-6 class="price">R$ 480 mil</ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-6 class="title-name-resultados">RESULTADOS</ion-col>
+    <ion-col col-6 class="price">R$ 480 mil</ion-col>
+  </ion-row>
+
+  <p></p>
+
+  <div _ngcontent-c1="" class="row topbartable"></div>
+
+  <p></p>
+
+  <ion-row>
+    <ion-col col-12 class="title-ultimos-meses">Últimos meses</ion-col>
+  </ion-row>
+
+  <p></p>
+
+  <ion-row>
+    <ion-col col-6 class="title-name">RECEITA</ion-col>
+    <ion-col col-6 class="title-name-right">RECEITA</ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-6 class="title-name">RECEITA</ion-col>
+    <ion-col col-6 class="title-name-right">RECEITA</ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-6 class="title-name">RECEITA</ion-col>
+    <ion-col col-6 class="title-name-right">RECEITA</ion-col>
+  </ion-row>
+
+</ion-content>

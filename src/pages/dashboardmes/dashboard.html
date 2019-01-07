@@ -191,7 +191,15 @@
   <br/>
   <!--<ion-row id="compName" justify-content-center> {{(profileData)?.companyName }} </ion-row>-->
   <ion-row id="compName" justify-content-center>
-    <h5>L A Lopes Com De Cosmeticos Ltda Epp</h5>
+    <ion-col col-1 (click)="viewPreviousCompany();">
+      <ion-icon name="md-arrow-back" style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -0px;"></ion-icon>
+    </ion-col>
+    <ion-col col-10 style="text-align: center; margin-top: -9px;">
+      <h6>L A Lopes Com De Cosmeticos Ltda Epp</h6>
+    </ion-col>
+    <ion-col col-1 (click)="viewNextCompany();">
+      <ion-icon name="md-arrow-forward" style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -0px;"></ion-icon>
+    </ion-col>
   </ion-row>
 
   <!-- <div class="container"> -->
