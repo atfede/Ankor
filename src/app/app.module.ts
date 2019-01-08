@@ -58,7 +58,6 @@ import {Globals} from '../components/Globals';
     SharedModule,
     DresinteticoComponentModule
 
-
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -68,7 +67,6 @@ import {Globals} from '../components/Globals';
     // DashboardPage
     // RegisterPage,
     // LoginPage,
-
 
   ],
   providers: [

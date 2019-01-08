@@ -37,7 +37,7 @@
                 (click)='goBack()'></ion-icon>
     </ion-col>
     <!--<ion-col col-8 style="text-align:center;" align-items-center justify-content-center>{{clientName}}</ion-col>-->
-    <ion-col col-8 style="text-align:center;" align-items-center justify-content-center>MAXIMA LOGISTICA E DIST.
+    <ion-col col-8 style="text-align:center;" align-items-center justify-content-center>{{clientName}}
     </ion-col>
     <ion-col col-2></ion-col>
   </ion-row>
@@ -68,12 +68,13 @@
                     [dataSets]="myDataSets"
                     [style]="chartStyles"></ngx-line-chart>
     <div id="monthsDrawed" class="monthsDrawed">
-      <div class="monthDrawedName">JUN</div>
       <div class="monthDrawedName">JUL</div>
       <div class="monthDrawedName">AGO</div>
       <div class="monthDrawedName">SET</div>
       <div class="monthDrawedName">OUT</div>
       <div class="monthDrawedName">NOV</div>
+      <div class="monthDrawedName">DIC</div>
+
     </div>
   </ion-row>
 

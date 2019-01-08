@@ -31,25 +31,25 @@ export class TributosPage {
       {
         abr: 'IRPJ',
         value: 'R$ 930,37',
-        duedate: '30/11/2018',
+        duedate: '30/01/2019',
         paid: false
       },
       {
         abr: 'CSLL',
         value: 'R$ 837,34',
-        duedate: '30/11/2018',
+        duedate: '30/01/2019',
         paid: false
       },
       {
         abr: 'Cofins',
         value: 'R$ 2.325,94',
-        duedate: '25/11/2018', // 'PAGO'
+        duedate: '25/01/2019', // 'PAGO'
         paid: false
       },
       {
         abr: 'PIS',
         value: 'R$ 503,95',
-        duedate: '25/11/2018',
+        duedate: '25/01/2019',
         paid: false
       }
     ];

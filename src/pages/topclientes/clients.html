@@ -119,7 +119,7 @@
     <ion-col></ion-col>
 
     <div class="selectButtonContainer">
-      <ion-select class="month-drp" interface="popover">
+      <ion-select class="month-drp" interface="popover" (ionChange)="onChange($event)">
         <ng-container *ngFor="let month of months">
           <ion-option *ngIf="!month.actMonth" [value]="month" class="popover-color">{{month.month}} {{month.year}}
           </ion-option>
@@ -133,15 +133,15 @@
     <ion-col></ion-col>
   </ion-row>
 
-  <ion-item *ngFor="let client of filteredTopTenClients" class="client-row" (click)="viewClient(client);">
+  <ion-item *ngFor="let e of filteredTopTenClients" class="client-row" (click)="viewClient(e);">
     <div class="row" style="width: 100%">
-      <ion-icon name="arrow-round-up" class="icon-arrow" *ngIf="client.Increments"
+      <ion-icon name="arrow-round-up" class="icon-arrow" *ngIf="e.Client.Increments"
                 style="text-align: right; color: rgb(68, 204, 130); font-weight: bold;"></ion-icon>
-      <ion-icon name="arrow-round-down" class="icon-arrow" *ngIf="!client.Increments"
+      <ion-icon name="arrow-round-down" class="icon-arrow" *ngIf="!e.Client.Increments"
                 style="text-align: right; color: rgb(209, 52, 64); font-weight: bold;"></ion-icon>
-      <div class="col name-client "> {{client.Surename}}</div>
-      <div class="col value-client">R$ {{client.Amount}}</div>
-      <div class="col percent-clients">{{ client.Percentage }}%</div>
+      <div class="col name-client "> {{e.Client.Name | slice:0:18}}.</div>
+      <div class="col value-client">R$ {{e.TotalNFe}}</div>
+      <!--<div class="col percent-clients">{{ e.Client.Percentage }}%</div>-->
       <ion-icon name="arrow-dropright" style="padding: 6px; margin-top: 5px; color: #ffffff;"></ion-icon>
     </div>
   </ion-item>

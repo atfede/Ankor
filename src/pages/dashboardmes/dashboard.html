@@ -195,10 +195,11 @@
       <ion-icon name="md-arrow-back" style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -0px;"></ion-icon>
     </ion-col>
     <ion-col col-10 style="text-align: center; margin-top: -9px;">
-      <h6>L A Lopes Com De Cosmeticos Ltda Epp</h6>
+      <h6>{{companyName}}</h6>
     </ion-col>
     <ion-col col-1 (click)="viewNextCompany();">
-      <ion-icon name="md-arrow-forward" style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -0px;"></ion-icon>
+      <ion-icon name="md-arrow-forward"
+                style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -0px;"></ion-icon>
     </ion-col>
   </ion-row>
 
@@ -278,18 +279,22 @@
             <div class="horizontal_dashed_line_parent">
               <div class="horizontal_dashed_line"></div>
             </div>
-            <div class="top_price">R$ {{ getTotalExtratosCurrentMonth() }}</div>
+            <div class="top_price">R$ {{ getTotalExtratosCurrentMonth() | number : '1.2-2'}}</div>
           </div>
 
           <ul id="bars">
             <li>
-              <div data-percentage="40" class="bar"></div>
+              <div attr.data-percentage="{{mesAnteriorEsteAnoBarHeight}}"
+                   style.height="{{mesAnteriorEsteAnoBarHeight}}%" class="bar"></div>
+              <!--<div data-percentage="70" class="bar"></div>-->
               <span>{{getPreviousMonthName() | slice:0:3 | uppercase }} {{getCurrentYear()}}</span>
               <!--<br/>-->
               <span class="last_month_1">Més anterior</span>
             </li>
             <li>
-              <div data-percentage="70" class="bar"></div>
+              <div attr.data-percentage="{{mesmoMesNoAnoAnteriorBarHeight}}"
+                   style.height="{{mesmoMesNoAnoAnteriorBarHeight}}%" class="bar"></div>
+              <!--<div data-percentage="70" class="bar"></div>-->
               <span>{{getPreviousMonthName() | slice:0:3 }} {{getLastYear()}}</span>
               <!--<br/>-->
               <span class="last_month_2">Mesmo mes no ano anterior</span>

@@ -191,10 +191,11 @@
       <ion-icon name="md-arrow-back" style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -0px;"></ion-icon>
     </ion-col>
     <ion-col col-10 style="text-align: center; margin-top: -9px;">
-      <h6>L A Lopes Com De Cosmeticos Ltda Epp</h6>
+      <h6>{{companyName}}</h6>
     </ion-col>
     <ion-col col-1 (click)="viewNextCompany();">
-      <ion-icon name="md-arrow-forward" style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -0px;"></ion-icon>
+      <ion-icon name="md-arrow-forward"
+                style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -0px;"></ion-icon>
     </ion-col>
   </ion-row>
 
@@ -281,20 +282,25 @@
             <div class="piechart_text_year_right">{{getLastYear()}}</div>
 
             <div class="piechart_text">Aproveitamento</div>
-            <div class="piechart_text_percentage">{{getAproveitamento()}}%</div>
+            <div class="piechart_text_percentage"
+                 *ngIf="!aproveitamientoPastHigher"> {{getAproveitamento() | number : '1.2-2'}}%
+            </div>
+            <div class="piechart_text_percentage" *ngIf="aproveitamientoPastHigher">
+              - {{getAproveitamento() | number : '1.2-2'}}%
+            </div>
 
             <div class="piechart_text_left">
               <div class="faturamento_ano">Faturamento deste ano</div>
-              <div>({{ getLastMonthName() }} - {{getCurrentYear()}})</div>
+              <div>({{ getLastMonthName() }} - {{getLastYear()}})</div>
               <br/>
-              <div class="faturamento_ano_price">R$ {{getTotalExtratosCurrentYear()}}</div>
+              <div class="faturamento_ano_price">R$ {{getTotalExtratosCurrentYear() | number : '1.2-2'}}</div>
             </div>
 
             <div class="piechart_text_right">
               <div class="faturamento_ano_anterior">Faturamento do ano anterior</div>
-              <div>({{ getLastMonthName()}} - {{getLastYear()}})</div>
+              <div>({{ getLastMonthName()}} - {{getLastYear() - 1}})</div>
               <br/>
-              <div class="faturamento_ano_anterior_price">R$ {{getTotalExtratosLastYear()}}</div>
+              <div class="faturamento_ano_anterior_price">R$ {{getTotalExtratosLastYear() | number : '1.2-2'}}</div>
             </div>
 
           </div>

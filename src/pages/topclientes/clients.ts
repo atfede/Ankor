@@ -2,6 +2,9 @@ import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams, DateTime} from 'ionic-angular';
 import {Client} from "../../models/Client";
 import {clientPct} from "../../models/clientPct";
+import {Globals} from "../../components/Globals";
+import {l} from "@angular/core/src/render3";
+import {ExtratoTotal} from "../../models/ExtratoTotal";
 
 /**
  * Generated class for the ClientsPage page.
@@ -22,245 +25,22 @@ export class ClientsPage {
     cid: string, lastValue: string, isIncrementing: boolean, percentage: string
   }>;
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, private globals: Globals) {
+    this.top10Clients = this.globals.top10ClientesSumaPorMes;
+    this.selectedDate = {month: "Janeiro", year: 2018};
+  }
+
   public isSearchBarOpened = false;
+  filteredTopTenClients: any = new Array<ExtratoTotal>();
   searchTerm: string = '';
-  filteredTopTenClients: Array<clientPct> = [];
+
+  top10Clients: any = [];
+  selectedDate: any;
 
   months: Array<{ month: string, year: number, actMonth: boolean }>;
 
   public clientsOctubreTopTen: Array<clientPct> = [];
   // public percentageRandom: Array<number> = [];
-
-  public clientsJulio: Array<clientPct> = [
-    {
-      Id: 1,
-      Name: '',
-      Surename: '901.421.100',
-      Increments: true,
-      Amount: 2319.72,
-      ClientType: 'comercio',
-      Percentage: 0
-    },
-    {
-      Id: 2,
-      Name: '',
-      Surename: '312.924.508',
-      Increments: true,
-      Amount: 2298.84,
-      ClientType: 'comercio',
-      Percentage: 0
-    },
-    {
-      Id: 3,
-      Name: '',
-      Surename: '096.212.221',
-      Increments: true,
-      Amount: 2301.42,
-      ClientType: 'servicio',
-      Percentage: 0
-    },
-    {
-      Id: 4,
-      Name: '',
-      Surename: '22829604000',
-      Increments: true,
-      Amount: 4704.37,
-      ClientType: 'comercio',
-      Percentage: 0
-    },
-    {Id: 5, Name: '', Surename: '887.440.600', Increments: true, Amount: 719.49, ClientType: 'comercio', Percentage: 0},
-    {
-      Id: 6,
-      Name: '',
-      Surename: '901.421.100',
-      Increments: true,
-      Amount: 2319.72,
-      ClientType: 'comercio',
-      Percentage: 0
-    },
-    {
-      Id: 7,
-      Name: '',
-      Surename: '312.924.508',
-      Increments: true,
-      Amount: 2298.84,
-      ClientType: 'comercio',
-      Percentage: 0
-    },
-    {
-      Id: 8,
-      Name: '',
-      Surename: '096.212.221',
-      Increments: true,
-      Amount: 2301.42,
-      ClientType: 'servicio',
-      Percentage: 0
-    },
-    {
-      Id: 9,
-      Name: '',
-      Surename: '22829604000',
-      Increments: true,
-      Amount: 4704.37,
-      ClientType: 'comercio',
-      Percentage: 0
-    },
-    {Id: 10, Name: '', Surename: '887.440.600', Increments: true, Amount: 719.49, ClientType: 'comercio', Percentage: 0}
-  ];
-
-  public clientsAgosto: Array<clientPct> = [
-    {
-      Id: 1,
-      Name: '',
-      Surename: '901.421.100',
-      Increments: true,
-      Amount: 2319.72,
-      ClientType: 'comercio',
-      Percentage: 0
-    },
-    {
-      Id: 2,
-      Name: '',
-      Surename: '312.924.508',
-      Increments: true,
-      Amount: 2298.84,
-      ClientType: 'comercio',
-      Percentage: 0
-    },
-    {
-      Id: 3,
-      Name: '',
-      Surename: '096.212.221',
-      Increments: true,
-      Amount: 2301.42,
-      ClientType: 'servicio',
-      Percentage: 0
-    },
-    {
-      Id: 4,
-      Name: '',
-      Surename: '22829604000',
-      Increments: true,
-      Amount: 4704.37,
-      ClientType: 'comercio',
-      Percentage: 0
-    },
-    {Id: 5, Name: '', Surename: '887.440.600', Increments: true, Amount: 719.49, ClientType: 'comercio', Percentage: 0},
-    {
-      Id: 6,
-      Name: '',
-      Surename: '901.421.100',
-      Increments: true,
-      Amount: 2319.72,
-      ClientType: 'comercio',
-      Percentage: 0
-    },
-    {
-      Id: 7,
-      Name: '',
-      Surename: '312.924.508',
-      Increments: true,
-      Amount: 2298.84,
-      ClientType: 'comercio',
-      Percentage: 0
-    },
-    {
-      Id: 8,
-      Name: '',
-      Surename: '096.212.221',
-      Increments: true,
-      Amount: 2301.42,
-      ClientType: 'servicio',
-      Percentage: 0
-    },
-    {
-      Id: 9,
-      Name: '',
-      Surename: '22829604000',
-      Increments: true,
-      Amount: 4704.37,
-      ClientType: 'comercio',
-      Percentage: 0
-    },
-    {Id: 10, Name: '', Surename: '887.440.600', Increments: true, Amount: 719.49, ClientType: 'comercio', Percentage: 0}
-  ];
-
-  public clientsSetiembre: Array<clientPct> = [
-    {
-      Id: 1,
-      Name: '',
-      Surename: '901.421.100',
-      Increments: true,
-      Amount: 2319.72,
-      ClientType: 'comercio',
-      Percentage: 0
-    },
-    {
-      Id: 2,
-      Name: '',
-      Surename: '312.924.508',
-      Increments: true,
-      Amount: 2298.84,
-      ClientType: 'comercio',
-      Percentage: 0
-    },
-    {
-      Id: 3,
-      Name: '',
-      Surename: '096.212.221',
-      Increments: true,
-      Amount: 2301.42,
-      ClientType: 'servicio',
-      Percentage: 0
-    },
-    {
-      Id: 4,
-      Name: '',
-      Surename: '22829604000',
-      Increments: true,
-      Amount: 4704.37,
-      ClientType: 'comercio',
-      Percentage: 0
-    },
-    {Id: 5, Name: '', Surename: '887.440.600', Increments: true, Amount: 719.49, ClientType: 'comercio', Percentage: 0},
-    {
-      Id: 6,
-      Name: '',
-      Surename: '901.421.100',
-      Increments: true,
-      Amount: 2319.72,
-      ClientType: 'comercio',
-      Percentage: 0
-    },
-    {
-      Id: 7,
-      Name: '',
-      Surename: '312.924.508',
-      Increments: true,
-      Amount: 2298.84,
-      ClientType: 'comercio',
-      Percentage: 0
-    },
-    {
-      Id: 8,
-      Name: '',
-      Surename: '096.212.221',
-      Increments: true,
-      Amount: 2301.42,
-      ClientType: 'servicio',
-      Percentage: 0
-    },
-    {
-      Id: 9,
-      Name: '',
-      Surename: '22829604000',
-      Increments: true,
-      Amount: 4704.37,
-      ClientType: 'comercio',
-      Percentage: 0
-    },
-    {Id: 10, Name: '', Surename: '887.440.600', Increments: true, Amount: 719.49, ClientType: 'comercio', Percentage: 0}
-  ];
 
   public clientsOctubre: Array<clientPct> = [
     {
@@ -355,12 +135,9 @@ export class ClientsPage {
     } //096.212.221-17
   ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.filteredTopTenClients = this.getClientsOctubreTopTenRet();
-  }
-
   ionViewDidLoad() {
-    this.getClientsOctubreTopTen();
+    //this.getClientsOctubreTopTen();
+    this.filteredTopTenClients = this.getTopTenClients({month: "Janeiro", year: "2018"});
   }
 
   getRandomPercentage(limit) {
@@ -386,7 +163,7 @@ export class ClientsPage {
       'Novembro',
       'Dezembro'];
 
-    const year = date.getFullYear();
+    const year = date.getFullYear() - 1; //sacar -1
     var actualMonth = meses[monthIndex]; //meses[monthIndex - 1]
 
     for (let p = 0; p < meses.length; p++) {
@@ -397,106 +174,16 @@ export class ClientsPage {
       });
     }
 
-    //console.log('ionViewDidLoad ClientsPage');
-
-    this.clients = [];
-    this.clients.push({
-        name: 'Manuel Curz',
-        actualValue: 'R$ 127 mil',
-        cid: '12312313',
-        lastValue: '12/20/1956',
-        isIncrementing: true,
-        percentage: '22%'
-      }, {
-        name: 'Ulisses Cabl',
-        actualValue: 'R$ 127 mil',
-        cid: '12312313',
-        lastValue: '12/20/1956',
-        isIncrementing: true,
-        percentage: '32%'
-      }, {
-        name: 'Cristina Dua',
-        actualValue: 'R$ 127 mil',
-        cid: '12312313',
-        lastValue: '12/20/1956',
-        isIncrementing: true,
-        percentage: '60%'
-      }, {
-        name: 'Andrea Rosa',
-        actualValue: 'R$ 127 mil',
-        cid: '12312313',
-        lastValue: '12/20/1956',
-        isIncrementing: true,
-        percentage: '12%'
-      }, {
-        name: 'Juan Gomes',
-        actualValue: 'R$ 127 mil',
-        cid: '12312313',
-        lastValue: '12/20/1956',
-        isIncrementing: true,
-        percentage: '15%'
-      }, {
-        name: 'Jesus',
-        actualValue: 'R$ 127 mil',
-        cid: '12312313',
-        lastValue: '12/20/1956',
-        isIncrementing: true,
-        percentage: '53%'
-      }, {
-        name: 'Enrrique',
-        actualValue: 'R$ 127 mil',
-        cid: '12312313',
-        lastValue: '12/20/1956',
-        isIncrementing: true,
-        percentage: '12%'
-      }, {
-        name: 'Pedro',
-        actualValue: 'R$ 127 mil',
-        cid: '12312313',
-        lastValue: '12/20/1956',
-        isIncrementing: true,
-        percentage: '14%'
-      }, {
-        name: 'Juan',
-        actualValue: 'R$ 127 mil',
-        cid: '12312313',
-        lastValue: '12/20/1956',
-        isIncrementing: true,
-        percentage: '9%'
-      }, {
-        name: 'Nicolas',
-        actualValue: 'R$ 127 mil',
-        cid: '12312313',
-        lastValue: '12/20/1956',
-        isIncrementing: true,
-        percentage: '8%'
-      }, {
-        name: 'Fabian',
-        actualValue: 'R$ 127 mil',
-        cid: '12312313',
-        lastValue: '12/20/1956',
-        isIncrementing: true,
-        percentage: '11%'
-      }, {
-        name: 'Andres',
-        actualValue: 'R$ 127 mil',
-        cid: '12312313',
-        lastValue: '12/20/1956',
-        isIncrementing: true,
-        percentage: '12%'
-      }
-    );
-
   }
 
   viewClient(client) {
     this.navCtrl.setRoot('ClientPage', {
-      cid: client.cid
-      , name: client.name
-      , actualValue: client.actualValue
-      , lastValue: client.lastValue
-      , isIncrementing: client.isIncrementing
-      , percentage: client.percentage
+      // cid: client.cid
+      name: client.Client.Name
+      , actualValue: client.TotalNFe
+      // , lastValue: client.lastValue
+      , isIncrementing: client.Client.Increments
+      // , percentage: client.percentage
     });
   }
 
@@ -513,7 +200,7 @@ export class ClientsPage {
     this.clientsOctubreTopTen = topTenClients.slice(0, 10);
   }
 
-  getClientsOctubreTopTenRet() {
+  getTopTenClients2() {
 
     var topTenClients = this.clientsOctubre.sort(function (a, b) {
       return a.Amount - b.Amount;
@@ -523,14 +210,82 @@ export class ClientsPage {
   }
 
   onSearch(event) {
-    console.log("looking for.." + event.target.value);
+    //console.log("looking for.." + event.target.value);
+    this.getTopTenClients(event);
+  }
+
+  onChange($event) {
+    // console.log($event);
+    this.selectedDate = {month: this.getMonthNumberStr($event.month), year: String($event.year).substring(2)};
+    this.filteredTopTenClients = this.getTopTenClients($event);
+  }
+
+  getTopTenClients(event) {
+    let month = this.getMonthNumberStr(event.month);
+    let year = String(event.year).substring(2);
+    let ret = [];
+
+    this.top10Clients.forEach((el) => {
+      if (el.MesAnoEmit.split('/')[0] == month && el.MesAnoEmit.split('/')[1] == year) { //get current year
+        ret.push(el);
+      }
+    });
+
+    //TODO: FILTER ONLY 10 CLIENTS
+    console.log(ret);
+    return ret.sort((a, b) => parseFloat(a.TotalNFe) - parseFloat(b.TotalNFe)).reverse();
+  }
+
+  getMonthNumberStr(monthStr) {
+    var month = "";
+    switch (monthStr) {
+
+      case "Janeiro":
+        month = '01';
+        break;
+      case "Fevereiro":
+        month = '02';
+        break;
+      case "Março":
+        month = '03';
+        break;
+      case "Abril":
+        month = '04';
+        break;
+      case "Maio":
+        month = '05';
+        break;
+      case "Junho":
+        month = '06';
+        break;
+      case "Julho":
+        month = '07';
+        break;
+      case "Agosto":
+        month = '08';
+        break;
+      case "Setembro":
+        month = '09';
+        break;
+      case "Outubro":
+        month = '10';
+        break;
+      case "Novembro":
+        month = '11';
+        break;
+      case "Dezembro":
+        month = '12';
+        break;
+    }
+    return month;
   }
 
   filterClients() {
-    this.filteredTopTenClients = this.clientsOctubreTopTen.filter((item) => {
-      return item.Name.toLowerCase().indexOf(this.searchTerm.toLowerCase()) > -1 ||
-        item.Surename.toLowerCase().indexOf(this.searchTerm.toLowerCase()) > -1;
-    });
+    this.filteredTopTenClients = this.top10Clients.filter((item) => {
+      return item.Client.Name.toLowerCase().indexOf(this.searchTerm.toLowerCase()) > -1
+        && item.MesAnoEmit.split('/')[0] == this.selectedDate.month && item.MesAnoEmit.split('/')[1] == this.selectedDate.year
+    }).sort((a, b) => parseFloat(a.TotalNFe) - parseFloat(b.TotalNFe)).reverse();
   }
 
 }
+
