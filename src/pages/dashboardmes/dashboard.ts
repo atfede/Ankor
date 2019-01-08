@@ -39,6 +39,7 @@ export class DashboardPage {
     //TODO: Get type of Profile from login (servicio o comercio)
     this.extratoTotal = this.globals.clients;
     this.setCompanyName(this.extratoTotal[this.globals.CURRENT_PAGE][0].Client.Name);
+
   }
 
   profileData: AngularFireObject<Profile>;
@@ -52,46 +53,46 @@ export class DashboardPage {
   public clients: Array<Client> = [
     {
       Id: 1,
-      Name: 'DANIELLE',
-      Surename: 'CUNHA VARELA',
+      Name: '',
+      Surename: 'Infrati Informatic.',
       Increments: true,
-      Amount: 2319.72,
+      Amount: 3767203,
       ClientType: 'comercio',
       extratos: new Array<ExtratoTotal>()
     }, //901.421.100-78
     {
       Id: 3,
-      Name: 'FATIMA',
-      Surename: 'APARECIDA FAGUN.',
+      Name: '',
+      Surename: 'Hidroscience Consu.',
       Increments: true,
-      Amount: 2345.76,
+      Amount: 2066400,
       ClientType: 'servicio',
       extratos: new Array<ExtratoTotal>()
     }, //469.574.560-72
     {
       Id: 4,
       Name: '',
-      Surename: 'MAXIMA LOGISTICA E DIST.',
+      Surename: 'Mkt Lopes Com De C.',
       Increments: true,
-      Amount: 3695.74,
+      Amount: 911203.35,
       ClientType: 'comercio',
       extratos: new Array<ExtratoTotal>()
     }, //22829604000188
     {
       Id: 6,
-      Name: 'PABLO',
-      Surename: 'PAEZ RODRIGUEZ',
+      Name: '',
+      Surename: 'L A Lopes Com De C.',
       Increments: true,
-      Amount: 2353.14,
+      Amount: 832291.15,
       ClientType: 'comercio',
       extratos: new Array<ExtratoTotal>()
     }, //096.233.801-00
     {
       Id: 10,
-      Name: 'DEBORAH',
-      Surename: 'PEREZ CABRERA',
+      Name: '',
+      Surename: 'Surgeon Com De Mat.',
       Increments: false,
-      Amount: 2301.42,
+      Amount: 206869.35,
       ClientType: 'comercio',
       extratos: new Array<ExtratoTotal>()
     } //096.212.221-17
@@ -157,7 +158,6 @@ export class DashboardPage {
 
   getTotalPreviousMonth() {
     //return this.extratoTotal[this.extratoTotal.length - 1].TotalNFe;
-    let totalPreviousMonth = 0;
     let date = new Date();
     let previousMonth = date.getMonth();
     let previousMonthStr = "";
@@ -168,21 +168,23 @@ export class DashboardPage {
 
     if (Constants.IsComercio) {
       //return this.extratoTotal[this.globals.CURRENT_PAGE].TotalNFe - Constants.ICMS - Constants.COMERCIO - Constants.ISSQN5;
+      let totalPreviousMonth = 0;
 
       this.extratoTotal[this.globals.CURRENT_PAGE].forEach((el) => {
-        if (el.MesAnoEmit.split('/')[0] == previousMonthStr && el.MesAnoEmit.split('/')[1] == '19') {
+        if (el.MesAnoEmit.split('/')[0] == previousMonthStr && el.MesAnoEmit.split('/')[1] == '18') {
           totalPreviousMonth += el.TotalICMS;
 
         } else {
-          totalPreviousMonth = 0;
+          totalPreviousMonth += 0;
         }
       });
+
+      return totalPreviousMonth;
 
     } else if (Constants.IsServicio) {
       //return this.extratoTotal[this.extratoTotal.length - 1].TotalNFe - Constants.ICMS - Constants.SERVICIO - Constants.ISSQN5;
     }
 
-    return totalPreviousMonth;
   }
 
   getTotalPreviousMonthPreviousYear() {
@@ -200,11 +202,11 @@ export class DashboardPage {
       //return this.extratoTotal[this.globals.CURRENT_PAGE].TotalNFe - Constants.ICMS - Constants.COMERCIO - Constants.ISSQN5;
 
       this.extratoTotal[this.globals.CURRENT_PAGE].forEach((el) => {
-        if (el.MesAnoEmit.split('/')[0] == previousMonthStr && el.MesAnoEmit.split('/')[1] == '18') {
+        if (el.MesAnoEmit.split('/')[0] == previousMonthStr && el.MesAnoEmit.split('/')[1] == '17') {
           totalPreviousMonth += el.TotalICMS;
 
         } else {
-          totalPreviousMonth = 0;
+          totalPreviousMonth += 0;
         }
       });
 
@@ -221,6 +223,7 @@ export class DashboardPage {
   }
 
   ionViewDidLoad() {
+
     // this.presentLoadingDefault();
 
     /* setTimeout(() => {
@@ -458,6 +461,9 @@ export class DashboardPage {
       //alert(this.globals.CURRENT_PAGE);
       this.setCompanyName(this.extratoTotal[this.globals.CURRENT_PAGE][0].Client.Name);
     }
+    this.getmesAnteriorEsteAnoBarHeight();
+    this.getmesmoMesNoAnoAnteriorBarHeight();
+
   }
 
   viewNextCompany() {
@@ -466,6 +472,8 @@ export class DashboardPage {
       //alert(this.globals.CURRENT_PAGE);
       this.setCompanyName(this.extratoTotal[this.globals.CURRENT_PAGE][0].Client.Name);
     }
+    this.getmesAnteriorEsteAnoBarHeight();
+    this.getmesmoMesNoAnoAnteriorBarHeight();
   }
 
   setCompanyName(name) {
@@ -473,19 +481,54 @@ export class DashboardPage {
   }
 
   getmesAnteriorEsteAnoBarHeight() {
-    let currentMonthTotal = this.getTotalExtratosCurrentMonth();
+    // let currentMonthTotal = this.getTotalExtratosCurrentMonth();
     let totalPreviousMonthTotal = this.getTotalPreviousMonth();
     let totalPreviousMonthPreviousYear = this.getTotalPreviousMonthPreviousYear();
 
-    let heightPercentageHundred = currentMonthTotal + totalPreviousMonthTotal + totalPreviousMonthPreviousYear; //100%
-    let heightLastMonth = totalPreviousMonthTotal * 100 / heightPercentageHundred;
-    let heightLastMonthPreviousYear = totalPreviousMonthPreviousYear * 100 / heightPercentageHundred;
+    let highest = totalPreviousMonthTotal > totalPreviousMonthPreviousYear ? totalPreviousMonthTotal : totalPreviousMonthPreviousYear; // 7025 == 100% 7005, 6005
+    highest += 20; // 100%
 
+    var res = ((totalPreviousMonthTotal * highest) / totalPreviousMonthPreviousYear);
 
+    if (res != NaN) {
+      if (res > 10000) {
+        res = res / 1000;
+      } else if (res > 1000) {
+        res = res / 100;
+      } else {
+        res = res / 100;
+      }
+    }
+    if (!isNaN(res) && res > 100) {
+      res = 100;
+    }
+
+    this.mesAnteriorEsteAnoBarHeight = !isNaN(res) ? String(Math.round(res)) : String(0);
   }
 
   getmesmoMesNoAnoAnteriorBarHeight() {
+    let totalPreviousMonthTotal = this.getTotalPreviousMonth();
+    let totalPreviousMonthPreviousYear = this.getTotalPreviousMonthPreviousYear();
 
+    let highest = totalPreviousMonthTotal > totalPreviousMonthPreviousYear ? totalPreviousMonthTotal : totalPreviousMonthPreviousYear; // 7025 == 100% 7005, 6005
+    highest += 20; // 100%
+
+    var res = ((totalPreviousMonthPreviousYear * highest) / totalPreviousMonthTotal);
+
+    if (res != NaN) {
+      if (res > 10000) {
+        res = res / 1000;
+      } else if (res > 1000) {
+        res = res / 100;
+      } else {
+        res = res / 100;
+      }
+    }
+    if (!isNaN(res) && res > 100) {
+      res = 100;
+    }
+
+    this.mesmoMesNoAnoAnteriorBarHeight = !isNaN(res) ? String(Math.round(res)) : String(0);
   }
 
 

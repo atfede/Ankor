@@ -12,49 +12,50 @@ import {Globals} from "../../components/Globals";
 })
 export class PiechartPage {
 
+  //top 5 clients
   public clients: Array<Client> = [
     {
       Id: 1,
-      Name: 'DANIELLE',
-      Surename: 'CUNHA VARELA',
+      Name: '',
+      Surename: 'Infrati Informatic.',
       Increments: true,
-      Amount: 2319.72,
+      Amount: 3767203,
       ClientType: 'comercio',
       extratos: new Array<ExtratoTotal>()
     }, //901.421.100-78
     {
       Id: 3,
-      Name: 'FATIMA',
-      Surename: 'APARECIDA FAGUN.',
+      Name: '',
+      Surename: 'Hidroscience Consu.',
       Increments: true,
-      Amount: 2345.76,
+      Amount: 2066400,
       ClientType: 'servicio',
       extratos: new Array<ExtratoTotal>()
     }, //469.574.560-72
     {
       Id: 4,
       Name: '',
-      Surename: 'MAXIMA LOGISTICA E DIST.',
+      Surename: 'Mkt Lopes Com De C.',
       Increments: true,
-      Amount: 3695.74,
+      Amount: 911203.35,
       ClientType: 'comercio',
       extratos: new Array<ExtratoTotal>()
     }, //22829604000188
     {
       Id: 6,
-      Name: 'PABLO',
-      Surename: 'PAEZ RODRIGUEZ',
+      Name: '',
+      Surename: 'L A Lopes Com De C.',
       Increments: true,
-      Amount: 2353.14,
+      Amount: 832291.15,
       ClientType: 'comercio',
       extratos: new Array<ExtratoTotal>()
     }, //096.233.801-00
     {
       Id: 10,
-      Name: 'DEBORAH',
-      Surename: 'PEREZ CABRERA',
+      Name: '',
+      Surename: 'Surgeon Com De Mat.',
       Increments: false,
-      Amount: 2301.42,
+      Amount: 206869.35,
       ClientType: 'comercio',
       extratos: new Array<ExtratoTotal>()
     } //096.212.221-17

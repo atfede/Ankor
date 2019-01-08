@@ -7,6 +7,8 @@
     /*margin: 10px auto 0;*/
     display: block;
     text-align: center;
+
+    margin-top: 30px;
   }
 
   #chart #numbers {
@@ -171,6 +173,20 @@
     width: 90%;
   }
 
+  .price_previous_month {
+    position: absolute;
+    width: 90%;
+    z-index: 2;
+    margin-left: -35px;
+  }
+
+  .price_previous_month_previous_year {
+    position: absolute;
+    width: 90%;
+    margin-left: 60px;
+    z-index: 2;
+  }
+
 </style>
 
 <ion-header>
@@ -282,12 +298,20 @@
             <div class="top_price">R$ {{ getTotalExtratosCurrentMonth() | number : '1.2-2'}}</div>
           </div>
 
+          <div class="price_previous_month">
+            <div class="">R$ {{ getTotalPreviousMonth() }}</div>
+          </div>
+
+          <div class="price_previous_month_previous_year">
+            <div class="">R$ {{ getTotalPreviousMonthPreviousYear() }}</div>
+          </div>
+
           <ul id="bars">
             <li>
               <div attr.data-percentage="{{mesAnteriorEsteAnoBarHeight}}"
                    style.height="{{mesAnteriorEsteAnoBarHeight}}%" class="bar"></div>
               <!--<div data-percentage="70" class="bar"></div>-->
-              <span>{{getPreviousMonthName() | slice:0:3 | uppercase }} {{getCurrentYear()}}</span>
+              <span>{{getPreviousMonthName() | slice:0:3 | uppercase }} {{getCurrentYear() - 1}}</span>
               <!--<br/>-->
               <span class="last_month_1">Més anterior</span>
             </li>
@@ -295,7 +319,7 @@
               <div attr.data-percentage="{{mesmoMesNoAnoAnteriorBarHeight}}"
                    style.height="{{mesmoMesNoAnoAnteriorBarHeight}}%" class="bar"></div>
               <!--<div data-percentage="70" class="bar"></div>-->
-              <span>{{getPreviousMonthName() | slice:0:3 }} {{getLastYear()}}</span>
+              <span>{{getPreviousMonthName() | slice:0:3 }} {{getLastYear() - 1}}</span>
               <!--<br/>-->
               <span class="last_month_2">Mesmo mes no ano anterior</span>
             </li>
@@ -329,7 +353,7 @@
                         {{ client.Surename }}
                         </span>-->
 
-            <span style="font-weight: bold; font-size: 11px;">
+            <span style="font-weight: bold; font-size: 12px;">
             {{ client.Surename }}
             </span>
 
@@ -344,7 +368,7 @@
             style="width: 50%; background-color: #00253a; margin-top: 3px; height: 12px; display: list-item; float: left; list-style: none; border-radius: 15px 15px 15px 15px"
           ></div> <!--[ngStyle]="setWidthAmount(client.amount)"-->
           &nbsp;
-          <span style="font-weight: bold;">
+          <span style="font-weight: bold; font-size: 11px;">
           R$ {{client.Amount}}
           </span>
         </ion-col>
