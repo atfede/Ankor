@@ -17,32 +17,27 @@ export class ClientPage {
   percentage: string;
   clientName: string;
   lineClient: any;
-  tiketMedioMensal: string;
-  mesAtual: string;
+  tiketMedioMensal: number = 0;
+  mesAtual: number = 0;
   totalFaturado: number = 77531.24;
-
-  public extratoTotal: any = new Array<Client>();
-
+  extratoTotal: any = new Array<Client>();
   iter: number = 0;
   milestone: number = 0;
   metaEstablecida: number = 0;
   metaEstablecidaFlag: Boolean = false;
-
   myDataSets: any;
-
-  p1: number;
-  p2: number;
-  p3: number;
-  p4: number;
-  p5: number;
-  p6: number;
+  m1: number;
+  m2: number;
+  m3: number;
+  m4: number;
+  m5: number;
+  m6: number;
   selectedDateJul: any;
   selectedDateAgo: any;
   selectedDateSet: any;
   selectedDateOut: any;
   selectedDateNov: any;
   selectedDateDez: any;
-
   jul: any;
   ago: any;
   set: any;
@@ -52,6 +47,7 @@ export class ClientPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl: LoadingController, private globals: Globals) {
     this.extratoTotal = this.globals.clients;
+    //TODO: get últimos 6 meses del año
     this.selectedDateJul = {month: "Julho", year: 2018};
     this.selectedDateAgo = {month: "Agosto", year: 2018};
     this.selectedDateSet = {month: "Setembro", year: 2018};
@@ -59,12 +55,12 @@ export class ClientPage {
     this.selectedDateNov = {month: "Novembro", year: 2018};
     this.selectedDateDez = {month: "Decembro", year: 2018};
 
-    this.p1 = 0;
-    this.p2 = 0;
-    this.p3 = 0;
-    this.p4 = 0;
-    this.p5 = 0;
-    this.p6 = 0;
+    this.m1 = 0;
+    this.m2 = 0;
+    this.m3 = 0;
+    this.m4 = 0;
+    this.m5 = 0;
+    this.m6 = 0;
 
     if (this.navParams.get('name') != undefined) {
       this.jul = this.globals.getTopTenClientsByNameAndDate(this.navParams.get('name'), this.selectedDateJul);
@@ -74,27 +70,29 @@ export class ClientPage {
       this.nov = this.globals.getTopTenClientsByNameAndDate(this.navParams.get('name'), this.selectedDateNov);
       this.dez = this.globals.getTopTenClientsByNameAndDate(this.navParams.get('name'), this.selectedDateDez);
 
-      this.p1 = this.jul.length > 0 ? this.jul[0].TotalNFe : 0;
-      this.p2 = this.ago.length > 0 ? this.ago[0].TotalNFe : 0;
-      this.p3 = this.set.length > 0 ? this.set[0].TotalNFe : 0;
-      this.p4 = this.out.length > 0 ? this.out[0].TotalNFe : 0;
-      this.p5 = this.nov.length > 0 ? this.nov[0].TotalNFe : 0;
-      this.p6 = this.dez.length > 0 ? this.dez[0].TotalNFe : 0;
+      this.m1 = this.jul.length > 0 ? this.jul[0].TotalNFe : 0;
+      this.m2 = this.ago.length > 0 ? this.ago[0].TotalNFe : 0;
+      this.m3 = this.set.length > 0 ? this.set[0].TotalNFe : 0;
+      this.m4 = this.out.length > 0 ? this.out[0].TotalNFe : 0;
+      this.m5 = this.nov.length > 0 ? this.nov[0].TotalNFe : 0;
+      this.m6 = this.dez.length > 0 ? this.dez[0].TotalNFe : 0;
+
+      this.getTiketMedioMensaltiketMedioMensal(this.m1, this.m2, this.m3, this.m4, this.m5, this.m6);
+      this.mesAtual = this.m6;
     }
+
     this.myDataSets = [{
       name: '', //prices
       points: [
-        {x: 7, y: this.p1},
-        {x: 8, y: this.p2},
-        {x: 9, y: this.p3},
-        {x: 10, y: this.p4},
-        {x: 11, y: this.p5},
-        {x: 12, y: this.p6}
+        {x: 7, y: this.m1},
+        {x: 8, y: this.m2},
+        {x: 9, y: this.m3},
+        {x: 10, y: this.m4},
+        {x: 11, y: this.m5},
+        {x: 12, y: this.m6}
       ]
     }];
   }
-
-
 
   chartStyles = {
     dataSetStyles: [
@@ -177,11 +175,6 @@ export class ClientPage {
     this.clientName = this.navParams.get('name');
     this.lastValue = this.navParams.get('lastValue');
     this.isIncrementing = this.navParams.get('isIncrementing');
-
-    // Hard coded values
-    this.tiketMedioMensal = 'R$ 37 mil'; //37628,59
-    this.mesAtual = 'R$ 77 mil'; //77.531,24
-
   }
 
   renderClientChart() {
@@ -213,5 +206,9 @@ export class ClientPage {
     this.metaEstablecidaFlag = true;
   }
 
+  getTiketMedioMensaltiketMedioMensal(m1, m2, m3, m4, m5, m6) {
+    let suma = m1 + m2 + m3 + m4 + m5 + m6;
+    this.tiketMedioMensal = suma / 6;
+  }
 
 }

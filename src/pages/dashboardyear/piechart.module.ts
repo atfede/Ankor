@@ -6,7 +6,7 @@ import {RoundProgressModule} from 'angular-svg-round-progressbar';
 
 @NgModule({
   declarations: [
-    PiechartPage,
+    PiechartPage
   ],
   imports: [
     IonicPageModule.forChild(PiechartPage),

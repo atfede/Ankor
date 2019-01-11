@@ -25,7 +25,6 @@ import {FIREBASE_CONFIG} from './app.firebase.config';
 // import { LoginPage } from '../pages/login/login';
 // import { RegisterPage } from '../pages/register/register';
 
-import {RoundProgressModule} from 'angular-svg-round-progressbar';
 import {NgxLineChartModule} from 'ngx-line-chart';
 import {HttpClientModule} from '@angular/common/http';
 // import {ProgressBarComponent} from '../components/progress-bar/progress-bar';
@@ -52,7 +51,6 @@ import {Globals} from '../components/Globals';
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    RoundProgressModule,
     NgxLineChartModule,
     HttpClientModule,
     SharedModule,

@@ -84,7 +84,7 @@
       <!-- position 1/3 -->
       <ion-col class="tributo-value">
         <ion-label>TIKET MEDIO MENSAL</ion-label>
-        <p>{{tiketMedioMensal}}</p>
+        <p>{{tiketMedioMensal | number : '1.2-2'}}</p>
       </ion-col>
       <!-- position 2/3 -->
       <ion-col class="tributo-value">
@@ -126,7 +126,8 @@
     <ion-row align-items-center justify-content-center="">
       <ion-row align-items-center justify-content-center="">
         <p style="margin:0px;">R$ &nbsp;</p>
-        <ion-input class="inputMeta" type="number" maxlength="10" align-items-center justify-content-center="" #milestone></ion-input>
+        <ion-input class="inputMeta" type="number" maxlength="10" align-items-center justify-content-center=""
+                   #milestone></ion-input>
       </ion-row>
     </ion-row>
 

@@ -3048,7 +3048,7 @@ export class Globals {
     {
       MesAnoEmit: '01/18',
       QtdNFes: 1,
-      TotalNFe: 1063,
+      TotalNFe: 1063.00,
       TotalBCICMS: 0.00,
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
