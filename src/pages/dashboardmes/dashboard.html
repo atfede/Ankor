@@ -207,13 +207,13 @@
   <br/>
   <!--<ion-row id="compName" justify-content-center> {{(profileData)?.companyName }} </ion-row>-->
   <ion-row id="compName" justify-content-center>
-    <ion-col col-1 (click)="viewPreviousCompany();">
+    <ion-col col-1 (click)="viewPreviousCompany();" *ngIf="globals.CURRENT_PAGE > 0">
       <ion-icon name="md-arrow-back" style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -0px;"></ion-icon>
     </ion-col>
     <ion-col col-10 style="text-align: center; margin-top: -9px;">
       <h6>{{companyName}}</h6>
     </ion-col>
-    <ion-col col-1 (click)="viewNextCompany();">
+    <ion-col col-1 (click)="viewNextCompany();" *ngIf="globals.CURRENT_PAGE < globals.NUMBER_OF_COMPANIES">
       <ion-icon name="md-arrow-forward"
                 style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -0px;"></ion-icon>
     </ion-col>

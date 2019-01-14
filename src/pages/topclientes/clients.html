@@ -67,6 +67,12 @@
   .searchbar-ios .searchbar-input {
     border-radius: 25px !important;
   }
+
+  /*pasar a html en index*/
+  .button-md{
+    background-color: transparent;
+  }
+
 </style>
 
 <ion-header>
@@ -89,12 +95,6 @@
     </ion-col>
 
     <ion-col class="fontname" *ngIf="!isSearchBarOpened">Top Clientes</ion-col>
-
-    <!--<ion-col *ngIf="!isSearchBarOpened">-->
-    <!--<button class="search-button"> &lt;!&ndash;(click)=""&ndash;&gt;-->
-    <!--<img src="./assets/imgs/search-icon.png" style="width: 37px; margin-top: -10px;"/>-->
-    <!--</button>-->
-    <!--</ion-col>-->
 
     <ion-col *ngIf="isSearchBarOpened">
       <!-- <ion-searchbar [ngModel]="txtSearch" showCancelButton="true" animated="true" placeholder="Procurar clientes"

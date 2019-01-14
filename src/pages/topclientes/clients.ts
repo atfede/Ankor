@@ -232,7 +232,6 @@ export class ClientsPage {
     });
 
     //TODO: FILTER ONLY 10 CLIENTS
-    console.log(ret);
     return ret.sort((a, b) => parseFloat(a.TotalNFe) - parseFloat(b.TotalNFe)).reverse();
   }
 

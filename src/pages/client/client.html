@@ -74,7 +74,6 @@
       <div class="monthDrawedName">OUT</div>
       <div class="monthDrawedName">NOV</div>
       <div class="monthDrawedName">DIC</div>
-
     </div>
   </ion-row>
 
@@ -132,7 +131,9 @@
     </ion-row>
 
     <ion-row align-items-center justify-content-center="" style="margin-top:5%;">
-      <button class="btn-style" id="establishMilestone" ion-button (click)="displayMilestone(milestone)" block>
+      <!--<button class="btn-style" id="establishMilestone" ion-button (click)="setAndDisplayMilestone(milestone)" block>-->
+      <button class="btn-style" id="establishMilestone" ion-button (click)="addMeta(clientName, milestone)" block>
+      <!--<button class="btn-style" id="establishMilestone" ion-button (click)="updateMeta(clientName, milestone)" block>-->
         Establecer meta
       </button>
     </ion-row>

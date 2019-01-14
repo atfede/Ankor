@@ -33,46 +33,49 @@ import {DresinteticoComponent} from "../pages/dresintetico/dresintetico";
 import {DresinteticoComponentModule} from '../pages/dresintetico/dresintetico.module';
 
 import {Globals} from '../components/Globals';
+import {MetasService} from "../services/metas.service";
 
 @NgModule({
-  declarations: [
-    MyApp
-    , HomePage
-    , ListPage
-    // , MetasComponent
-    // , DashboardPage
-    // , LoginPage,
-    // , RegisterPage,
-    // , DresinteticoComponentModule
-  ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(FIREBASE_CONFIG),
-    AngularFireAuthModule,
-    AngularFireDatabaseModule,
-    NgxLineChartModule,
-    HttpClientModule,
-    SharedModule,
-    DresinteticoComponentModule
+    declarations: [
+        MyApp
+        , HomePage
+        , ListPage
+        // , MetasService
+        // , MetasComponent
+        // , DashboardPage
+        // , LoginPage,
+        // , RegisterPage,
+        // , DresinteticoComponentModule
+    ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        IonicModule.forRoot(MyApp),
+        AngularFireModule.initializeApp(FIREBASE_CONFIG),
+        AngularFireAuthModule,
+        AngularFireDatabaseModule,
+        NgxLineChartModule,
+        SharedModule,
+        DresinteticoComponentModule
+    ],
+    bootstrap: [IonicApp],
+    entryComponents: [
+        MyApp,
+        HomePage,
+        ListPage
+        // DashboardPage
+        // RegisterPage,
+        // LoginPage,
 
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    HomePage,
-    ListPage
-    // DashboardPage
-    // RegisterPage,
-    // LoginPage,
+    ],
+    providers: [
+        StatusBar
+        , SplashScreen
+        , {provide: ErrorHandler, useClass: IonicErrorHandler}
+        , Globals
+        , MetasService
 
-  ],
-  providers: [
-    StatusBar
-    , SplashScreen
-    , {provide: ErrorHandler, useClass: IonicErrorHandler}
-    , Globals
-  ]
+    ]
 })
 export class AppModule {
 }
