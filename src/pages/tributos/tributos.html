@@ -9,7 +9,8 @@
     <button ion-button menuToggle>
       <ion-icon class="menuIconBurger" name="menu"></ion-icon>
     </button>
-    <ion-title><img id="topTitleImg" height="50px" src="assets/imgs/image-without-bg.png" class="thumb-img" /></ion-title>
+    <ion-title><img id="topTitleImg" height="50px" src="assets/imgs/image-without-bg.png" class="thumb-img"/>
+    </ion-title>
     <button ion-button menuToggle style="display:none;">
       <ion-icon class="menuIconBurger" name="menu"></ion-icon>
     </button>
@@ -19,28 +20,39 @@
 
 <ion-content padding class="bg-style">
   <ion-row class="row" id="compName" justify-content-center="" style="margin-top: 10px;font-size: larger;">
-    <ion-col col-2 (click)="goBack()">
-        <ion-icon class="back-arrow" name="md-arrow-back" style="font-size: 2em;"></ion-icon>
-    </ion-col>
+    <ion-col col-2></ion-col>
     <ion-col col-8 style="text-align:center;" align-items-center justify-content-center>Tributos a pagar</ion-col>
     <ion-col col-2></ion-col>
+  </ion-row>
 
+  <ion-row id="compName" justify-content-center>
+    <ion-col col-1 (click)="viewPreviousCompany();" *ngIf="globals.CURRENT_PAGE > 0">
+      <ion-icon name="md-arrow-back"
+                style="z-index:99; font-size: 2.5em; color: #b18619; margin-top: -0px;"></ion-icon>
+    </ion-col>
+    <ion-col col-10 style="text-align: center; margin-top: 11px; color: white;">
+      <h6>{{companyName}}</h6>
+    </ion-col>
+    <ion-col col-1 (click)="viewNextCompany();" *ngIf="globals.CURRENT_PAGE < globals.NUMBER_OF_COMPANIES">
+      <ion-icon name="md-arrow-forward"
+                style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -0px;"></ion-icon>
+    </ion-col>
   </ion-row>
 
   <ion-row class="tributo-row" *ngFor="let tributo of tributos" align-items-center justify-content-center="">
 
     <ion-col class="tributo-abr">
-      {{tributo.abr}}
+      {{tributo.nombre}}
     </ion-col>
 
     <ion-col class="tributo-value">
       <ion-label *ngIf="!tributo.paid">VALOR ESTIMADO</ion-label>
-      {{tributo.value}}
+      R$ {{tributo.value | number : '1.2-2'}}
     </ion-col>
 
-    <!--<ion-col class="tributo.paid" *ngIf="tributo.paid" style=" color : rgb(68, 204, 130) !important;font-weight: bold;    text-align: center;">-->
+    <!--<ion-col class="tributo.paid" *ngIf="tributo.paid" style=" color : rgb(68, 204, 130) !important;font-weight: bold; text-align: center;">-->
     <ion-col class="tributo.paid" *ngIf="tributo.paid">
-      <!--<ion-icon name="checkmark" style=" color : rgb(68, 204, 130) !important; font-weight: bold;    text-align: center;"></ion-icon>
+      <!--<ion-icon name="checkmark" style=" color : rgb(68, 204, 130) !important; font-weight: bold; text-align: center;"></ion-icon>
       PAGO
     </ion-col>-->
       <ion-label style="text-align: center;">DATA PAGO</ion-label>
@@ -52,7 +64,6 @@
     </ion-col>
 
   </ion-row>
-
 
 
 </ion-content>

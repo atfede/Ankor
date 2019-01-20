@@ -4,6 +4,7 @@ import {ExtratoTotal} from "../../models/ExtratoTotal";
 import {Client} from "../../models/Client";
 import {Constants} from '../../models/Constants';
 import {Globals} from "../../components/Globals";
+import {ChangeDetectorRef, AfterContentChecked} from '@angular/core';
 
 @IonicPage()
 @Component({
@@ -65,18 +66,17 @@ export class PiechartPage {
   public companyName: string;
   public aproveitamientoPastHigher;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private globals: Globals) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private globals: Globals, private cdref: ChangeDetectorRef) {
     this.extratoTotal = this.globals.clients;
     this.setCompanyName(this.extratoTotal[this.globals.CURRENT_PAGE][0].Client.Name);
   }
 
   ngOnInit() {
     this.getTopFiveClients();
-    //this.displayProgressBar();
   }
 
   ionViewDidLoad() {
-    //console.log('ionViewDidLoad PiechartPage');
+
   }
 
   displayMonthlyChart() {
@@ -141,16 +141,16 @@ export class PiechartPage {
   }
 
   getAproveitamento() {
-    var past = this.getTotalExtratosPreviousYearUntilMonth();
-    var curr = this.getTotalExtratosCurrentYear();
+    var past = this.getTotalExtratosLastYear(); //2017;
+    var curr = this.getTotalExtratosCurrentYear(); //2018
 
-    if (past > curr) {
-      this.aproveitamientoPastHigher = true;
-    } else {
-      this.aproveitamientoPastHigher = false;
-    }
+    /* if (past > curr) {
+       this.aproveitamientoPastHigher = true;
+     } else {
+       this.aproveitamientoPastHigher = false;
+     }*/
 
-    return (past * 100) / curr;
+    return ((past - curr) / curr) * 100;
   }
 
   getCurrentMonth() {
@@ -175,10 +175,6 @@ export class PiechartPage {
     } else {
       return monthNames[m - 1].toLowerCase().substring(0, 3);
     }
-  }
-
-  displayProgressBar() {
-
   }
 
   getLastYear() {

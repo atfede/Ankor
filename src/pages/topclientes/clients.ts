@@ -27,20 +27,17 @@ export class ClientsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private globals: Globals) {
     this.top10Clients = this.globals.top10ClientesSumaPorMes;
-    this.selectedDate = {month: "Janeiro", year: 2018};
+    // this.selectedDate = {month: "Janeiro", year: 2018};
+    this.selectedDate = {month: this.getMonthNumberByMonthName("Janeiro"), year: String(2018).substring(2)};
   }
 
-  public isSearchBarOpened = false;
+  isSearchBarOpened = false;
   filteredTopTenClients: any = new Array<ExtratoTotal>();
   searchTerm: string = '';
-
   top10Clients: any = [];
   selectedDate: any;
-
   months: Array<{ month: string, year: number, actMonth: boolean }>;
-
-  public clientsOctubreTopTen: Array<clientPct> = [];
-  // public percentageRandom: Array<number> = [];
+  clientsOctubreTopTen: Array<clientPct> = [];
 
   public clientsOctubre: Array<clientPct> = [
     {
@@ -136,7 +133,6 @@ export class ClientsPage {
   ];
 
   ionViewDidLoad() {
-    //this.getClientsOctubreTopTen();
     this.filteredTopTenClients = this.getTopTenClients({month: "Janeiro", year: "2018"});
   }
 
@@ -216,12 +212,12 @@ export class ClientsPage {
 
   onChange($event) {
     // console.log($event);
-    this.selectedDate = {month: this.getMonthNumberStr($event.month), year: String($event.year).substring(2)};
+    this.selectedDate = {month: this.getMonthNumberByMonthName($event.month), year: String($event.year).substring(2)};
     this.filteredTopTenClients = this.getTopTenClients($event);
   }
 
   getTopTenClients(event) {
-    let month = this.getMonthNumberStr(event.month);
+    let month = this.getMonthNumberByMonthName(event.month);
     let year = String(event.year).substring(2);
     let ret = [];
 
@@ -235,7 +231,7 @@ export class ClientsPage {
     return ret.sort((a, b) => parseFloat(a.TotalNFe) - parseFloat(b.TotalNFe)).reverse();
   }
 
-  getMonthNumberStr(monthStr) {
+  getMonthNumberByMonthName(monthStr) {
     var month = "";
     switch (monthStr) {
 

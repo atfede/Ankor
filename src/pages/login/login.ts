@@ -6,6 +6,7 @@ import {UserData} from '../../models/UserData';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {Observable} from "rxjs";
+import {Globals} from "../../components/Globals";
 
 @IonicPage()
 @Component({
@@ -17,7 +18,7 @@ export class LoginPage {
   user = {} as User;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth,
-              private toast: ToastController, private http: HttpClient) {
+              private toast: ToastController, private http: HttpClient, private globals: Globals) {
   }
 
   ionViewDidLoad() {
@@ -29,6 +30,7 @@ export class LoginPage {
       const logAttemp = this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password).then(f => {
 
         console.log(logAttemp);
+        this.globals.loggedUser = this.user.email;
 
         // Successful login
         if (logAttemp) {

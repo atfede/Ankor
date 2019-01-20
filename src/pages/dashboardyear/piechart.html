@@ -64,7 +64,7 @@
     text-align: center;
     width: 100%;
     z-index: 1;
-    font-size: 2.2em;
+    font-size: 26px;
     color: #c49846;
     font-weight: bold;
   }
@@ -80,7 +80,7 @@
     z-index: 1;
     font-weight: 100;
     font-size: 11px;
-    width: 60%;
+    width: 62%;
   }
 
   .faturamento_ano {
@@ -165,7 +165,8 @@
 
   .client-amount {
     font-weight: bold;
-    font-size: 11px;"
+    font-size: 11px;
+  "
   }
 
 </style>
@@ -188,15 +189,16 @@
   <br/>
   <!--<ion-row id="compName" justify-content-center> {{(profileData)?.CompanyName }} </ion-row>-->
   <ion-row id="compName" justify-content-center>
-    <ion-col col-1 (click)="viewPreviousCompany();">
-      <ion-icon name="md-arrow-back" style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -0px;"></ion-icon>
+    <ion-col col-1 (click)="viewPreviousCompany();" *ngIf="globals.CURRENT_PAGE > 0">
+      <ion-icon name="md-arrow-back"
+                style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -0px;"></ion-icon>
     </ion-col>
     <ion-col col-10 style="text-align: center; margin-top: -9px;">
       <h6>{{companyName}}</h6>
     </ion-col>
-    <ion-col col-1 (click)="viewNextCompany();">
+    <ion-col col-1 (click)="viewNextCompany();" *ngIf="globals.CURRENT_PAGE < globals.NUMBER_OF_COMPANIES">
       <ion-icon name="md-arrow-forward"
-                style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -0px;"></ion-icon>
+                style="z-index:99; font-size: 2.5em; color: #b18619; margin-top: -0px;"></ion-icon>
     </ion-col>
   </ion-row>
 
@@ -250,7 +252,8 @@
           <ion-col></ion-col>
           <ion-col>
             <button data-action="false" class="selectedMonth">Este ano</button>
-            <button data-action="true" class="unselectedMonth" (click)="displayMonthlyChart()">Este mês</button>
+            <button data-action="true" class="unselectedMonth" (click)="displayMonthlyChart()">Este mês
+            </button>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -279,29 +282,32 @@
             ></round-progress>
             <!--(onRender)="doSomethingWithCurrentValue($event)"-->
 
-            <div class="piechart_text_year_left">{{getCurrentYear()}}</div>
-            <div class="piechart_text_year_right">{{getLastYear()}}</div>
+            <div class="piechart_text_year_left">{{getCurrentYear() - 1}}</div>
+            <div class="piechart_text_year_right">{{getLastYear() - 1}}</div>
 
             <div class="piechart_text">Aproveitamento</div>
             <div class="piechart_text_percentage"
                  *ngIf="!aproveitamientoPastHigher"> {{getAproveitamento() | number : '1.2-2'}}%
             </div>
             <div class="piechart_text_percentage" *ngIf="aproveitamientoPastHigher">
-              - {{getAproveitamento() | number : '1.2-2'}}%
+              {{getAproveitamento() | number : '1.2-2'}}%
             </div>
 
             <div class="piechart_text_left">
               <div class="faturamento_ano">Faturamento deste ano</div>
               <div>({{ getLastMonthName() }} - {{getLastYear()}})</div>
               <br/>
-              <div class="faturamento_ano_price">R$ {{getTotalExtratosCurrentYear() | number : '1.2-2'}}</div>
+              <div class="faturamento_ano_price">R$ {{getTotalExtratosCurrentYear() | number : '1.2-2'}}
+              </div>
             </div>
 
             <div class="piechart_text_right">
               <div class="faturamento_ano_anterior">Faturamento do ano anterior</div>
               <div>({{ getLastMonthName()}} - {{getLastYear() - 1}})</div>
               <br/>
-              <div class="faturamento_ano_anterior_price">R$ {{getTotalExtratosLastYear() | number : '1.2-2'}}</div>
+              <div class="faturamento_ano_anterior_price">R$ {{getTotalExtratosLastYear() | number :
+                '1.2-2'}}
+              </div>
             </div>
 
           </div>

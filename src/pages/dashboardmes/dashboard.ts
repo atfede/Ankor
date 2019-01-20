@@ -157,7 +157,6 @@ export class DashboardPage {
   }
 
   getTotalPreviousMonth() {
-    //return this.extratoTotal[this.extratoTotal.length - 1].TotalNFe;
     let date = new Date();
     let previousMonth = date.getMonth();
     let previousMonthStr = "";
@@ -224,16 +223,6 @@ export class DashboardPage {
 
   ionViewDidLoad() {
 
-    // this.presentLoadingDefault();
-
-    /* setTimeout(() => {
-       this.renderCenterComponents();
-       this.renderBottomComponents();
-
-       for (var id in Chart.instances) {
-         Chart.instances[id].resize()
-       }
-     }, 3000);*/
   }
 
   ionViewWillEnter() {
@@ -328,6 +317,7 @@ export class DashboardPage {
     this.navCtrl.setRoot('PiechartPage', {}, {animate: true, direction: 'forward'});
   }
 
+  //TODO: sacar top 5 de clientes según usuario logueado
   getTopFiveClients() {
 
     var top5Clients = this.clients.sort(function (a, b) {

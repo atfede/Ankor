@@ -1,8 +1,7 @@
 import {TipoCliente} from "./TipoCliente";
 import {ExtratoTotal} from "./ExtratoTotal";
-import {Meta} from "./Meta";
 
-export class Client {
+export class Meta {
   Id: number;
   Name: string;
   Surename: string;
@@ -10,10 +9,9 @@ export class Client {
   Amount: number;
   ClientType: string;
   extratos: Array<ExtratoTotal>;
-  // metas: Array<Meta>;
 
   constructor(id: number, name: string, surename: string, increments: boolean, amount: number, clientType: string, extratos: Array<ExtratoTotal>) {
-    this.Id = id,
+      this.Id = id,
       this.Name = name,
       this.Surename = this.Surename,
       this.Increments = increments,
