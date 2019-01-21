@@ -10,9 +10,9 @@ export class Client {
   Amount: number;
   ClientType: string;
   extratos: Array<ExtratoTotal>;
-  // metas: Array<Meta>;
+  metas: Array<Meta>;
 
-  constructor(id: number, name: string, surename: string, increments: boolean, amount: number, clientType: string, extratos: Array<ExtratoTotal>) {
+  constructor(id: number, name: string, surename: string, increments: boolean, amount: number, clientType: string, extratos: Array<ExtratoTotal>, metas: Array<Meta>) {
     this.Id = id,
       this.Name = name,
       this.Surename = this.Surename,
@@ -20,5 +20,6 @@ export class Client {
       this.Amount = amount,
       this.ClientType = clientType,
       this.extratos = extratos
+    this.metas = metas;
   }
 }

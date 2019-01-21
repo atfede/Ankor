@@ -14,6 +14,7 @@ import {Constants} from "../../models/Constants";
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {Globals} from "../../components/Globals";
+import {Meta} from "../../models/Meta";
 // import {HelperService} from './services/helper.service';
 
 declare var jquery: any;
@@ -37,8 +38,8 @@ export class DashboardPage {
               /*, private _helper: HelperService*/) {
 
     //TODO: Get type of Profile from login (servicio o comercio)
-    this.extratoTotal = this.globals.clients;
-    this.setCompanyName(this.extratoTotal[this.globals.CURRENT_PAGE][0].Client.Name);
+    this.extratoTotal = this.globals.clients[this.globals.loggedUserIndex];
+    this.setCompanyName(this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE][0].Client.Name);
 
   }
 
@@ -46,9 +47,7 @@ export class DashboardPage {
   barChart: any;
   lineChart: any;
 
-  //private currentPage = GlobalVariable.CURRENT_PAGE;
-  //private numberOfCompanies = GlobalVariable.NUMBER_OF_COMPANIES;
-
+  //TODO: calcular top 5 clientes para el usuario logueado
   //top 5 clients
   public clients: Array<Client> = [
     {
@@ -58,7 +57,8 @@ export class DashboardPage {
       Increments: true,
       Amount: 3767203,
       ClientType: 'comercio',
-      extratos: new Array<ExtratoTotal>()
+      extratos: new Array<ExtratoTotal>(),
+      metas : new Array<Meta>()
     }, //901.421.100-78
     {
       Id: 3,
@@ -67,7 +67,8 @@ export class DashboardPage {
       Increments: true,
       Amount: 2066400,
       ClientType: 'servicio',
-      extratos: new Array<ExtratoTotal>()
+      extratos: new Array<ExtratoTotal>(),
+      metas : new Array<Meta>()
     }, //469.574.560-72
     {
       Id: 4,
@@ -76,7 +77,8 @@ export class DashboardPage {
       Increments: true,
       Amount: 911203.35,
       ClientType: 'comercio',
-      extratos: new Array<ExtratoTotal>()
+      extratos: new Array<ExtratoTotal>(),
+      metas : new Array<Meta>()
     }, //22829604000188
     {
       Id: 6,
@@ -85,7 +87,8 @@ export class DashboardPage {
       Increments: true,
       Amount: 832291.15,
       ClientType: 'comercio',
-      extratos: new Array<ExtratoTotal>()
+      extratos: new Array<ExtratoTotal>(),
+      metas : new Array<Meta>()
     }, //096.233.801-00
     {
       Id: 10,
@@ -94,9 +97,11 @@ export class DashboardPage {
       Increments: false,
       Amount: 206869.35,
       ClientType: 'comercio',
-      extratos: new Array<ExtratoTotal>()
+      extratos: new Array<ExtratoTotal>(),
+      metas : new Array<Meta>()
     } //096.212.221-17
   ];
+
   public topFiveClients: any = new Array<Client>();
   public extratoTotal: any = new Array<Client>();
   public companyName: string;
@@ -106,7 +111,7 @@ export class DashboardPage {
   getTotalExtratosCurrentYear() {
     let total = 0;
 
-    this.extratoTotal[this.globals.CURRENT_PAGE].forEach((el) => {
+    this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE].forEach((el) => {
       if (el.MesAnoEmit.split('/')[1] == '18') { //get current year
         total += el.TotalNFe;
       }
@@ -124,7 +129,7 @@ export class DashboardPage {
   getImpostosPrevistos(year) {
     let totalICMS = 0;
 
-    this.extratoTotal[this.globals.CURRENT_PAGE].forEach((el) => {
+    this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE].forEach((el) => {
       if (el.MesAnoEmit.split('/')[1] == year) { //'18'
         totalICMS += el.TotalICMS;
       }
@@ -140,7 +145,7 @@ export class DashboardPage {
     if (Constants.IsComercio) {
       //return this.extratoTotal[this.globals.CURRENT_PAGE].TotalNFe - Constants.ICMS - Constants.COMERCIO - Constants.ISSQN5;
 
-      this.extratoTotal[this.globals.CURRENT_PAGE].forEach((el) => {
+      this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE].forEach((el) => {
         if (el.MesAnoEmit.split('/')[0] == '01' && el.MesAnoEmit.split('/')[1] == '19') {
           totalCurrentMonth += el.TotalICMS;
 
@@ -169,7 +174,7 @@ export class DashboardPage {
       //return this.extratoTotal[this.globals.CURRENT_PAGE].TotalNFe - Constants.ICMS - Constants.COMERCIO - Constants.ISSQN5;
       let totalPreviousMonth = 0;
 
-      this.extratoTotal[this.globals.CURRENT_PAGE].forEach((el) => {
+      this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE].forEach((el) => {
         if (el.MesAnoEmit.split('/')[0] == previousMonthStr && el.MesAnoEmit.split('/')[1] == '18') {
           totalPreviousMonth += el.TotalICMS;
 
@@ -200,7 +205,7 @@ export class DashboardPage {
     if (Constants.IsComercio) {
       //return this.extratoTotal[this.globals.CURRENT_PAGE].TotalNFe - Constants.ICMS - Constants.COMERCIO - Constants.ISSQN5;
 
-      this.extratoTotal[this.globals.CURRENT_PAGE].forEach((el) => {
+      this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE].forEach((el) => {
         if (el.MesAnoEmit.split('/')[0] == previousMonthStr && el.MesAnoEmit.split('/')[1] == '17') {
           totalPreviousMonth += el.TotalICMS;
 
@@ -449,7 +454,7 @@ export class DashboardPage {
       this.globals.CURRENT_PAGE--;
       //this.extratoTotal[];
       //alert(this.globals.CURRENT_PAGE);
-      this.setCompanyName(this.extratoTotal[this.globals.CURRENT_PAGE][0].Client.Name);
+      this.setCompanyName(this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE][0].Client.Name);
     }
     this.getmesAnteriorEsteAnoBarHeight();
     this.getmesmoMesNoAnoAnteriorBarHeight();
@@ -460,7 +465,7 @@ export class DashboardPage {
     if (this.globals.CURRENT_PAGE < this.globals.NUMBER_OF_COMPANIES) {
       this.globals.CURRENT_PAGE++;
       //alert(this.globals.CURRENT_PAGE);
-      this.setCompanyName(this.extratoTotal[this.globals.CURRENT_PAGE][0].Client.Name);
+      this.setCompanyName(this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE][0].Client.Name);
     }
     this.getmesAnteriorEsteAnoBarHeight();
     this.getmesmoMesNoAnoAnteriorBarHeight();

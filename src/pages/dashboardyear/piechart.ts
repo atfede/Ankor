@@ -5,6 +5,7 @@ import {Client} from "../../models/Client";
 import {Constants} from '../../models/Constants';
 import {Globals} from "../../components/Globals";
 import {ChangeDetectorRef, AfterContentChecked} from '@angular/core';
+import {Meta} from "../../models/Meta";
 
 @IonicPage()
 @Component({
@@ -22,7 +23,8 @@ export class PiechartPage {
       Increments: true,
       Amount: 3767203,
       ClientType: 'comercio',
-      extratos: new Array<ExtratoTotal>()
+      extratos: new Array<ExtratoTotal>(),
+      metas : new Array<Meta>()
     }, //901.421.100-78
     {
       Id: 3,
@@ -31,7 +33,8 @@ export class PiechartPage {
       Increments: true,
       Amount: 2066400,
       ClientType: 'servicio',
-      extratos: new Array<ExtratoTotal>()
+      extratos: new Array<ExtratoTotal>(),
+      metas : new Array<Meta>()
     }, //469.574.560-72
     {
       Id: 4,
@@ -40,7 +43,8 @@ export class PiechartPage {
       Increments: true,
       Amount: 911203.35,
       ClientType: 'comercio',
-      extratos: new Array<ExtratoTotal>()
+      extratos: new Array<ExtratoTotal>(),
+      metas : new Array<Meta>()
     }, //22829604000188
     {
       Id: 6,
@@ -49,7 +53,8 @@ export class PiechartPage {
       Increments: true,
       Amount: 832291.15,
       ClientType: 'comercio',
-      extratos: new Array<ExtratoTotal>()
+      extratos: new Array<ExtratoTotal>(),
+      metas : new Array<Meta>()
     }, //096.233.801-00
     {
       Id: 10,
@@ -58,7 +63,8 @@ export class PiechartPage {
       Increments: false,
       Amount: 206869.35,
       ClientType: 'comercio',
-      extratos: new Array<ExtratoTotal>()
+      extratos: new Array<ExtratoTotal>(),
+      metas : new Array<Meta>()
     } //096.212.221-17
   ];
   public topFiveClients: Array<Client> = [];

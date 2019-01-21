@@ -32,9 +32,13 @@ export class LoginPage {
         console.log(logAttemp);
         this.globals.loggedUser = this.user.email;
 
+        this.globals.setLoggedUserIndex(this.user.email);
+
         // Successful login
         if (logAttemp) {
 
+          this.globals.CURRENT_PAGE = 0;
+          this.globals.setNumberOfCompanies(this.globals.loggedUserIndex, this.globals.loggedUser);
           this.getUser();
 
           if (!f.additionalUserInfo.isNewUser) {
