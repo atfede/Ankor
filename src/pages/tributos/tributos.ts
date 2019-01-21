@@ -18,8 +18,8 @@ export class TributosPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private globals: Globals) {
-    this.extratoTotal = this.globals.clients;
-    this.setCompanyName(this.extratoTotal[this.globals.CURRENT_PAGE][0].Client.Name);
+    this.extratoTotal = this.globals.clients[this.globals.loggedUserIndex];
+    this.setCompanyName(this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE][0].Client.Name);
   }
 
   ionViewDidLoad() {
@@ -63,16 +63,17 @@ export class TributosPage {
   viewPreviousCompany() {
     if (this.globals.CURRENT_PAGE > 0) {
       this.globals.CURRENT_PAGE--;
-      this.setCompanyName(this.extratoTotal[this.globals.CURRENT_PAGE][0].Client.Name);
-      this.setTributos();
+      //this.extratoTotal[];
+      //alert(this.globals.CURRENT_PAGE);
+      this.setCompanyName(this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE][0].Client.Name);
     }
   }
 
   viewNextCompany() {
     if (this.globals.CURRENT_PAGE < this.globals.NUMBER_OF_COMPANIES) {
       this.globals.CURRENT_PAGE++;
-      this.setCompanyName(this.extratoTotal[this.globals.CURRENT_PAGE][0].Client.Name);
-      this.setTributos();
+      //alert(this.globals.CURRENT_PAGE);
+      this.setCompanyName(this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE][0].Client.Name);
     }
   }
 
@@ -83,7 +84,7 @@ export class TributosPage {
     if (Constants.IsComercio) {
       //return this.extratoTotal[this.globals.CURRENT_PAGE].TotalNFe - Constants.ICMS - Constants.COMERCIO - Constants.ISSQN5;
 
-      this.extratoTotal[this.globals.CURRENT_PAGE].forEach((el) => {
+      this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE].forEach((el) => {
         if (el.MesAnoEmit.split('/')[0] == '01' && el.MesAnoEmit.split('/')[1] == '19') {
           totalCurrentMonth += el.TotalICMS;
 

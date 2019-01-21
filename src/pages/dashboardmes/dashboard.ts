@@ -40,7 +40,6 @@ export class DashboardPage {
     //TODO: Get type of Profile from login (servicio o comercio)
     this.extratoTotal = this.globals.clients[this.globals.loggedUserIndex];
     this.setCompanyName(this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE][0].Client.Name);
-
   }
 
   profileData: AngularFireObject<Profile>;

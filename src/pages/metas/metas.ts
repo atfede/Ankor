@@ -27,8 +27,8 @@ export class MetasComponent {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private globals: Globals) {
     this.loadProgress = 46;
-    this.extratoTotal = this.globals.clients;
-    this.setCompanyName(this.extratoTotal[this.globals.CURRENT_PAGE][0].Client.Name);
+    this.extratoTotal = this.globals.clients[this.globals.loggedUserIndex];
+    this.setCompanyName(this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE][0].Client.Name);
   }
 
   goBack() {
@@ -72,14 +72,14 @@ export class MetasComponent {
   viewPreviousCompany() {
     if (this.globals.CURRENT_PAGE > 0) {
       this.globals.CURRENT_PAGE--;
-      this.setCompanyName(this.extratoTotal[this.globals.CURRENT_PAGE][0].Client.Name);
+      this.setCompanyName(this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE][0].Client.Name);
     }
   }
 
   viewNextCompany() {
     if (this.globals.CURRENT_PAGE < this.globals.NUMBER_OF_COMPANIES) {
       this.globals.CURRENT_PAGE++;
-      this.setCompanyName(this.extratoTotal[this.globals.CURRENT_PAGE][0].Client.Name);
+      this.setCompanyName(this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE][0].Client.Name);
     }
   }
 }

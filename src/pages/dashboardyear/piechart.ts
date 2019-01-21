@@ -73,8 +73,8 @@ export class PiechartPage {
   public aproveitamientoPastHigher;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private globals: Globals, private cdref: ChangeDetectorRef) {
-    this.extratoTotal = this.globals.clients;
-    this.setCompanyName(this.extratoTotal[this.globals.CURRENT_PAGE][0].Client.Name);
+    this.extratoTotal = this.globals.clients[this.globals.loggedUserIndex];
+    this.setCompanyName(this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE][0].Client.Name);
   }
 
   ngOnInit() {
@@ -92,7 +92,7 @@ export class PiechartPage {
   getTotalExtratosCurrentYear() {
     let total = 0;
 
-    this.extratoTotal[this.globals.CURRENT_PAGE].forEach((el) => {
+    this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE].forEach((el) => {
       if (el.MesAnoEmit.split('/')[1] == '18') { //get current year
         total += el.TotalNFe;
       }
@@ -110,7 +110,7 @@ export class PiechartPage {
   getTotalExtratosLastYear() {
     let total = 0;
 
-    this.extratoTotal[this.globals.CURRENT_PAGE].forEach((el) => {
+    this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE].forEach((el) => {
       if (el.MesAnoEmit.split('/')[1] == '17') { //get current year
         total += el.TotalNFe;
       }
@@ -137,7 +137,7 @@ export class PiechartPage {
     let totalICMS = 0;
 
     //total ICMS
-    this.extratoTotal[this.globals.CURRENT_PAGE].forEach((el) => {
+    this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE].forEach((el) => {
       if (el.MesAnoEmit.split('/')[1] == year) { //'18'
         totalICMS += el.TotalICMS;
       }
@@ -156,7 +156,7 @@ export class PiechartPage {
        this.aproveitamientoPastHigher = false;
      }*/
 
-    return ((past - curr) / curr) * 100;
+    return (((past - curr) / curr) * 100) * (-1);
   }
 
   getCurrentMonth() {
@@ -262,7 +262,7 @@ export class PiechartPage {
       this.globals.CURRENT_PAGE--;
       //this.extratoTotal[];
       //alert(this.globals.CURRENT_PAGE);
-      this.setCompanyName(this.extratoTotal[this.globals.CURRENT_PAGE][0].Client.Name);
+      this.setCompanyName(this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE][0].Client.Name);
     }
   }
 
@@ -270,7 +270,7 @@ export class PiechartPage {
     if (this.globals.CURRENT_PAGE < this.globals.NUMBER_OF_COMPANIES) {
       this.globals.CURRENT_PAGE++;
       //alert(this.globals.CURRENT_PAGE);
-      this.setCompanyName(this.extratoTotal[this.globals.CURRENT_PAGE][0].Client.Name);
+      this.setCompanyName(this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE][0].Client.Name);
     }
   }
 
