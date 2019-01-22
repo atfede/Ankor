@@ -308,9 +308,6 @@ export class DashboardPage {
     $("#bars li .bar").each(function (key, bar) {
       var percentage = $(this).data('percentage');
 
-      console.log("key: " + key);
-      console.log("bar: " + bar);
-
       $(this).animate({
         'height': percentage + '%'
       }, 1000);

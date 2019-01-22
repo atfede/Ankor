@@ -70,7 +70,6 @@ export class PiechartPage {
   public topFiveClients: Array<Client> = [];
   public extratoTotal: any = new Array<Client>();
   public companyName: string;
-  public aproveitamientoPastHigher;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private globals: Globals, private cdref: ChangeDetectorRef) {
     this.extratoTotal = this.globals.clients[this.globals.loggedUserIndex];
@@ -149,12 +148,6 @@ export class PiechartPage {
   getAproveitamento() {
     var past = this.getTotalExtratosLastYear(); //2017;
     var curr = this.getTotalExtratosCurrentYear(); //2018
-
-    /* if (past > curr) {
-       this.aproveitamientoPastHigher = true;
-     } else {
-       this.aproveitamientoPastHigher = false;
-     }*/
 
     return (((past - curr) / curr) * 100) * (-1);
   }

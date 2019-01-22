@@ -30,20 +30,31 @@ metas {
     //background-color: #00253a;
   }
 
-  .progress-bar .progress-outer{
+  ion-select{
+    max-width: 100%;
+    color: white;
+  }
+
+  .progress-bar .progress-outer {
     padding: 0;
 
   }
 
-  .progress-inner{
-    -webkit-box-shadow:0 0 20px #C49846;
+  .progress-inner {
+    -webkit-box-shadow: 0 0 20px #C49846;
     -moz-box-shadow: 0 0 20px #C49846;
     box-shadow: 0 0 20px #C49846;
   }
 
-  .client-name{
+  .client-name {
     float: right;
     margin-top: 5px;
     color: white;
   }
+
+  .company_name {
+    margin-top: 10px;
+    font-size: larger;
+  }
+
 }

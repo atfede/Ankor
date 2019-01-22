@@ -2,46 +2,70 @@ page-clients {
   .select-md {
     padding: 0px 8px 13px 16px;
   }
+
   .client-row {
     background-color: #1f3e51;
     border-radius: 28px;
     height: 7%;
     margin: 6px;
   }
+
   .month-drp {
     background-color: #151f25;
     border-radius: 28px;
     height: 29px;
   }
+
   .label-md {
     margin: 1px 4px 1px 0;
   }
+
   .item-md.item-block .item-inner {
     padding-right: 8px;
     border-bottom: 0px solid !important;
   }
+
   .icon-arrow {
     padding-top: 7px;
     margin-right: 9px;
     font-weight: bold;
     color: green;
   }
+
   .item-cover {
     width: 0%;
     height: 0%;
   }
+
   .item-inner {
     border: none;
   }
+
   .item-ios.item-block .item-inner {
     padding-right: 8px;
     padding-right: 8px;
     border-bottom: 0px solid #c8c7cc;
   }
+
   .select-ios {
     padding: 5px 8px 7px 12px;
-
+    max-width: 100%;
+    color: white;
+    //background-color: #00253a;
   }
+
+  .month-drp select select-md {
+    max-width: 100% !important;
+  }
+
+  .ion-select {
+    max-width: 100% !important;
+  }
+
+  .month-drp {
+    background: #002131;
+  }
+
   .fontname {
     font-weight: bold;
     font-size: 17px;
@@ -55,19 +79,30 @@ page-clients {
     text-align: -webkit-center;
     padding-top: 16px;
   }
+
   .value-client {
     font-weight: bold;
     font-size: 18px;
     margin-top: 5px;
     color: white;
   }
+
   .percent-clients {
     font-size: 12px;
     color: white;
     text-align: -webkit-center;
     padding-top: 16px;
   }
+
   .selectButtonContainer {
     display: contents;
+  }
+  
+  .text-centered{
+    text-align: left;
+  }
+
+  .gold-text{
+    color: #C49846;
   }
 }

@@ -69,8 +69,12 @@
   }
 
   /*pasar a html en index*/
-  .button-md{
+  .button-md {
     background-color: transparent;
+  }
+
+  .cliente-en-alerta {
+    font-size: 11px;
   }
 
 </style>
@@ -145,6 +149,31 @@
       <ion-icon name="arrow-dropright" style="padding: 6px; margin-top: 5px; color: #ffffff;"></ion-icon>
     </div>
   </ion-item>
+
+  <ion-row>
+    <ion-col col-2></ion-col>
+    <ion-col col-8 class="text-centered">
+      Clientes em alerta:
+      <br/>
+      <span style="color:#c49846;">1.</span> <span style="">Surgeon Com De Mat Cirurgico</span><br/>
+      <span style="color:#c49846;">2.</span> <span style="">Icafe Do Sul Com Varej De V.</span> <br/>
+      <span style="color:#c49846;">3.</span> <span style="cliente-en-alerta">Valen Bar E Rest Ltda Epp</span> <br/>
+    </ion-col>
+    <ion-col col-2></ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="displayClientesEmAlerta()">
+          <!--<img src="./assets/imgs/search-icon.png" class="search-button-img"/>-->
+          <span>Ver detalhes</span>
+        </button>
+      </ion-buttons>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
 
   <!-- <ion-row height="50%" style="margin-top: 25px; margin-bottom: 15px;">
      &lt;!&ndash; Charts &ndash;&gt;

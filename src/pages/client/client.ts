@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams, LoadingController} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, LoadingController, AlertController} from 'ionic-angular';
 import {Globals} from "../../components/Globals";
 import {Client} from "../../models/Client";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
@@ -54,7 +54,7 @@ export class ClientPage {
   metas = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl: LoadingController,
-              private globals: Globals, private metasService: MetasService) {
+              private globals: Globals, private metasService: MetasService, private alertCtrl: AlertController) {
     this.loggedUser = this.globals.loggedUser;
     this.extratoTotal = this.globals.clients;
     //TODO: get últimos 6 meses del año
@@ -224,8 +224,34 @@ export class ClientPage {
   }
 
   updateMeta(user, clientName, meta) {
-    this.metasService.updateMeta(user, clientName, meta._value).subscribe(meta => this.metas.push({user, clientName, meta}));
-    this.metaEstablecida = meta._value;
-    this.metaEstablecidaFlag = true;
+
+    var isNumber = !isNaN(meta);
+
+    if (user && clientName && meta && !isNumber) {
+      this.metasService.updateMeta(user, clientName, parseFloat(meta._value)).subscribe(meta => this.metas.push({
+        user,
+        clientName,
+        meta
+      }));
+      this.metaEstablecida = meta._value;
+      this.metaEstablecidaFlag = true;
+      //this.globals.getMetasCliente(this.globals.loggedUser);
+
+      this.displayMetaEstablecida("Meta establecida");
+
+    } else {
+      this.displayMetaEstablecida("Error al establecer meta");
+    }
   }
+
+  displayMetaEstablecida(txt) {
+    let alert = this.alertCtrl.create({
+      title: 'Meta',
+      subTitle: txt,
+      message: '',
+      buttons: ['Ok']
+    });
+    alert.present();
+  }
+
 }

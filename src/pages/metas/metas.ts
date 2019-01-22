@@ -3,15 +3,11 @@ import {IonicPage} from "ionic-angular";
 import {NavController, NavParams} from 'ionic-angular';
 import {Globals} from "../../components/Globals";
 import {Client} from "../../models/Client";
+import {MetasService} from "../../services/metas.service";
+import {Meta} from "../../models/Meta";
 
 // import {ProgressBarComponent} from "../../components/progress-bar/progress-bar";
 
-/**
- * Generated class for the MetasComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @IonicPage()
 @Component({
   selector: 'metas',
@@ -24,11 +20,13 @@ export class MetasComponent {
   loadProgress: number;
   companyName: string;
   extratoTotal: any = new Array<Client>();
+  metasCliente: any = new Array<Meta>();
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private globals: Globals) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private globals: Globals, private metasService: MetasService) {
     this.loadProgress = 46;
     this.extratoTotal = this.globals.clients[this.globals.loggedUserIndex];
     this.setCompanyName(this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE][0].Client.Name);
+    this.metasCliente = globals.metasCliente;
   }
 
   goBack() {
@@ -40,6 +38,8 @@ export class MetasComponent {
     var monthIndex = date.getMonth();
     this.months = [];
     const meses = [
+      'Janeiro'
+      /*,
       'Fevereiro',
       'Março',
       'Abril',
@@ -50,16 +50,18 @@ export class MetasComponent {
       'Setembro',
       'Outubro',
       'Novembro',
-      'Dezembro',
-      'Janeiro'];
+      'Dezembro'*/
+    ];
 
     const year = date.getFullYear();
     var actualMonth = meses[monthIndex]; //meses[monthIndex - 1]
 
     for (let p = 0; p < meses.length; p++) {
+      //var m = meses[p] == "Janeiro" ? year : year - 1;
+
       this.months.push({
         month: meses[p],
-        year: year - 1, //TODO: remove - 1
+        year: year, //TODO: remove - 1
         actMonth: actualMonth == meses[p]
       });
     }
@@ -81,5 +83,21 @@ export class MetasComponent {
       this.globals.CURRENT_PAGE++;
       this.setCompanyName(this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE][0].Client.Name);
     }
+  }
+
+  getLoadProgress(m) {
+    let max = this.getMaxAmount(this.metasCliente);
+    return ((m.Amount * 100) / max).toFixed(2);
+  }
+
+  getMaxAmount(metasCliente) {
+    var max = 0;
+
+    for (let data of metasCliente) {
+      if (data.Amount > max) {
+        max = data.Amount;
+      }
+    }
+    return max;
   }
 }

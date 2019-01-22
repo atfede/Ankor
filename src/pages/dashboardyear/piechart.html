@@ -267,7 +267,7 @@
         <div class="piechart">
           <div class="progress-wrapper">
             <round-progress
-              [current]="75"
+              [current]="getAproveitamento()"
               [max]="100"
               [color]="'#C49846'"
               [background]="'#eaeaea'"
@@ -286,10 +286,7 @@
             <div class="piechart_text_year_right">{{getLastYear() - 1}}</div>
 
             <div class="piechart_text">Aproveitamento</div>
-            <div class="piechart_text_percentage"
-                 *ngIf="!aproveitamientoPastHigher"> {{getAproveitamento() | number : '1.2-2'}}%
-            </div>
-            <div class="piechart_text_percentage" *ngIf="aproveitamientoPastHigher">
+            <div class="piechart_text_percentage">
               {{getAproveitamento() | number : '1.2-2'}}%
             </div>
 

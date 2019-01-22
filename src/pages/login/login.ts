@@ -29,9 +29,8 @@ export class LoginPage {
     try {
       const logAttemp = this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password).then(f => {
 
-        console.log(logAttemp);
+        // console.log(logAttemp);
         this.globals.loggedUser = this.user.email;
-
         this.globals.setLoggedUserIndex(this.user.email);
 
         // Successful login
@@ -39,6 +38,7 @@ export class LoginPage {
 
           this.globals.CURRENT_PAGE = 0;
           this.globals.setNumberOfCompanies(this.globals.loggedUserIndex, this.globals.loggedUser);
+          this.globals.getMetasCliente(this.globals.loggedUser);
           this.getUser();
 
           if (!f.additionalUserInfo.isNewUser) {

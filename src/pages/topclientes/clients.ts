@@ -5,13 +5,7 @@ import {clientPct} from "../../models/clientPct";
 import {Globals} from "../../components/Globals";
 import {l} from "@angular/core/src/render3";
 import {ExtratoTotal} from "../../models/ExtratoTotal";
-
-/**
- * Generated class for the ClientsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {AlertController} from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -25,7 +19,7 @@ export class ClientsPage {
     cid: string, lastValue: string, isIncrementing: boolean, percentage: string
   }>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private globals: Globals) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private globals: Globals, private alertCtrl: AlertController) {
     this.top10Clients = this.globals.top10ClientesSumaPorMes;
     // this.selectedDate = {month: "Janeiro", year: 2018};
     this.selectedDate = {month: this.getMonthNumberByMonthName("Janeiro"), year: String(2018).substring(2)};
@@ -37,100 +31,6 @@ export class ClientsPage {
   top10Clients: any = [];
   selectedDate: any;
   months: Array<{ month: string, year: number, actMonth: boolean }>;
-  clientsOctubreTopTen: Array<clientPct> = [];
-
-  public clientsOctubre: Array<clientPct> = [
-    {
-      Id: 1,
-      Name: 'DANIELLE',
-      Surename: 'CUNHA VARELA',
-      Increments: true,
-      Amount: 2319.72,
-      ClientType: 'comercio',
-      Percentage: 16
-    }, //901.421.100-78
-    {
-      Id: 2,
-      Name: 'DIEGO',
-      Surename: 'SALIBA DIAS',
-      Increments: false,
-      Amount: 687.95,
-      ClientType: 'comercio',
-      Percentage: 14
-    }, //910.302.260-91
-    {
-      Id: 3,
-      Name: 'FATIMA',
-      Surename: 'APARECIDA FAGUN.',
-      Increments: true,
-      Amount: 2345.76,
-      ClientType: 'servicio',
-      Percentage: 13
-    }, //469.574.560-72
-    {
-      Id: 4,
-      Name: '',
-      Surename: 'MAXIMA LOGISTICA E DIST.',
-      Increments: true,
-      Amount: 3695.74,
-      ClientType: 'comercio',
-      Percentage: 17
-    }, //22829604000188
-    {
-      Id: 5,
-      Name: 'ALEXANDRO',
-      Surename: 'FLORES MACHADO',
-      Increments: false,
-      Amount: 920.20,
-      ClientType: 'comercio',
-      Percentage: 14
-    }, //781.478.320-87
-    {
-      Id: 6,
-      Name: 'PABLO',
-      Surename: 'PAEZ RODRIGUEZ',
-      Increments: true,
-      Amount: 2353.14,
-      ClientType: 'comercio',
-      Percentage: 8
-    }, //096.233.801-00
-    {
-      Id: 7,
-      Name: 'MIRIAM CAMPOS',
-      Surename: 'MARQUES WIERZBICKI',
-      Increments: false,
-      Amount: 938.9,
-      ClientType: 'comercio',
-      Percentage: 6
-    }, //988.776.740-91
-    {
-      Id: 8,
-      Name: 'RAMON',
-      Surename: 'COSTA DE JESUS',
-      Increments: false,
-      Amount: 2200.54,
-      ClientType: 'servicio',
-      Percentage: 13
-    }, //171.392.297-59
-    {
-      Id: 9,
-      Name: 'EUCLEIA',
-      Surename: 'FARIAS COELHO',
-      Increments: true,
-      Amount: 2298.84,
-      ClientType: 'comercio',
-      Percentage: 12
-    }, //312.924.508-19
-    {
-      Id: 10,
-      Name: 'DEBORAH',
-      Surename: 'PEREZ CABRERA',
-      Increments: true,
-      Amount: 2301.42,
-      ClientType: 'comercio',
-      Percentage: 10
-    } //096.212.221-17
-  ];
 
   ionViewDidLoad() {
     this.filteredTopTenClients = this.getTopTenClients({month: "Janeiro", year: "2018"});
@@ -174,12 +74,9 @@ export class ClientsPage {
 
   viewClient(client) {
     this.navCtrl.setRoot('ClientPage', {
-      // cid: client.cid
       name: client.Client.Name
       , actualValue: client.TotalNFe
-      // , lastValue: client.lastValue
       , isIncrementing: client.Client.Increments
-      // , percentage: client.percentage
     });
   }
 
@@ -187,31 +84,20 @@ export class ClientsPage {
     this.navCtrl.setRoot('DashboardPage');
   }
 
-  getClientsOctubreTopTen() {
+  /*  getClientsOctubreTopTen() {
 
-    var topTenClients = this.clientsOctubre.sort(function (a, b) {
-      return a.Amount - b.Amount;
-    }).reverse();
+      var topTenClients = this.clientsOctubre.sort(function (a, b) {
+        return a.Amount - b.Amount;
+      }).reverse();
 
-    this.clientsOctubreTopTen = topTenClients.slice(0, 10);
-  }
-
-  getTopTenClients2() {
-
-    var topTenClients = this.clientsOctubre.sort(function (a, b) {
-      return a.Amount - b.Amount;
-    }).reverse();
-
-    return topTenClients.slice(0, 10);
-  }
+      this.clientsOctubreTopTen = topTenClients.slice(0, 10);
+    }*/
 
   onSearch(event) {
-    //console.log("looking for.." + event.target.value);
     this.getTopTenClients(event);
   }
 
   onChange($event) {
-    // console.log($event);
     this.selectedDate = {month: this.getMonthNumberByMonthName($event.month), year: String($event.year).substring(2)};
     this.filteredTopTenClients = this.getTopTenClients($event);
   }
@@ -280,6 +166,21 @@ export class ClientsPage {
       return item.Client.Name.toLowerCase().indexOf(this.searchTerm.toLowerCase()) > -1
         && item.MesAnoEmit.split('/')[0] == this.selectedDate.month && item.MesAnoEmit.split('/')[1] == this.selectedDate.year
     }).sort((a, b) => parseFloat(a.TotalNFe) - parseFloat(b.TotalNFe)).reverse();
+  }
+
+  displayClientesEmAlerta() {
+    let alert = this.alertCtrl.create({
+      title: 'Clientes em alerta',
+      subTitle: '', //10% of battery remaining
+      message: '<span style="color: #c49846"> 1.</span> <span style="font-size: 13px;">Surgeon Com De Mat Cirurgico</span> <br/>' +
+        'Caiu 5 posicoes nos últimos 30 días <p/>' +
+        ' <span style="color: #c49846"> 2.</span> <span style="font-size: 13px;">Icafe Do Sul Com Varej De V.</span> <br/>' +
+        'Caiu 10 posicoes nos últimos 3 meses e faturou R$ 6280.88 abaixo de sua média<p/>' +
+        ' <span style="color: #c49846"> 3.</span> <span style="font-size: 13px;">Valen Bar E Rest Ltda Epp</span><br/>' +
+        'Caiu 9 posicoes nos últimos 30 días <br/>',
+      buttons: ['Ok']
+    });
+    alert.present();
   }
 
 }

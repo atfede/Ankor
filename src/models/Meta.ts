@@ -1,14 +1,15 @@
-import {TipoCliente} from "./TipoCliente";
-import {ExtratoTotal} from "./ExtratoTotal";
-
 export class Meta {
-  Increments: Boolean;
+  id: number;
+  clientName: string;
+  user: string;
   Amount: number;
-  Percentage: number;
+  fechaMeta: string;
 
-  constructor(increments: boolean, amount: number, percentage: number) {
-    this.Increments = increments;
-    this.Amount = amount;
-    this.Percentage = percentage;
+  constructor(id: number, user: string, clientName: string, valor: number, fecha: string) {
+    this.id = id;
+    this.user = user;
+    this.clientName = clientName;
+    this.Amount = valor;
+    this.fechaMeta = fecha;
   }
 }

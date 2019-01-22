@@ -10,7 +10,6 @@ import {Constants} from "../../models/Constants";
   templateUrl: 'tributos.html',
 })
 
-
 export class TributosPage {
   tributos: Array<{ nombre: string, value: number, duedate: string, paid: boolean }>;
   companyName: string;
@@ -66,6 +65,7 @@ export class TributosPage {
       //this.extratoTotal[];
       //alert(this.globals.CURRENT_PAGE);
       this.setCompanyName(this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE][0].Client.Name);
+      this.setTributos();
     }
   }
 
@@ -74,6 +74,7 @@ export class TributosPage {
       this.globals.CURRENT_PAGE++;
       //alert(this.globals.CURRENT_PAGE);
       this.setCompanyName(this.extratoTotal[this.globals.loggedUser][this.globals.CURRENT_PAGE][0].Client.Name);
+      this.setTributos();
     }
   }
 
