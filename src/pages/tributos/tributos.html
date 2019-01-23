@@ -21,11 +21,12 @@
 <ion-content padding class="bg-style">
   <ion-row class="row" id="compName" justify-content-center="" style="margin-top: 10px;font-size: larger;">
     <ion-col col-2></ion-col>
-    <ion-col col-8 style="text-align:center;" align-items-center justify-content-center>Estimativo tributos a pagar</ion-col>
+    <ion-col col-8 style="text-align:center;" align-items-center justify-content-center>Estimativo tributos a pagar
+    </ion-col>
     <ion-col col-2></ion-col>
   </ion-row>
 
-  <ion-row id="compName" justify-content-center>
+  <!--<ion-row id="compName" justify-content-center>
     <ion-col col-1 (click)="viewPreviousCompany();" *ngIf="globals.CURRENT_PAGE > 0">
       <ion-icon name="md-arrow-back"
                 style="z-index:99; font-size: 2.5em; color: #b18619; margin-top: -0px;"></ion-icon>
@@ -37,6 +38,16 @@
       <ion-icon name="md-arrow-forward"
                 style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -0px;"></ion-icon>
     </ion-col>
+  </ion-row>-->
+
+  <ion-row id="compName" justify-content-center>
+    <ion-col col-1></ion-col>
+    <ion-col col-10 style="text-align: center; margin-top: -9px;">
+      <h6>{{companyName}}</h6>
+    </ion-col>
+    <ion-col col-1>
+      <ion-icon></ion-icon>
+    </ion-col>
   </ion-row>
 
   <ion-row class="tributo-row" *ngFor="let tributo of tributos" align-items-center justify-content-center="">
@@ -47,7 +58,8 @@
 
     <ion-col class="tributo-value">
       <ion-label *ngIf="!tributo.paid">VALOR ESTIMADO</ion-label>
-      R$ {{tributo.value | number : '1.2-2'}}
+      <!--R$ {{tributo.value | number : '1.2-2'}}-->
+      {{tributo.value}}
     </ion-col>
 
     <!--<ion-col class="tributo.paid" *ngIf="tributo.paid" style=" color : rgb(68, 204, 130) !important;font-weight: bold; text-align: center;">-->

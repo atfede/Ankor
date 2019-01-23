@@ -69,6 +69,8 @@ export class MetasComponent {
 
   setCompanyName(name) {
     this.companyName = name;
+
+    this.companyName = "MKT";
   }
 
   viewPreviousCompany() {
@@ -87,7 +89,14 @@ export class MetasComponent {
 
   getLoadProgress(m) {
     let max = this.getMaxAmount(this.metasCliente);
-    return ((m.Amount * 100) / max).toFixed(2);
+
+    var ret = ((m.Amount * 100) / max);
+
+    if (ret > 100) {
+      return "100";
+    } else {
+      return ret.toFixed(2);
+    }
   }
 
   getMaxAmount(metasCliente) {

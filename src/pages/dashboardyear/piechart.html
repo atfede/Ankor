@@ -187,8 +187,8 @@
 <ion-content class="bg-style">
   <ion-row class="row" id="compName" justify-content-center></ion-row>
   <br/>
-  <!--<ion-row id="compName" justify-content-center> {{(profileData)?.CompanyName }} </ion-row>-->
-  <ion-row id="compName" justify-content-center>
+
+  <!--<ion-row id="compName" justify-content-center>
     <ion-col col-1 (click)="viewPreviousCompany();" *ngIf="globals.CURRENT_PAGE > 0">
       <ion-icon name="md-arrow-back"
                 style="z-index:99; font-size: 2.5em; color: #b18619 ;margin-top: -0px;"></ion-icon>
@@ -200,9 +200,18 @@
       <ion-icon name="md-arrow-forward"
                 style="z-index:99; font-size: 2.5em; color: #b18619; margin-top: -0px;"></ion-icon>
     </ion-col>
+  </ion-row>-->
+
+  <ion-row id="compName" justify-content-center>
+    <ion-col col-1></ion-col>
+    <ion-col col-10 style="text-align: center; margin-top: -9px;">
+      <h6>{{companyName}}</h6>
+    </ion-col>
+    <ion-col col-1>
+      <ion-icon></ion-icon>
+    </ion-col>
   </ion-row>
 
-  <!-- <div class="container"> -->
   <ion-grid class="main-container-grid">
 
     <!-- Start top bar -->
@@ -226,15 +235,17 @@
         <!-- Table values -->
         <ion-row class="valuesTop">
           <ion-col class="valuesTop">
-            <span class="price_year">R$ {{getTotalExtratosCurrentYear() | number : '1.2-2'}}</span>
+            <!--<span class="price_year">R$ {{getTotalExtratosCurrentYear() | number : '1.2-2'}}</span>-->
+            <span class="price_year">R$ 5.813.090,19</span>
           </ion-col>
           <ion-col class="valuesTop">
-            <span class="price_year">R$ {{getImpostosPrevistos('18') | number : '1.2-2'}}</span>
+            <!--<span class="price_year">R$ {{getImpostosPrevistos('18') | number : '1.2-2'}}</span>-->
+            <span class="price_year">R$ 797.958,53</span>
           </ion-col>
           <ion-col class="valuesTop">
             <!--DD/MM-->
             <!--<span class="price_year">{{getProximoPagamentoDays()}}/{{getProximoPagamentoMonth()}}</span>-->
-            <span class="price_year">12/{{getProximoPagamentoMonth()}}</span>
+            <span class="price_year">20/{{getProximoPagamentoMonth()}}/2019</span>
             <br/>
             <span class="issqn">ISSQN</span>
           </ion-col>

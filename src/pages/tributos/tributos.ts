@@ -11,7 +11,7 @@ import {Constants} from "../../models/Constants";
 })
 
 export class TributosPage {
-  tributos: Array<{ nombre: string, value: number, duedate: string, paid: boolean }>;
+  tributos: Array<{ nombre: string, value: string, duedate: string, paid: boolean }>; //TODO: poner value: string a value: number
   companyName: string;
   extratoTotal: any = new Array<Client>();
 
@@ -26,25 +26,29 @@ export class TributosPage {
     this.tributos = [
       {
         nombre: 'IRPJ',
-        value: this.getIrpj(),
+        // value: this.getIrpj(),
+        value: '9.575,50',
         duedate: '30/01/2019',
         paid: false
       },
       {
         nombre: 'CSLL',
-        value: this.getCsll(),
+        // value: this.getCsll(),
+        value: '8.617,95',
         duedate: '30/01/2019',
         paid: false
       },
       {
         nombre: 'Cofins',
-        value: this.getCofins(),
+        // value: this.getCofins(),
+        value: '23.938,75',
         duedate: '25/01/2019', // 'PAGO'
         paid: false
       },
       {
         nombre: 'PIS',
-        value: this.getPis(),
+        // value: this.getPis(),
+        value: '5.186,73',
         duedate: '25/01/2019',
         paid: false
       }
@@ -57,6 +61,8 @@ export class TributosPage {
 
   setCompanyName(name) {
     this.companyName = name;
+
+    this.companyName = "MKT";
   }
 
   viewPreviousCompany() {
@@ -105,25 +111,29 @@ export class TributosPage {
     this.tributos = [
       {
         nombre: 'IRPJ',
-        value: this.getIrpj(),
+        // value: this.getIrpj(),
+        value: '9.575,50',
         duedate: '30/01/2019',
         paid: false
       },
       {
         nombre: 'CSLL',
-        value: this.getCsll(),
+        // value: this.getCsll(),
+        value: '8.617,95',
         duedate: '30/01/2019',
         paid: false
       },
       {
         nombre: 'Cofins',
-        value: this.getCofins(),
+        // value: this.getCofins(),
+        value: '23.938,75',
         duedate: '25/01/2019', // 'PAGO'
         paid: false
       },
       {
         nombre: 'PIS',
-        value: this.getPis(),
+        // value: this.getPis(),
+        value: '5.186,73',
         duedate: '25/01/2019',
         paid: false
       }

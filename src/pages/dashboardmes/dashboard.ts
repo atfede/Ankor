@@ -52,7 +52,7 @@ export class DashboardPage {
     {
       Id: 1,
       Name: '',
-      Surename: 'Infrati Informatic.',
+      Surename: 'Systex Informatica Ltda',
       Increments: true,
       Amount: 3767203,
       ClientType: 'comercio',
@@ -62,7 +62,7 @@ export class DashboardPage {
     {
       Id: 3,
       Name: '',
-      Surename: 'Hidroscience Consu.',
+      Surename: 'H Consulting Ltda',
       Increments: true,
       Amount: 2066400,
       ClientType: 'servicio',
@@ -72,7 +72,7 @@ export class DashboardPage {
     {
       Id: 4,
       Name: '',
-      Surename: 'Mkt Lopes Com De C.',
+      Surename: 'M2b Postal Com',
       Increments: true,
       Amount: 911203.35,
       ClientType: 'comercio',
@@ -82,7 +82,7 @@ export class DashboardPage {
     {
       Id: 6,
       Name: '',
-      Surename: 'L A Lopes Com De C.',
+      Surename: 'F E Coming Solutions',
       Increments: true,
       Amount: 832291.15,
       ClientType: 'comercio',
@@ -92,7 +92,7 @@ export class DashboardPage {
     {
       Id: 10,
       Name: '',
-      Surename: 'Surgeon Com De Mat.',
+      Surename: 'Surg. Ment Plus Ltda',
       Increments: false,
       Amount: 206869.35,
       ClientType: 'comercio',
@@ -226,7 +226,8 @@ export class DashboardPage {
   }
 
   ionViewDidLoad() {
-
+    this.getmesAnteriorEsteAnoBarHeight();
+    this.getmesmoMesNoAnoAnteriorBarHeight();
   }
 
   ionViewWillEnter() {
@@ -469,6 +470,8 @@ export class DashboardPage {
 
   setCompanyName(name) {
     this.companyName = name;
+
+    this.companyName = "MKT";
   }
 
   getmesAnteriorEsteAnoBarHeight() {

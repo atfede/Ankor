@@ -9,7 +9,7 @@ export class Globals {
   loggedUser: string;
   loggedUserIndex: number;
   CURRENT_PAGE: number = 0;
-  NUMBER_OF_COMPANIES: number = 9; //TODO: get length of total companies
+  NUMBER_OF_COMPANIES: number = 0; //TODO: get length of total companies
   metasCliente: Array<Meta> = [];
 
   constructor(private metasService: MetasService) {
@@ -32,7 +32,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Ft2 Entretenimento E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'S2t Entity Cia', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -43,7 +43,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Ft2 Entretenimento E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'S2t Entity Cia', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }  //Ft2 Entretenimento E Servs Ltda
           , {
@@ -54,7 +54,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Ft2 Entretenimento E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'S2t Entity Cia', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '12/18',
@@ -64,7 +64,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Ft2 Entretenimento E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'S2t Entity Cia', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }]
         //Hidroscience Consult E Restaur Ambiental Ltda
@@ -76,7 +76,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Hidroscience Consult E Restaur Ambiental Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'H Consulting Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         },
           {
@@ -87,7 +87,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Hidroscience Consult E Restaur Ambiental Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'H Consulting Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '05/17',
@@ -97,7 +97,7 @@ export class Globals {
             TotalICMS: 29709.12,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Hidroscience Consult E Restaur Ambiental Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'H Consulting Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -108,7 +108,7 @@ export class Globals {
             TotalICMS: 44563.68,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Hidroscience Consult E Restaur Ambiental Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'H Consulting Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '09/17',
@@ -118,7 +118,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Hidroscience Consult E Restaur Ambiental Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'H Consulting Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -129,7 +129,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Hidroscience Consult E Restaur Ambiental Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'H Consulting Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '12/17',
@@ -139,7 +139,7 @@ export class Globals {
             TotalICMS: 53334.94,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Hidroscience Consult E Restaur Ambiental Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'H Consulting Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '01/18',
@@ -149,7 +149,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Hidroscience Consult E Restaur Ambiental Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'H Consulting Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '08/18',
@@ -159,7 +159,7 @@ export class Globals {
             TotalICMS: 26763.66,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Hidroscience Consult E Restaur Ambiental Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'H Consulting Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '10/18',
@@ -169,7 +169,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Hidroscience Consult E Restaur Ambiental Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'H Consulting Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }
           , {
@@ -180,7 +180,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Hidroscience Consult E Restaur Ambiental Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'H Consulting Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }
           , {
@@ -191,7 +191,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Hidroscience Consult E Restaur Ambiental Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'H Consulting Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '01/19',
@@ -201,7 +201,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Hidroscience Consult E Restaur Ambiental Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'H Consulting Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }
         ]
@@ -214,7 +214,7 @@ export class Globals {
           TotalICMS: 3690.75,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }
           , {
@@ -225,7 +225,7 @@ export class Globals {
             TotalICMS: 1869.60,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -236,7 +236,7 @@ export class Globals {
             TotalICMS: 1869.60,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -247,7 +247,7 @@ export class Globals {
             TotalICMS: 2294.54,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -258,7 +258,7 @@ export class Globals {
             TotalICMS: 6793.41,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -269,7 +269,7 @@ export class Globals {
             TotalICMS: 10087.86,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -280,7 +280,7 @@ export class Globals {
             TotalICMS: 1293.12,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -291,7 +291,7 @@ export class Globals {
             TotalICMS: 596.89,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -302,7 +302,7 @@ export class Globals {
             TotalICMS: 291.59,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -313,7 +313,7 @@ export class Globals {
             TotalICMS: 401.71,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -324,7 +324,7 @@ export class Globals {
             TotalICMS: 21066.99,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -335,7 +335,7 @@ export class Globals {
             TotalICMS: 2801.02,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '01/18',
@@ -345,7 +345,7 @@ export class Globals {
             TotalICMS: 887.06,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '02/18',
@@ -355,7 +355,7 @@ export class Globals {
             TotalICMS: 865.94,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '03/18',
@@ -365,7 +365,7 @@ export class Globals {
             TotalICMS: 2575.03,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '04/18',
@@ -375,7 +375,7 @@ export class Globals {
             TotalICMS: 3774.48,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '05/18',
@@ -385,7 +385,7 @@ export class Globals {
             TotalICMS: 1923.55,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '06/18',
@@ -395,7 +395,7 @@ export class Globals {
             TotalICMS: 3045.03,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '07/18',
@@ -405,7 +405,7 @@ export class Globals {
             TotalICMS: 1488.45,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '08/18',
@@ -415,7 +415,7 @@ export class Globals {
             TotalICMS: 13262.23,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '09/18',
@@ -425,7 +425,7 @@ export class Globals {
             TotalICMS: 4407.21,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '10/18',
@@ -435,7 +435,7 @@ export class Globals {
             TotalICMS: 5323.09,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '11/18',
@@ -445,7 +445,7 @@ export class Globals {
             TotalICMS: 1970.51,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '12/18',
@@ -455,7 +455,7 @@ export class Globals {
             TotalICMS: 7178.07,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '01/19',
@@ -465,7 +465,7 @@ export class Globals {
             TotalICMS: 190.62,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Cofe De Nort Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }]
 
@@ -478,7 +478,7 @@ export class Globals {
           TotalICMS: 211.79,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '02/17',
@@ -488,7 +488,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '03/17',
@@ -498,7 +498,7 @@ export class Globals {
           TotalICMS: 243.36,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }
           , {
@@ -509,7 +509,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }
           , {
@@ -520,7 +520,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }
           , {
@@ -531,7 +531,7 @@ export class Globals {
             TotalICMS: 34.28,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }
           , {
@@ -542,7 +542,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }
           , {
@@ -553,7 +553,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }
           , {
@@ -564,7 +564,7 @@ export class Globals {
             TotalICMS: 16.83,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }
           , {
@@ -575,7 +575,7 @@ export class Globals {
             TotalICMS: 277.58,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }
           , {
@@ -586,7 +586,7 @@ export class Globals {
             TotalICMS: 346.77,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '12/17',
@@ -596,7 +596,7 @@ export class Globals {
             TotalICMS: 41.75,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '01/18',
@@ -606,7 +606,7 @@ export class Globals {
             TotalICMS: 41.51,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '02/18',
@@ -616,7 +616,7 @@ export class Globals {
             TotalICMS: 6813.52,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '03/18',
@@ -626,7 +626,7 @@ export class Globals {
             TotalICMS: 305.71,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '04/18',
@@ -636,7 +636,7 @@ export class Globals {
             TotalICMS: 393.01,
             TotalBCICMSST: 243.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '05/18',
@@ -646,7 +646,7 @@ export class Globals {
             TotalICMS: 12866.43,
             TotalBCICMSST: 22158.65,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '06/18',
@@ -656,7 +656,7 @@ export class Globals {
             TotalICMS: 172.66,
             TotalBCICMSST: 4316.41,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '07/18',
@@ -666,7 +666,7 @@ export class Globals {
             TotalICMS: 3761.28,
             TotalBCICMSST: 89826.43,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '08/18',
@@ -676,7 +676,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 22158.65,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '09/18',
@@ -686,7 +686,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '10/18',
@@ -696,7 +696,7 @@ export class Globals {
             TotalICMS: 224.78,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '11/18',
@@ -706,7 +706,7 @@ export class Globals {
             TotalICMS: 2095.66,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '12/18',
@@ -716,7 +716,7 @@ export class Globals {
             TotalICMS: 76170.79,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '01/19',
@@ -726,7 +726,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }]
 
@@ -739,7 +739,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '03/17',
@@ -749,7 +749,7 @@ export class Globals {
           TotalICMS: 8.73,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '04/17',
@@ -759,7 +759,7 @@ export class Globals {
           TotalICMS: 3285.81,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '05/17',
@@ -769,7 +769,7 @@ export class Globals {
           TotalICMS: 16431.93,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '06/17',
@@ -779,7 +779,7 @@ export class Globals {
           TotalICMS: 16431.93,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '07/17',
@@ -789,7 +789,7 @@ export class Globals {
           TotalICMS: 16874.01,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '08/17',
@@ -799,7 +799,7 @@ export class Globals {
           TotalICMS: 23695.38,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '09/17',
@@ -809,7 +809,7 @@ export class Globals {
           TotalICMS: 19185.12,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '10/17',
@@ -819,7 +819,7 @@ export class Globals {
           TotalICMS: 23400.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '11/17',
@@ -829,7 +829,7 @@ export class Globals {
           TotalICMS: 17966.76,
           TotalBCICMSST: 298.71,
           TotalICMSST: 47.95,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '12/17',
@@ -839,7 +839,7 @@ export class Globals {
           TotalICMS: 18754.05,
           TotalBCICMSST: 1261.86,
           TotalICMSST: 211.33,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '01/18',
@@ -849,7 +849,7 @@ export class Globals {
           TotalICMS: 16043.77,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '02/18',
@@ -859,7 +859,7 @@ export class Globals {
           TotalICMS: 20693.05,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '03/18',
@@ -869,7 +869,7 @@ export class Globals {
           TotalICMS: 11661.46,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '04/18',
@@ -879,7 +879,7 @@ export class Globals {
           TotalICMS: 18081.53,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '05/18',
@@ -889,7 +889,7 @@ export class Globals {
           TotalICMS: 15140.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '06/18',
@@ -899,7 +899,7 @@ export class Globals {
           TotalICMS: 11450.67,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '07/18',
@@ -909,7 +909,7 @@ export class Globals {
           TotalICMS: 3093.95,
           TotalBCICMSST: 13044.22,
           TotalICMSST: 2573.96,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '08/18',
@@ -919,7 +919,7 @@ export class Globals {
           TotalICMS: 1824.01,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '09/18',
@@ -929,7 +929,7 @@ export class Globals {
           TotalICMS: 2223.81,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '10/18',
@@ -939,7 +939,7 @@ export class Globals {
           TotalICMS: 2185.59,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '11/18',
@@ -949,7 +949,7 @@ export class Globals {
           TotalICMS: 3915.90,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '12/18',
@@ -959,7 +959,7 @@ export class Globals {
           TotalICMS: 1377.75,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '01/19',
@@ -969,7 +969,7 @@ export class Globals {
           TotalICMS: 141.29,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }]
 
@@ -982,7 +982,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '02/17',
@@ -992,7 +992,7 @@ export class Globals {
           TotalICMS: 110.70,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '03/17',
@@ -1002,7 +1002,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '04/17',
@@ -1012,7 +1012,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '05/17',
@@ -1022,7 +1022,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '06/17',
@@ -1032,7 +1032,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '07/17',
@@ -1042,7 +1042,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '08/17',
@@ -1052,7 +1052,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '09/17',
@@ -1062,7 +1062,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 31.41,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '10/17',
@@ -1072,7 +1072,7 @@ export class Globals {
           TotalICMS: 53.31,
           TotalBCICMSST: 423.60,
           TotalICMSST: 31.41,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '11/17',
@@ -1082,7 +1082,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '12/17',
@@ -1092,7 +1092,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '01/18',
@@ -1102,7 +1102,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '02/18',
@@ -1112,7 +1112,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '03/18',
@@ -1122,7 +1122,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '04/18',
@@ -1132,7 +1132,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '05/18',
@@ -1142,7 +1142,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '06/18',
@@ -1152,7 +1152,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '07/18',
@@ -1162,7 +1162,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '08/18',
@@ -1172,7 +1172,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '09/18',
@@ -1182,7 +1182,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '10/18',
@@ -1192,7 +1192,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '11/18',
@@ -1202,7 +1202,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '12/18',
@@ -1212,7 +1212,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '01/19',
@@ -1222,7 +1222,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }]
 
@@ -1235,7 +1235,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'M2t Gastronomia E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F2t Botman Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '05/17',
@@ -1245,7 +1245,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'M2t Gastronomia E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F2t Botman Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '08/17',
@@ -1255,7 +1255,7 @@ export class Globals {
           TotalICMS: 134.78,
           TotalBCICMSST: 1479.16,
           TotalICMSST: 161.06,
-          Client: new Client(1, 'M2t Gastronomia E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F2t Botman Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '12/17',
@@ -1265,7 +1265,7 @@ export class Globals {
           TotalICMS: 21.93,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'M2t Gastronomia E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F2t Botman Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '06/18',
@@ -1275,7 +1275,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'M2t Gastronomia E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F2t Botman Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '09/18',
@@ -1285,7 +1285,7 @@ export class Globals {
           TotalICMS: 219.09,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'M2t Gastronomia E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F2t Botman Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }]
         //Mkt Lopes Com De Cosmeticos Ltda
@@ -1297,7 +1297,7 @@ export class Globals {
           TotalICMS: 11553.48,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '07/17',
@@ -1307,7 +1307,7 @@ export class Globals {
           TotalICMS: 18943.02,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }
           , {
@@ -1318,7 +1318,7 @@ export class Globals {
             TotalICMS: 20010.33,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }
           , {
@@ -1329,7 +1329,7 @@ export class Globals {
             TotalICMS: 20000.34,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }
           , {
@@ -1340,7 +1340,7 @@ export class Globals {
             TotalICMS: 23116.23,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }
           , {
@@ -1351,7 +1351,7 @@ export class Globals {
             TotalICMS: 21652.83,
             TotalBCICMSST: 455.77,
             TotalICMSST: 101.95,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }
           , {
@@ -1362,7 +1362,7 @@ export class Globals {
             TotalICMS: 17702.08,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '01/18',
@@ -1372,7 +1372,7 @@ export class Globals {
             TotalICMS: 25220.98,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '02/18',
@@ -1382,7 +1382,7 @@ export class Globals {
             TotalICMS: 14682.65,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '03/18',
@@ -1392,7 +1392,7 @@ export class Globals {
             TotalICMS: 13451.61,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '04/18',
@@ -1402,7 +1402,7 @@ export class Globals {
             TotalICMS: 17458.65,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '05/18',
@@ -1412,7 +1412,7 @@ export class Globals {
             TotalICMS: 17811.80,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '06/18',
@@ -1422,7 +1422,7 @@ export class Globals {
             TotalICMS: 16514.94,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '07/18',
@@ -1432,7 +1432,7 @@ export class Globals {
             TotalICMS: 4061.55,
             TotalBCICMSST: 13044.22,
             TotalICMSST: 2573.96,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '08/18',
@@ -1442,7 +1442,7 @@ export class Globals {
             TotalICMS: 2477.23,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '09/18',
@@ -1452,7 +1452,7 @@ export class Globals {
             TotalICMS: 3789.26,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '10/18',
@@ -1462,7 +1462,7 @@ export class Globals {
             TotalICMS: 333.68,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '11/18',
@@ -1472,7 +1472,7 @@ export class Globals {
             TotalICMS: 6811.76,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '12/18',
@@ -1482,7 +1482,7 @@ export class Globals {
             TotalICMS: 2351.57,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '01/19',
@@ -1492,7 +1492,7 @@ export class Globals {
             TotalICMS: 1021.74,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }]
 
@@ -1505,7 +1505,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '02/17',
@@ -1515,7 +1515,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '03/17',
@@ -1525,7 +1525,7 @@ export class Globals {
           TotalICMS: 120.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '04/17',
@@ -1535,7 +1535,7 @@ export class Globals {
           TotalICMS: 188.10,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '05/17',
@@ -1545,7 +1545,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '06/17',
@@ -1555,7 +1555,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '07/17',
@@ -1565,7 +1565,7 @@ export class Globals {
           TotalICMS: 54.00,
           TotalBCICMSST: 441.00,
           TotalICMSST: 22.32,
-          Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '08/17',
@@ -1575,7 +1575,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '09/17',
@@ -1585,7 +1585,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '10/17',
@@ -1595,7 +1595,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '11/17',
@@ -1605,7 +1605,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '12/17',
@@ -1615,7 +1615,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '01/18',
@@ -1625,7 +1625,7 @@ export class Globals {
           TotalICMS: 60.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '02/18',
@@ -1635,7 +1635,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '03/18',
@@ -1645,7 +1645,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 225.00,
           TotalICMSST: 51.08,
-          Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '04/18',
@@ -1655,7 +1655,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '05/18',
@@ -1665,7 +1665,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '06/18',
@@ -1675,7 +1675,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '07/18',
@@ -1685,7 +1685,7 @@ export class Globals {
           TotalICMS: 18.00,
           TotalBCICMSST: 133.00,
           TotalICMSST: 5.94,
-          Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }
           , {
@@ -1696,7 +1696,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '09/18',
@@ -1706,7 +1706,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '10/18',
@@ -1716,7 +1716,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '11/18',
@@ -1726,7 +1726,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
             MesAnoEmit: '12/18',
@@ -1736,7 +1736,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }]
 
@@ -1749,7 +1749,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '02/17',
@@ -1759,7 +1759,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '03/17',
@@ -1769,7 +1769,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '04/17',
@@ -1779,7 +1779,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '05/17',
@@ -1789,7 +1789,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '06/17',
@@ -1799,7 +1799,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '07/17',
@@ -1809,7 +1809,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '08/17',
@@ -1819,7 +1819,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '09/17',
@@ -1829,7 +1829,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '10/17',
@@ -1839,7 +1839,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '11/17',
@@ -1849,7 +1849,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '12/17',
@@ -1859,7 +1859,7 @@ export class Globals {
           TotalICMS: 472.80,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '01/18',
@@ -1869,7 +1869,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '02/18',
@@ -1879,7 +1879,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '03/18',
@@ -1889,7 +1889,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '04/18',
@@ -1899,7 +1899,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '05/18',
@@ -1909,7 +1909,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '06/18',
@@ -1919,7 +1919,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '07/18',
@@ -1929,7 +1929,7 @@ export class Globals {
           TotalICMS: 19.61,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '08/18',
@@ -1939,7 +1939,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '09/18',
@@ -1949,7 +1949,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '10/18',
@@ -1959,7 +1959,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '11/18',
@@ -1969,7 +1969,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '12/18',
@@ -1979,7 +1979,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '01/19',
@@ -1989,7 +1989,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }
         ]]
@@ -2005,7 +2005,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         },
           {
@@ -2016,7 +2016,7 @@ export class Globals {
             TotalICMS: 8.73,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2027,7 +2027,7 @@ export class Globals {
             TotalICMS: 3285.81,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2038,7 +2038,7 @@ export class Globals {
             TotalICMS: 17337.06,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2049,7 +2049,7 @@ export class Globals {
             TotalICMS: 16431.93,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
           MesAnoEmit: '07/17',
@@ -2059,7 +2059,7 @@ export class Globals {
           TotalICMS: 16874.01,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '08/17',
@@ -2069,7 +2069,7 @@ export class Globals {
           TotalICMS: 23695.38,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '09/17',
@@ -2079,7 +2079,7 @@ export class Globals {
           TotalICMS: 19185.12,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '10/17',
@@ -2089,7 +2089,7 @@ export class Globals {
           TotalICMS: 23400,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '11/17',
@@ -2099,7 +2099,7 @@ export class Globals {
           TotalICMS: 17966.76,
           TotalBCICMSST: 298.71,
           TotalICMSST: 47.95,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '12/17',
@@ -2109,7 +2109,7 @@ export class Globals {
           TotalICMS: 18754.05,
           TotalBCICMSST: 1261.86,
           TotalICMSST: 211.33,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         },
           //2018
@@ -2121,7 +2121,7 @@ export class Globals {
             TotalICMS: 16043.67,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2132,7 +2132,7 @@ export class Globals {
             TotalICMS: 20693.05,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
           MesAnoEmit: '03/18',
@@ -2142,7 +2142,7 @@ export class Globals {
           TotalICMS: 11661.46,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '04/18',
@@ -2152,7 +2152,7 @@ export class Globals {
           TotalICMS: 18081.53,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '05/18',
@@ -2162,7 +2162,7 @@ export class Globals {
           TotalICMS: 15140,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '06/18',
@@ -2172,7 +2172,7 @@ export class Globals {
           TotalICMS: 11450.67,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '07/18',
@@ -2182,7 +2182,7 @@ export class Globals {
           TotalICMS: 3093.95,
           TotalBCICMSST: 13044.22,
           TotalICMSST: 2573.93,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '08/18',
@@ -2192,7 +2192,7 @@ export class Globals {
           TotalICMS: 1824.01,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '09/18',
@@ -2202,7 +2202,7 @@ export class Globals {
           TotalICMS: 2223.81,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '10/18',
@@ -2212,7 +2212,7 @@ export class Globals {
           TotalICMS: 2158.59,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '11/18',
@@ -2222,7 +2222,7 @@ export class Globals {
           TotalICMS: 3915.9,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '12/18',
@@ -2232,7 +2232,7 @@ export class Globals {
           TotalICMS: 8688.21,
           TotalBCICMSST: 1395.47,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }],
 
@@ -2245,7 +2245,7 @@ export class Globals {
           TotalICMS: 11553.48,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         },
           {
@@ -2256,7 +2256,7 @@ export class Globals {
             TotalICMS: 18943.02,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2267,7 +2267,7 @@ export class Globals {
             TotalICMS: 20000.34,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2278,7 +2278,7 @@ export class Globals {
             TotalICMS: 23116.23,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2289,7 +2289,7 @@ export class Globals {
             TotalICMS: 23116.23,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2300,7 +2300,7 @@ export class Globals {
             TotalICMS: 455.77,
             TotalBCICMSST: 101.95,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2311,7 +2311,7 @@ export class Globals {
             TotalICMS: 17702.08,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2322,7 +2322,7 @@ export class Globals {
             TotalICMS: 25220.98,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2333,7 +2333,7 @@ export class Globals {
             TotalICMS: 14682.65,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2344,7 +2344,7 @@ export class Globals {
             TotalICMS: 13451.61,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2355,7 +2355,7 @@ export class Globals {
             TotalICMS: 17458.65,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2366,7 +2366,7 @@ export class Globals {
             TotalICMS: 17877.8,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2377,7 +2377,7 @@ export class Globals {
             TotalICMS: 16514.94,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2388,7 +2388,7 @@ export class Globals {
             TotalICMS: 4061.55,
             TotalBCICMSST: 13044.22,
             TotalICMSST: 2573.96,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2399,7 +2399,7 @@ export class Globals {
             TotalICMS: 2477.23,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2410,7 +2410,7 @@ export class Globals {
             TotalICMS: 3789.26,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2421,7 +2421,7 @@ export class Globals {
             TotalICMS: 3333.68,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2432,7 +2432,7 @@ export class Globals {
             TotalICMS: 6811.76,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2443,7 +2443,7 @@ export class Globals {
             TotalICMS: 2385.07,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }]
       ]
@@ -2459,7 +2459,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
           MesAnoEmit: '02/17',
@@ -2469,7 +2469,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '03/17',
@@ -2479,7 +2479,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '04/17',
@@ -2489,7 +2489,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '05/17',
@@ -2499,7 +2499,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '06/17',
@@ -2509,7 +2509,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '07/17',
@@ -2519,7 +2519,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '08/17',
@@ -2529,7 +2529,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '09/17',
@@ -2539,7 +2539,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '10/17',
@@ -2549,7 +2549,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '11/17',
@@ -2559,7 +2559,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '12/17',
@@ -2569,7 +2569,7 @@ export class Globals {
           TotalICMS: 472.8,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '01/18',
@@ -2579,7 +2579,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '02/18',
@@ -2589,7 +2589,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '03/18',
@@ -2599,7 +2599,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '04/18',
@@ -2609,7 +2609,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '05/18',
@@ -2619,7 +2619,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '06/18',
@@ -2629,7 +2629,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '07/18',
@@ -2639,7 +2639,7 @@ export class Globals {
           TotalICMS: 19.61,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '08/18',
@@ -2649,7 +2649,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '09/18',
@@ -2659,7 +2659,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '10/18',
@@ -2669,7 +2669,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '11/18',
@@ -2679,7 +2679,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '12/18',
@@ -2689,7 +2689,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }
         ]
@@ -2705,7 +2705,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Ft2 Entretenimento E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'S2t Entity Cia', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         },
           {
@@ -2716,7 +2716,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Ft2 Entretenimento E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'S2t Entity Cia', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }, {
           MesAnoEmit: '08/18',
@@ -2726,7 +2726,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Ft2 Entretenimento E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'S2t Entity Cia', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         },
           {
@@ -2737,7 +2737,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'Ft2 Entretenimento E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'S2t Entity Cia', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }]
         //M2t Gastronomia E Servs Ltda
@@ -2749,7 +2749,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'M2t Gastronomia E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F2t Botman Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '05/17',
@@ -2759,7 +2759,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'M2t Gastronomia E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'F2t Botman Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         },
           {
@@ -2770,7 +2770,7 @@ export class Globals {
             TotalICMS: 134.78,
             TotalBCICMSST: 1479.16,
             TotalICMSST: 161.06,
-            Client: new Client(1, 'M2t Gastronomia E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'F2t Botman Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2781,7 +2781,7 @@ export class Globals {
             TotalICMS: 21.93,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'M2t Gastronomia E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'F2t Botman Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2792,7 +2792,7 @@ export class Globals {
             TotalICMS: 0.00,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'M2t Gastronomia E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'F2t Botman Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           },
           {
@@ -2803,7 +2803,7 @@ export class Globals {
             TotalICMS: 219.09,
             TotalBCICMSST: 0.00,
             TotalICMSST: 0.00,
-            Client: new Client(1, 'M2t Gastronomia E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+            Client: new Client(1, 'F2t Botman Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
             Clients: new Array<Client>()
           }],
         [{
@@ -2814,7 +2814,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Oito Atlantida Casa De Festas E Eventos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Atlantis Festival Eventos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }, {
           MesAnoEmit: '12/18',
@@ -2824,7 +2824,7 @@ export class Globals {
           TotalICMS: 0.00,
           TotalBCICMSST: 0.00,
           TotalICMSST: 0.00,
-          Client: new Client(1, 'Oito Atlantida Casa De Festas E Eventos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+          Client: new Client(1, 'Atlantis Festival Eventos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
           Clients: new Array<Client>()
         }]
       ]
@@ -2843,7 +2843,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Ft2 Entretenimento E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'S2t Entity Cia', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -2854,7 +2854,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Ft2 Entretenimento E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'S2t Entity Cia', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -2865,7 +2865,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Hidroscience Consult E Restaur Ambiental Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'H Consulting Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -2876,7 +2876,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Hidroscience Consult E Restaur Ambiental Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'H Consulting Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -2887,7 +2887,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Hidroscience Consult E Restaur Ambiental Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'H Consulting Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -2898,7 +2898,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Hidroscience Consult E Restaur Ambiental Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'H Consulting Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -2909,7 +2909,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Hidroscience Consult E Restaur Ambiental Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'H Consulting Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -2920,7 +2920,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Cofe De Nort Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -2931,7 +2931,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Cofe De Nort Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -2942,7 +2942,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Cofe De Nort Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -2953,7 +2953,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Cofe De Nort Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -2964,7 +2964,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Cofe De Nort Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -2975,7 +2975,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Cofe De Nort Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -2986,7 +2986,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Cofe De Nort Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -2997,7 +2997,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Cofe De Nort Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3008,7 +3008,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Cofe De Nort Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3019,7 +3019,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Cofe De Nort Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3030,7 +3030,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Cofe De Nort Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3041,7 +3041,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Icafe Do Sul Com Varej De Vest E Bij Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Cofe De Nort Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3052,7 +3052,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3063,7 +3063,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3074,7 +3074,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3085,7 +3085,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3096,7 +3096,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3107,7 +3107,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3118,7 +3118,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3129,7 +3129,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3140,7 +3140,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3151,7 +3151,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3162,7 +3162,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3173,7 +3173,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3184,7 +3184,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Infrati Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Systex Informatica Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3195,7 +3195,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3206,7 +3206,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3217,7 +3217,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3228,7 +3228,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3239,7 +3239,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3250,7 +3250,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3261,7 +3261,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3272,7 +3272,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3283,7 +3283,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3294,7 +3294,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3305,7 +3305,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3316,7 +3316,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'L A Lopes Com De Cosmeticos Ltda Epp', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'F E Coming Solutions Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3327,7 +3327,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3338,7 +3338,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3349,7 +3349,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3360,7 +3360,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3371,7 +3371,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3382,7 +3382,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3393,7 +3393,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3404,7 +3404,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3415,7 +3415,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3426,7 +3426,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3437,7 +3437,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3448,7 +3448,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Luciano Santos Espindola Eireli', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'G Estoyano Santos', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3459,7 +3459,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'M2t Gastronomia E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'F2t Botman Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3470,7 +3470,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'M2t Gastronomia E Servs Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'F2t Botman Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3481,7 +3481,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3492,7 +3492,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3503,7 +3503,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3514,7 +3514,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3525,7 +3525,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3536,7 +3536,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3547,7 +3547,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3558,7 +3558,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3569,7 +3569,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3580,7 +3580,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3591,7 +3591,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3602,7 +3602,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3613,7 +3613,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Mkt Lopes Com De Cosmeticos Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'M2b Postal Com', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3635,7 +3635,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3646,7 +3646,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3657,7 +3657,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3668,7 +3668,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3679,7 +3679,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3690,7 +3690,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3701,7 +3701,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3712,7 +3712,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3723,7 +3723,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3734,7 +3734,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3745,7 +3745,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3756,7 +3756,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Sidicom Sist Informacoes Por Computacao Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Semant Pro Sistemas Ltda', '', true, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3767,7 +3767,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3778,7 +3778,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3789,7 +3789,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3800,7 +3800,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3811,7 +3811,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3822,7 +3822,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3833,7 +3833,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3844,7 +3844,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3855,7 +3855,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3866,7 +3866,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3877,7 +3877,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3888,7 +3888,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Surgeon Com De Mat Cirurgico Hospl Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'Surg. Ment Plus Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {
@@ -3899,7 +3899,7 @@ export class Globals {
       TotalICMS: 0.00,
       TotalBCICMSST: 0.00,
       TotalICMSST: 0.00,
-      Client: new Client(1, 'Valen Bar E Rest Ltda Epp', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
+      Client: new Client(1, 'E V H Resto Bar Ltda', '', false, 1, '', new Array<ExtratoTotal>(), new Array<Meta>()),
       Clients: new Array<Client>()
     },
     {

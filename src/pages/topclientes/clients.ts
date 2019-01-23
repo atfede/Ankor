@@ -172,11 +172,11 @@ export class ClientsPage {
     let alert = this.alertCtrl.create({
       title: 'Clientes em alerta',
       subTitle: '', //10% of battery remaining
-      message: '<span style="color: #c49846"> 1.</span> <span style="font-size: 13px;">Surgeon Com De Mat Cirurgico</span> <br/>' +
+      message: '<span style="color: #c49846"> 1.</span> <span style="font-size: 13px;">Surg. Ment Plus Ltda</span> <br/>' +
         'Caiu 5 posicoes nos últimos 30 días <p/>' +
-        ' <span style="color: #c49846"> 2.</span> <span style="font-size: 13px;">Icafe Do Sul Com Varej De V.</span> <br/>' +
+        ' <span style="color: #c49846"> 2.</span> <span style="font-size: 13px;">Cofe De Nort Ltda</span> <br/>' +
         'Caiu 10 posicoes nos últimos 3 meses e faturou R$ 6280.88 abaixo de sua média<p/>' +
-        ' <span style="color: #c49846"> 3.</span> <span style="font-size: 13px;">Valen Bar E Rest Ltda Epp</span><br/>' +
+        ' <span style="color: #c49846"> 3.</span> <span style="font-size: 13px;">E V H Resto Bar Ltda</span><br/>' +
         'Caiu 9 posicoes nos últimos 30 días <br/>',
       buttons: ['Ok']
     });

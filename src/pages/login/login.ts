@@ -36,7 +36,7 @@ export class LoginPage {
         // Successful login
         if (logAttemp) {
 
-          this.globals.CURRENT_PAGE = 0;
+          this.globals.CURRENT_PAGE = 7; //TODO: poner en 0 cuando quiera hacer previous y next company con los botones
           this.globals.setNumberOfCompanies(this.globals.loggedUserIndex, this.globals.loggedUser);
           this.globals.getMetasCliente(this.globals.loggedUser);
           this.getUser();
