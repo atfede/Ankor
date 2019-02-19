@@ -34,6 +34,7 @@ import {DresinteticoComponentModule} from '../pages/dresintetico/dresintetico.mo
 
 import {Globals} from '../components/Globals';
 import {MetasService} from "../services/metas.service";
+import { UserServiceProvider } from '../providers/user-service/user-service';
 
 @NgModule({
     declarations: [
@@ -73,7 +74,8 @@ import {MetasService} from "../services/metas.service";
         , SplashScreen
         , {provide: ErrorHandler, useClass: IonicErrorHandler}
         , Globals
-        , MetasService
+        , MetasService,
+        UserServiceProvider
 
     ]
 })
